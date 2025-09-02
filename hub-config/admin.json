@@ -1,0 +1,20 @@
+{
+    "schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v5.1.0/admin-schema.json",
+    "name": "China COVID-19 Forecast Hub",
+    "maintainer": "GZNL Group",
+    "contact": {
+        "name": "yang_kaixin",
+        "email": "yang_kaixin@gzlab.ac.cn"
+    },
+    "repository": {
+        "host": "github",
+        "owner": "gzlab",
+        "url": "https://github.com/dailypartita/cn_covid19_forecast_hub",
+        "name": "cn_covid19_forecast_hub"
+    },
+    "file_format": ["csv", "parquet"],
+    "timezone": "Asia/Shanghai",
+    "cloud": {
+        "enabled": false
+    }
+}
