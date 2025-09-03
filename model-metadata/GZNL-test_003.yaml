@@ -1,0 +1,21 @@
+team_name: "GZNL Group"
+team_abbr: "GZNL"
+model_name: "test_003 COVID Seasonal Trend"
+model_abbr: "test_003"
+model_contributors:
+  - name: "XXX"
+    affiliation: "GZNL Group"
+    email: "xxx@xxx.com"
+  - name: "YYY"
+    affiliation: "GZNL Group"
+    email: "yyy@yyy.com"
+license: "CC-BY-4.0"
+designated_model: true
+data_inputs: "中国疾控中心每周发布的《全国急性呼吸道传染病哨点监测情况》报告的门急诊流感样病例中的新型冠状病毒阳性率"
+methods: "基于季节性趋势分解的COVID-19 ILI阳性率预测模型，分离趋势、季节性和随机成分"
+methods_long: "本模型采用季节性趋势分解(Seasonal Trend Decomposition)方法对COVID-19 ILI阳性率进行预测。模型将时间序列分解为趋势成分、季节性成分和残差成分三部分。趋势成分通过加权移动平均计算，季节性成分基于8周周期模式识别，残差成分捕捉随机波动。预测时综合考虑各成分的延续性和衰减特性，并结合周期性调整因子，生成具有季节性特征的未来4周预测值。"
+ensemble_of_models: false
+ensemble_of_hub_models: false
+website_url: "https://example.com"
+designated_github_users:
+  - "xxx"
