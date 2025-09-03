@@ -24,4 +24,3 @@ v <- hubValidations::validate_pr(
   skip_submit_window_check = FALSE
 )
 hubValidations::check_for_errors(v, verbose = TRUE)
-
