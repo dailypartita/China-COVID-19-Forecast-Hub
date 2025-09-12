@@ -1,55 +1,68 @@
-> [!NOTE]
-> To use this README.md in your hub, replace the placeholders (italics in
-> brackets) with information about your hub.
-> Below are a few example of READMEs throughout the Hubverse:
->
-> - [FluSight Forecast Hub](https://github.com/cdcepi/FluSight-forecast-hub/blob/main/README.md)
-> - [US SARS-CoV-2 Variant Nowcast Hub](https://github.com/reichlab/variant-nowcast-hub)
+# China COVID-19 Forecast Hub
 
-# *[Insert title of hub]*
+This collaborative forecast hub collects and evaluates real-time predictions for SARS-CoV-2 positivity rates among influenza-like illness (ILI) cases from sentinel hospitals across China. The hub serves as a platform for comparing forecasting models and providing evidence-based insights for public health decision-making. Anyone interested in using these data for additional research or publications is requested to contact yang_kaixin@gzlab.ac.cn for information regarding attribution of the source forecasts.
 
-*[Describe overall purpose of hub.]* Anyone interested in using these data for additional research or publications is
-requested to contact *[insert email]* for information regarding attribution of the source forecasts.
+## Weekly SARS-CoV-2 Positivity Rate Forecasts
 
-## *[Insert title of forecasts]*
+This hub focuses on forecasting the weekly SARS-CoV-2 positivity rate among influenza-like illness cases from China's sentinel hospital surveillance network. Forecasts provide probabilistic predictions for both retrospective analysis (nowcasting) and future projections.
 
-*[Describe forecasts]*
-
-**Dates:** The Challenge Period will begin *[insert start date]* and will run until *[insert start date]*. Participants
-are currently asked to submit *[insert description of forecasts]*  by *[insert timing]* .(herein referred to as the
-Forecast Due Date). In the event that timelines of data availability change, *[insert name of hub]*  may change the
-day of week that forecasts are due. In this case, participants would be notified at least one week in advance.
-*[insert temporal period]* submissions (including file names) will be specified in terms of the reference date, which
-is the Saturday following the Forecast Due Date. The reference date is the last day of the epidemiological week (EW)
-(Sunday to Saturday) containing the Forecast Due Date.
+**Dates:** The forecast submission period began August 21, 2025, and will continue indefinitely. Participants are asked to submit weekly forecasts by **Wednesday 23:59 Beijing Time** each week (herein referred to as the Forecast Due Date). In the event that timelines of data availability change, the China COVID-19 Forecast Hub may change the day of week that forecasts are due. In this case, participants would be notified at least one week in advance. Weekly submissions (including file names) will be specified in terms of the reference date, which is the Saturday following the Forecast Due Date. The reference date is the last day of the epidemiological week (EW) (Sunday to Saturday) containing the Forecast Due Date.
 
 **Prediction Targets:**
-Participating teams are asked to provide *[insert geographical requirements]* predictions for targets
-*[insert name of target(s)]*.
+Participating teams are asked to provide China-wide predictions for the target
+**"wk inc covid prop ili"** (weekly incident COVID-19 proportion in influenza-like illness).
 
-Teams will submit *[insert description of forecasts]* for the epidemiological week (EW) ending on the reference date
-as well as *[insert horizons]*. Teams can but are not required to submit forecasts for all *[insert temporal period]*
-horizons or for all locations. The evaluation data for forecasts will be the *[insert temporal period]* aggregate of
-*[insert description of evaluation data]*. We will use the specification of EWs defined by the
-[CDC](https://wwwn.cdc.gov/nndss/document/MMWR_Week_overview.pdf), which run Sunday through Saturday. The target end
-date for a prediction is the Saturday that ends an EW of interest, and can be calculated using the expression:
-**target end date = reference date + horizon * (*[insert # days in temporal period]* days)**.
+Teams will submit probabilistic forecasts for the epidemiological week (EW) ending on the reference date as well as horizons ranging from **-3 to +6 weeks**. Teams can but are not required to submit forecasts for all weekly horizons. The evaluation data for forecasts will be the weekly aggregate of SARS-CoV-2 positivity rates from China CDC's sentinel hospital surveillance system. We will use the specification of EWs defined by the [CDC](https://wwwn.cdc.gov/nndss/document/MMWR_Week_overview.pdf), which run Sunday through Saturday. The target end date for a prediction is the Saturday that ends an EW of interest, and can be calculated using the expression:
+**target end date = reference date + horizon * (7 days)**.
 
 There are standard software packages to convert from dates to epidemic weeks and vice versa (*e.g.*,
 [MMWRweek](https://cran.r-project.org/web/packages/MMWRweek/) and
 [lubridate](https://lubridate.tidyverse.org/reference/week.html) for R and [pymmwr](https://pypi.org/project/pymmwr/)
 and [epiweeks](https://pypi.org/project/epiweeks/) for Python).
 
-If you have questions aboutthis target, please reach out to *[insert name]* (*[insert email]*).
+If you have questions about this target, please reach out to Yang Kaixin (yang_kaixin@gzlab.ac.cn).
+
+## Data Sources
+
+### Target Data Collection
+The forecast target data comes from **China CDC's weekly acute respiratory syndrome surveillance reports** from sentinel hospitals across China. Historical surveillance data can be obtained from the automated data collection system at:
+
+**🔗 [China CDC Crawl Repository](https://github.com/dailypartita/cn_cdc_crawl)**
+
+This repository provides tools to automatically download, process, and extract structured surveillance data from China CDC's weekly reports, including:
+- PDF-to-text conversion of surveillance reports
+- Automated extraction of pathogen detection rates
+- Time series data for SARS-CoV-2, influenza, and other respiratory pathogens
+- Both outpatient ILI and inpatient SARI surveillance data
+
+The extracted data follows the format:
+- **report_date**: Report publication date
+- **report_week**: Epidemiological week (YYYY-WW format)  
+- **pathogen**: Pathogen name (including 新型冠状病毒/SARS-CoV-2)
+- **ili_percent**: ILI case positivity rate (%)
+- **sari_percent**: SARI case positivity rate (%)
+
+## Getting Started
+
+### For New Teams
+
+1. **Register Your Model**: Create a model metadata file in the `model-metadata/` folder following the [model metadata guidelines](model-metadata/README.md)
+2. **Submit Forecasts**: Weekly forecasts should be submitted as CSV files in the `model-output/` folder following the [submission guidelines](model-output/README.md)
+3. **Validation**: All submissions are automatically validated through GitHub Actions to ensure format compliance
+
+### Quick Start Checklist
+
+- [ ] Read the [model metadata requirements](model-metadata/README.md)
+- [ ] Create your `team-model.yml` metadata file
+- [ ] Submit a pull request with your metadata
+- [ ] Prepare your first forecast CSV file following the [format specifications](model-output/README.md)
+- [ ] Submit weekly forecasts by **Wednesday 23:59 Beijing Time**
 
 ## Accessing hub data on the cloud
 
-*[Remove this section if you're not planning to host your hub's data on the Hubverse's AWS infrastructure]*
-
 To ensure greater access to the data created by and submitted to this hub, real-time copies of its model-output,
 target, and configuration files are hosted on the Hubverse's Amazon Web Services (AWS) infrastructure,
-in a public S3 bucket:
-*[insert S3 bucket name, as specified in admin.json cloud.host.storage_location]*
+in a public S3 bucket (coming soon).
 
 **Note**: For efficient storage, all model-output files in S3 are stored in parquet format, even if the original
 versions in the GitHub repository are .csv.
@@ -86,6 +99,8 @@ hubData is a good choice if you:
 - want to interactively explore hub data from the cloud without downloading it
 - want to save a subset of the hub's data (*e.g.*, forecasts for a specific date or target) to your local machine
 - want to save hub data in a different file format (*e.g.*, parquet to .csv)
+
+**Note**: S3 access will be available in future versions.
 
 ### Installing hubData
 

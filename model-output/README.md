@@ -1,8 +1,6 @@
 # Model outputs folder
 
-<mark style="background-color: #FFE331">**Below is a template of the README.md file for the model-ouput folder of your hub. Italics in brackets are placeholders for information about your hub. **</mark>
-
-This folder contains a set of subdirectories, one for each model, that contains submitted model output files for that model. The structure of these directories and their contents follows [the model output guidelines in our documentation](https://docs.hubverse.io/en/latest/user-guide/model-output.html). Documentation for hub submissions specifically is provided below. 
+This folder contains a set of subdirectories, one for each model, that contains submitted model output files for that model. The structure of these directories and their contents follows [the model output guidelines in our documentation](https://docs.hubverse.io/en/latest/user-guide/model-output.html). Documentation for China COVID-19 Forecast Hub submissions specifically is provided below. 
 
 # Data submission instructions
 
@@ -51,7 +49,7 @@ uptake) may change over time.
 
 ## Target Data 
 
-*[insert description target data]* 
+The target data for this hub is the **weekly SARS-CoV-2 positivity rate among influenza-like illness (ILI) cases** from China's sentinel hospital surveillance network. This data is collected and reported by the China CDC through their weekly acute respiratory syndrome surveillance reports. Historical target data can be obtained using the [China CDC Crawl Repository](https://github.com/dailypartita/cn_cdc_crawl), which provides automated tools for downloading and processing China CDC surveillance reports. 
 
 
 ## Data formatting 
@@ -139,15 +137,13 @@ This is the date from which all forecasts should be considered. This date is the
 
 ### `target`
 
-Values in the `target` column must be a character (string) and be one of
-the following specific targets:
+Values in the `target` column must be a character (string) and be the following specific target:
 
--   *`[insert target] `* 
--   *`[insert target] `*
+-   **`wk inc covid prop ili`** - Weekly incident COVID-19 proportion in influenza-like illness
 
 
 ### `horizon`
-Values in the `horizon` column indicate the number of *[insert temporal period]*  between the `reference_date` and the `target_end_date`.  This should be a number between *[insert range of horizons]* , where for example a `horizon` of 0 indicates that the prediction is a nowcast for the *[insert temporal period]* of submission and a `horizon` of 1 indicates that the prediction is a forecast for the *[insert temporal period]* after submission. 
+Values in the `horizon` column indicate the number of **weeks** between the `reference_date` and the `target_end_date`. This should be a number between **-3 and 6**, where for example a `horizon` of 0 indicates that the prediction is a nowcast for the **week** of submission, a `horizon` of 1 indicates a forecast for the **week** after submission, and a `horizon` of -1 indicates a nowcast for the **week** before submission (retrospective analysis). 
 
 ### `target_end_date`
 
@@ -155,60 +151,72 @@ Values in the `target_end_date` column must be a date in the format
 
     YYYY-MM-DD
     
-This is the last date of the forecast target's *[insert temporal period]*. This will be the date of the Saturday at the end of the forecasted *[insert temporal period]* Within each row of the submission file, the `target_end_date` should be equal to the `reference_date` + `horizon`* (*[# days in temporal period]* days).
+This is the last date of the forecast target's **epidemiological week**. This will be the date of the Saturday at the end of the forecasted **week**. Within each row of the submission file, the `target_end_date` should be equal to the `reference_date` + `horizon` * (**7** days).
 
 
 ### `location`
 
-Values in the `location` column must be one of the "locations" in
-this *[insert name of location information file]* (*[insert url for location information file]* ) which
-includes *[describe what location information files included]* 
+Values in the `location` column must be **"CN"**, representing China as a whole. This hub focuses on national-level forecasting for China's overall SARS-CoV-2 positivity rates from the sentinel hospital network. 
 
 ### `output_type`
 
-<mark style="background-color: #FFE331">**Modify depending on which type of output_type you are collecting.**</mark>
+Values in the `output_type` column must be **"quantile"**.
 
-Values in the `output_type` column are either
-
--   "quantile" or
--   "pmf".
-
-This value indicates whether that row corresponds to a quantile forecast for *[insert target]* or the probability mass function (pmf) of a categorical forecast for *[insert target]*. 
+This hub exclusively collects quantile forecasts for the SARS-CoV-2 positivity rate target, which allows for proper evaluation of prediction intervals and forecast uncertainty. 
 
 ### `output_type_id`
 Values in the `output_type_id` column specify identifying information for the output type.
 
 #### quantile output
-<mark style="background-color: #FFE331">**Modify depending on which type of output_type you are collecting.**</mark>
 
 When the predictions are quantiles, values in the `output_type_id` column are a quantile probability level in the format
 
     0.###
 
- This value indicates the quantile probability level for for the
-`value` in this row.
+This value indicates the quantile probability level for the `value` in this row.
 
-Teams must provide the following *[insert # quantiles]* quantiles:
+Teams must provide the following **23 quantiles**:
 
-*[insert quantiles]*
+**Required quantiles**: 0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99
 
-R: *[insert r code for defining quantiles]*
-Python: *[insert Python code for defining quantiles]*
+**R code for defining quantiles:**
+```r
+quantiles <- c(0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99)
+```
 
-#### pmf output
-<mark style="background-color: #FFE331">**Modify depending on which type of output_type you are collecting.**</mark>
-
- *[Describe pmf output]*
+**Python code for defining quantiles:**
+```python
+quantiles = [0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99]
+```
 
 
 ### `value`
-<mark style="background-color: #FFE331">**Modify depending on which type of output_type you are collecting.**</mark>
 
-Values in the `value` column are non-negative numbers indicating the "quantile" or "pmf" prediction for this row. For a "quantile" prediction, `value` is the inverse of the cumulative distribution function (CDF) for the target, location, and quantile associated with that row. For example, the 2.5 and 97.5 quantiles for a given target and location should capture 95% of the predicted values and correspond to the central 95% Prediction Interval. 
+Values in the `value` column are non-negative numbers indicating the **quantile** prediction for this row. For a "quantile" prediction, `value` is the inverse of the cumulative distribution function (CDF) for the target, location, and quantile associated with that row. For example, the 2.5% and 97.5% quantiles for a given target and location should capture 95% of the predicted values and correspond to the central 95% Prediction Interval.
+
+**Important**: Values represent **percentages** (0-100), not proportions (0-1). For example, a value of 15.3 represents 15.3% SARS-CoV-2 positivity rate. 
 
 ### Example tables
 
- *[Insert example tables]*
+Here's an example of a forecast submission for the 2025-08-21 reference date:
+
+| reference_date | target | horizon | target_end_date | location | output_type | output_type_id | value |
+|----------------|--------|---------|----------------|----------|-------------|----------------|-------|
+| 2025-08-21 | wk inc covid prop ili | -3 | 2025-07-31 | CN | quantile | 0.01 | 8.2 |
+| 2025-08-21 | wk inc covid prop ili | -3 | 2025-07-31 | CN | quantile | 0.025 | 8.5 |
+| 2025-08-21 | wk inc covid prop ili | -3 | 2025-07-31 | CN | quantile | 0.05 | 9.1 |
+| ... | ... | ... | ... | ... | ... | ... | ... |
+| 2025-08-21 | wk inc covid prop ili | -3 | 2025-07-31 | CN | quantile | 0.5 | 13.5 |
+| ... | ... | ... | ... | ... | ... | ... | ... |
+| 2025-08-21 | wk inc covid prop ili | -3 | 2025-07-31 | CN | quantile | 0.975 | 18.7 |
+| 2025-08-21 | wk inc covid prop ili | -3 | 2025-07-31 | CN | quantile | 0.99 | 19.3 |
+| 2025-08-21 | wk inc covid prop ili | 0 | 2025-08-21 | CN | quantile | 0.01 | 7.8 |
+| ... | ... | ... | ... | ... | ... | ... | ... |
+
+**Key points:**
+- Each horizon (-3 to 6) requires all 23 quantiles
+- Total rows per submission: 10 horizons × 23 quantiles = 230 rows
+- Values represent percentage points (e.g., 13.5 = 13.5%)
 
 ## Forecast validation 
 
@@ -217,30 +225,85 @@ To ensure proper data formatting, pull requests for new data in
 
 ### Pull request forecast validation
 
-When a pull request is submitted, the data are validated through [Github
-Actions](https://docs.github.com/en/actions) which runs the tests
-present in [the hubValidations
-package](https://github.com/hubverse-org/hubValidations). The
-intent for these tests are to validate the requirements above. Please
-[let us know]( *[Insert url to your hub's issues]*) if you are facing issues while running the tests.
+When a pull request is submitted, the data are validated through [Github Actions](https://docs.github.com/en/actions) which runs the tests present in [the hubValidations package](https://github.com/hubverse-org/hubValidations). The intent for these tests are to validate the requirements above. Please [let us know](https://github.com/dailypartita/China_COVID-19_Forecast_Hub/issues) if you are facing issues while running the tests.
 
 ### Local forecast validation
 
 Optionally, you may validate a forecast file locally before submitting it to the hub in a pull request. Note that this is not required, since the validations will also run on the pull request. To run the validations locally, follow these steps:
 
- *[Add description for local forecast validation]*
+1. Create a fork of the `China_COVID-19_Forecast_Hub` repository and then clone the fork to your computer.
+2. Create a draft of the forecast file for your model and place it in the appropriate `model-output/team-model/` folder.
+3. Install the hubValidations package for R by running the following command from within an R session:
+``` r
+remotes::install_github("hubverse-org/hubValidations")
+```
+4. Validate your draft forecast file by running the following command in an R session:
+``` r
+hubValidations::validate_submission(
+    hub_path="<path to your clone of the hub repository>",
+    file_path="<relative path to your submission file>")
+```
+
+For example, if your working directory is the root of the hub repository:
+``` r
+hubValidations::validate_submission(
+    hub_path=".", 
+    file_path="model-output/GZNL-test_001/2025-08-21-GZNL-test_001.csv")
+```
 
 
 ## Weekly ensemble build 
 
-Every  *[day and time]*, we will generate a  *[hub name]* ensemble  *[Insert target]* using valid forecast submissions in the current week by the *[day and time]* deadline. Some or all participant forecasts may be combined into an ensemble forecast to be published in real-time along with the participant forecasts. In addition, some or all forecasts may be displayed alongside the output of a baseline model for comparison.
+Every **Thursday at 09:00 Beijing Time**, we will generate a **China COVID-19 Forecast Hub** ensemble for **weekly SARS-CoV-2 positivity rate** using valid forecast submissions in the current week by the **Wednesday 23:59 Beijing Time** deadline. Some or all participant forecasts may be combined into an ensemble forecast to be published in real-time along with the participant forecasts. In addition, some or all forecasts may be displayed alongside the output of a baseline model for comparison.
 
 
 ## Policy on late or updated submissions 
 
-In order to ensure that forecasting is done in real-time, all forecasts are required to be submitted to this repository by *[day and time]* each week. We do not accept late forecasts.
+In order to ensure that forecasting is done in real-time, all forecasts are required to be submitted to this repository by **Wednesday 23:59 Beijing Time** each week. We do not accept late forecasts.
+
+**Weekly submission timeline:**
+- **Monday-Wednesday**: Forecast development period
+- **Wednesday 23:59 Beijing Time**: Submission deadline
+- **Thursday 09:00 Beijing Time**: Ensemble generation and evaluation
+- **Saturday**: Reference date (end of epidemiological week)
+
+**Updated submissions:** If you need to update a forecast after submission but before the deadline, you may submit a new pull request with the corrected file. Only the most recent valid submission before the deadline will be used.
 
 ## Evaluation criteria
-Forecasts will be evaluated using a variety of metrics, including *[describe how they will be evaluated]*
 
-<mark style="background-color: #FFE331">**As an example, here is a link to the [Flusight-Forecast_Hub model-output README](https://github.com/cdcepi/FluSight-forecast-hub/blob/master/model-output/README.md).**</mark>
+Forecasts will be evaluated using a variety of metrics, including:
+
+### Primary Metrics
+- **WIS (Weighted Interval Score)**: Comprehensive measure of probabilistic forecast accuracy
+- **MAE (Mean Absolute Error)**: Accuracy of point forecasts (using median/0.5 quantile)
+- **Interval Coverage**: Percentage of observations falling within prediction intervals (50%, 95%)
+
+### Relative Metrics
+- **Relative WIS**: WIS relative to a baseline model (GZNL-test_001)
+- **Relative MAE**: MAE relative to a baseline model
+
+### Evaluation Schedule
+- **Real-time evaluation**: Conducted when new surveillance data becomes available
+- **Retrospective analysis**: Periodic evaluation of historical forecast performance
+- **Dashboard updates**: Results published on the [China COVID-19 Forecast Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
+
+### Evaluation Data Source
+Evaluation will be conducted using official surveillance data from China CDC's sentinel hospital network, obtained through the automated data collection system at [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl).
+
+## Data Sources for Model Development
+
+Teams are encouraged to use the following data sources for model development:
+
+1. **Historical surveillance data**: Available through [China CDC Crawl Repository](https://github.com/dailypartita/cn_cdc_crawl)
+2. **Weather data**: Available from Chinese meteorological services
+3. **Mobility data**: Available from various sources (with appropriate permissions)
+4. **Vaccination data**: Available from official health authorities
+5. **Social media indicators**: Available through appropriate APIs and permissions
+
+**Important**: Please ensure compliance with all relevant data use agreements and privacy regulations when using external data sources.
+
+## Support and Contact
+
+- **Technical questions**: Create an issue on [GitHub Issues](https://github.com/dailypartita/China_COVID-19_Forecast_Hub/issues)
+- **General inquiries**: Contact Yang Kaixin (yang_kaixin@gzlab.ac.cn)
+- **Dashboard access**: [China COVID-19 Forecast Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
