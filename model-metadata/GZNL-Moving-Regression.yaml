@@ -1,7 +1,7 @@
 team_name: "GZNL Group"
 team_abbr: "GZNL"
 model_name: "test_004 COVID Moving Regression"
-model_abbr: "test_004"
+model_abbr: "Moving-Regression"
 model_contributors:
   - name: "XXX"
     affiliation: "GZNL Group"
