@@ -1,5 +1,5 @@
 reference_date,target,horizon,target_end_date,location,output_type,output_type_id,oracle_value
-2025-09-01,wk inc covid prop ili,-3,2025-08-11,CN,quantile,NA,11.9
-2025-09-01,wk inc covid prop ili,-2,2025-08-18,CN,quantile,NA,10.5
+2025-09-01,wk inc covid prop ili,-3,2025-08-11,CN,quantile,NA,10.5
+2025-09-01,wk inc covid prop ili,-2,2025-08-18,CN,quantile,NA,9.5
 2025-09-01,wk inc covid prop ili,-1,2025-08-25,CN,quantile,NA,8.5
-2025-09-01,wk inc covid prop ili,0,2025-09-01,CN,quantile,NA,6.8
+2025-09-01,wk inc covid prop ili,0,2025-09-01,CN,quantile,NA,7.5
