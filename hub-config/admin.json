@@ -9,7 +9,6 @@
     "repository": {
         "host": "github",
         "owner": "dailypartita",
-        "url": "https://github.com/dailypartita/China-COVID-19-Forecast-Hub",
         "name": "China-COVID-19-Forecast-Hub"
     },
     "file_format": ["csv", "parquet"],
