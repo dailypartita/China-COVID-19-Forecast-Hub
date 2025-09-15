@@ -17,7 +17,7 @@
 
 有标准的软件包可以在日期和流行病学周之间进行转换（*例如*，R语言的[MMWRweek](https://cran.r-project.org/web/packages/MMWRweek/)和[lubridate](https://lubridate.tidyverse.org/reference/week.html)，Python的[pymmwr](https://pypi.org/project/pymmwr/)和[epiweeks](https://pypi.org/project/epiweeks/)）。
 
-如果您对此目标有任何疑问，请联系杨凯鑫（yang_kaixin@gzlab.ac.cn）。
+如果您对此目标有任何疑问，请联系（yang_kaixin@gzlab.ac.cn）。
 
 ## 数据来源
 
@@ -231,60 +231,8 @@ oracle_data = pl.scan_parquet(
 
 </details>
 
-<!--------------------------------------------------- AWS CLI ------------------------------------------------------->
-
-<details>
-
-<summary>AWS CLI</summary>
-
-AWS提供基于终端的命令行接口（CLI）来探索和下载S3文件。
-如果您符合以下条件，此选项是理想的：
-
-- 计划离线使用中心数据但不想使用git或GitHub
-- 想要下载数据的子集（而不是整个中心）
-- 将数据用于需要本地存储或快速响应时间的应用程序
-
-### 安装AWS CLI
-
-- 使用[这里的说明](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)安装AWS CLI
-- 您可以跳过设置安全凭证的说明，因为Hubverse数据是公共的
-
-### 使用AWS CLI
-
-使用AWS CLI时，需要`--no-sign-request`选项，因为它告诉AWS绕过凭证检查（*即*，`--no-sign-request`允许匿名访问公共S3数据）。
-
-> [!NOTE]
-> 存储桶的`raw`目录中的文件不应用于分析（仅供内部使用）。
-
-列出中心S3存储桶中的所有目录：
-
-```sh
-aws s3 ls [hub-bucket-name] --no-sign-request
-```
-
-列出中心存储桶中的所有文件：
-
-```sh
-aws s3 ls [hub-bucket-name] --recursive --no-sign-request
-```
-
-将所有target-data内容下载到当前工作目录：
-
-```sh
-aws s3 cp s3://[hub-bucket-name]/target-data/ . --recursive --no-sign-request
-```
-
-下载特定团队的model-output文件：
-
-```sh
-aws s3 cp s3://[hub-bucket-name]/[建模团队名称]/UMass-flusion/ . --recursive --no-sign-request
-```
-
-- [`aws s3 ls`完整文档](https://docs.aws.amazon.com/cli/latest/reference/s3/ls.html)
-- [`aws s3 cp`完整文档](https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html)
-
-</details>
-
 ## 致谢
+
+中国疾控中心
 
 本仓库遵循[hubverse](https://hubverse.io)概述的指导原则和标准，hubverse为建模中心提供一套数据格式和开源工具。
