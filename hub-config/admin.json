@@ -8,9 +8,9 @@
     },
     "repository": {
         "host": "github",
-        "owner": "gzlab",
-        "url": "https://github.com/dailypartita/cn_covid19_forecast_hub",
-        "name": "cn_covid19_forecast_hub"
+        "owner": "dailypartita",
+        "url": "https://github.com/dailypartita/China-COVID-19-Forecast-Hub",
+        "name": "China-COVID-19-Forecast-Hub"
     },
     "file_format": ["csv", "parquet"],
     "timezone": "Asia/Shanghai",
