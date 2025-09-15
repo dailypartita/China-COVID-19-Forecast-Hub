@@ -1,10 +1,6 @@
 # Model metadata
 
-
-<mark style="background-color: #FFE331">**Below is a template of the README.md file for the model-metadata folder of your hub. Italics in brackets are placeholders for information about your hub. **</mark>
-
-
-This folder contains metadata files for the models submitting to the  *[hub name]*. The specification for these files has been adapted to be consistent with [model metadata guidelines in the hubverse documentation](https://docs.hubverse.io/en/latest/user-guide/model-metadata.html).
+This folder contains metadata files for models submitting to the **China COVID-19 Forecast Hub**. The specification for these files has been adapted to be consistent with [model metadata guidelines in the hubverse documentation](https://docs.hubverse.io/en/latest/user-guide/model-metadata.html).
 
 Each model is required to have metadata in 
 [yaml format](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html).
@@ -69,7 +65,10 @@ A team-specified boolean indicator (`true` or `false`) for whether the model sho
 
 ### data_inputs
 
-List or description of the data sources used to inform the model. Particularly those used beyond the target data of confirmed influenza hospital admissions.
+List or description of the data sources used to inform the model. Particularly those used beyond the target data of SARS-CoV-2 positivity rates from sentinel hospitals. For example:
+- China CDC weekly surveillance reports
+- Historical ILI surveillance data from [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl)
+- Weather data, mobility data, vaccination coverage, etc.
 
 ### methods
 
@@ -115,7 +114,7 @@ Any information about funding source(s) for the team or members of the team that
 
 Optionally, you may validate a model metadata file locally before submitting it to the hub in a pull request. Note that this is not required, since the validations will also run on the pull request. To run the validations locally, follow these steps:
 
-1. Create a fork of the `*[insert hub name]*` repository and then clone the fork to your computer.
+1. Create a fork of the `China_COVID-19_Forecast_Hub` repository and then clone the fork to your computer.
 2. Create a draft of the model metadata file for your model and place it in the `model-metadata` folder of this clone.
 3. Install the hubValidations package for R by running the following command from within an R session:
 ``` r
@@ -130,19 +129,52 @@ hubValidations::validate_model_metadata(
 
 For example, if your working directory is the root of the hub repository, you can use a command similar to the following:
 ``` r
-hubValidations::validate_model_metadata(hub_path=".", file_path="UMass-trends_ensemble.yml")
+hubValidations::validate_model_metadata(hub_path=".", file_path="GZNL-test_001.yml")
 ```
 
 If all is well, you should see output similar to the following:
 ```
 ✔ model-metadata-schema.json: File exists at path hub-config/model-metadata-schema.json.
-✔ UMass-trends_ensemble.yml: File exists at path model-metadata/UMass-trends_ensemble.yml.
-✔ UMass-trends_ensemble.yml: Metadata file extension is "yml" or "yaml".
-✔ UMass-trends_ensemble.yml: Metadata file directory name matches "model-metadata".
-✔ UMass-trends_ensemble.yml: Metadata file contents are consistent with schema specifications.
-✔ UMass-trends_ensemble.yml: Metadata file name matches the `model_id` specified within the metadata file.
+✔ GZNL-test_001.yml: File exists at path model-metadata/GZNL-test_001.yml.
+✔ GZNL-test_001.yml: Metadata file extension is "yml" or "yaml".
+✔ GZNL-test_001.yml: Metadata file directory name matches "model-metadata".
+✔ GZNL-test_001.yml: Metadata file contents are consistent with schema specifications.
+✔ GZNL-test_001.yml: Metadata file name matches the `model_id` specified within the metadata file.
 ```
 
 If there are any errors, you will see a message describing the problem.
 
-<mark style="background-color: #FFE331">**As an example, here is a link to the [Flusight-Forecast_Hub model-metadata README](https://github.com/cdcepi/FluSight-forecast-hub/blob/master/model-metadata/README.md).**</mark>
+## Example Model Metadata File
+
+Here's an example metadata file for a GZNL test model:
+
+```yaml
+team_name: "Guangzhou National Laboratory"
+team_abbr: "GZNL"
+model_name: "GZNL Test Model 001"
+model_abbr: "test_001"
+model_contributors: [
+  {
+    "name": "Yang Kaixin",
+    "affiliation": "Guangzhou National Laboratory",
+    "email": "yang_kaixin@gzlab.ac.cn"
+  }
+]
+license: "cc-by-4.0"
+designated_model: true
+data_inputs: "China CDC weekly surveillance reports, historical ILI data"
+methods: "Time series forecasting with statistical modeling"
+methods_long: "This model uses time series analysis to forecast SARS-CoV-2 positivity rates based on historical surveillance data from China CDC sentinel hospitals. The model incorporates seasonal patterns and trend analysis."
+ensemble_of_models: false
+ensemble_of_hub_models: false
+```
+
+## Required Steps for Model Registration
+
+1. **Fork the repository**: Create your own fork of this repository
+2. **Create metadata file**: Add your `team-model.yml` file to the `model-metadata/` folder
+3. **Validate locally** (optional): Run validation checks using the hubValidations package
+4. **Submit pull request**: Create a pull request to add your metadata file
+5. **Wait for approval**: Hub administrators will review and merge your metadata
+
+Once your model is registered, you can begin submitting weekly forecasts to the `model-output/` folder.
