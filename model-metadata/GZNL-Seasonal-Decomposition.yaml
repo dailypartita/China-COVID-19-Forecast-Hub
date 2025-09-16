@@ -1,7 +1,7 @@
 team_name: "GZNL Group"
 team_abbr: "GZNL"
 model_name: "test_003 COVID Seasonal Trend"
-model_abbr: "Seasonal-Decomposition"
+model_abbr: "SeasonalDecomposition"
 model_contributors:
   - name: "XXX"
     affiliation: "GZNL Group"
