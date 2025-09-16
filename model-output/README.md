@@ -1,118 +1,115 @@
-# Model outputs folder
+# 模型输出文件夹
 
-This folder contains a set of subdirectories, one for each model, that contains submitted model output files for that model. The structure of these directories and their contents follows [the model output guidelines in our documentation](https://docs.hubverse.io/en/latest/user-guide/model-output.html). Documentation for China COVID-19 Forecast Hub submissions specifically is provided below. 
+此文件夹包含一组子目录，每个模型一个，其中包含该模型提交的模型输出文件。这些目录的结构及其内容遵循[我们文档中的模型输出指南](https://docs.hubverse.io/en/latest/user-guide/model-output.html)。以下提供专门针对中国COVID-19预测中心提交的文档。
 
-# Data submission instructions
+# 数据提交说明
 
-All forecasts should be submitted directly to the [model-output/](./)
-folder. Data in this directory should be added to the repository through
-a pull request so that automatic data validation checks are run.
+所有预测都应直接提交到[model-output/](./)
+文件夹。此目录中的数据应通过
+pull request添加到存储库，以便运行自动数据验证检查。
 
-These instructions provide detail about the [data
-format](#data-formatting) as well as [validation](#Forecast-validation) that
-you can do prior to this pull request. In addition, we describe
-[metadata](https://github.com/hubverse-org/hubTemplate/blob/master/model-metadata/README.md)
-that each model should provide in the model-metadata folder.
+这些说明提供了有关[数据
+格式](#数据格式)以及在此pull request之前可以进行的[验证](#预测验证)的详细信息。此外，我们描述了
+每个模型应在model-metadata文件夹中提供的[元数据](https://github.com/hubverse-org/hubTemplate/blob/master/model-metadata/README.md)。
 
-*Table of Contents*
+*目录*
 
--   [What is a forecast](#What-is-a-forecast)
--   [Target data](#Target-data)
--   [Data formatting](#data-formatting)
--   [Forecast file format](#Forecast-file-format)
--   [Forecast data validation](#Forecast-validation)
--   [Weekly ensemble build](#Weekly-ensemble-build)
--   [Policy on late submissions](#policy-on-late-or-updated-submissions)
+-   [什么是预测](#什么是预测)
+-   [目标数据](#目标数据)
+-   [数据格式化](#数据格式)
+-   [预测文件格式](#预测文件格式)
+-   [预测数据验证](#预测验证)
+-   [每周集成构建](#每周集成构建)
+-   [逾期提交政策](#逾期或更新提交政策)
 
-## What is a forecast 
+## 什么是预测
 
-Models are asked to make specific quantitative forecasts about data that
-will be observed in the future. These forecasts are interpreted as
-"unconditional" predictions about the future. That is, they are not
-predictions only for a limited set of possible future scenarios in which
-a certain set of conditions (e.g. vaccination uptake is strong, or new
-social-distancing mandates are put in place) hold about the future --
-rather, they should characterize uncertainty across all reasonable
-future scenarios. In practice, all forecasting models make some
-assumptions about how current trends in data may change and impact the
-forecasted outcome; some teams select a "most likely" scenario or
-combine predictions across multiple scenarios that may occur. Forecasts
-submitted to this repository will be evaluated against observed data.
+要求模型对将在未来观察到的数据进行特定的定量预测。这些预测被解释为
+对未来的"无条件"预测。也就是说，它们不是
+仅针对一组有限的可能未来情景的预测，在这些情景中
+特定的条件集合（例如疫苗接种率高，或新的
+社交距离规定被实施）对未来成立——
+相反，它们应该描述所有合理
+未来情景下的不确定性。在实践中，所有预测模型都对
+当前数据趋势如何变化并影响
+预测结果做出一些假设；一些团队选择"最可能"情景或
+结合可能发生的多个情景的预测。提交到此存储库的预测
+将根据观察到的数据进行评估。
 
-We note that other modeling efforts, such as the [Influenza Scenario
-Modeling Hub](https://fluscenariomodelinghub.org/), have been
-launched to collect and aggregate model outputs from "scenario
-projection" models. These models create longer-term projections under a
-specific set of assumptions about how the main drivers of the pandemic
-(such as non-pharmaceutical intervention compliance, or vaccination
-uptake) may change over time.
+我们注意到其他建模工作，如[流感情景
+建模中心](https://fluscenariomodelinghub.org/)，已经
+启动以收集和汇总来自"情景
+投影"模型的模型输出。这些模型在
+关于大流行主要驱动因素
+（如非药物干预依从性或疫苗
+接种率）如何随时间变化的特定假设集合下创建长期投影。
 
-## Target Data 
+## 目标数据
 
-The target data for this hub is the **weekly SARS-CoV-2 positivity rate among influenza-like illness (ILI) cases** from China's sentinel hospital surveillance network. This data is collected and reported by the China CDC through their weekly acute respiratory syndrome surveillance reports. Historical target data can be obtained using the [China CDC Crawl Repository](https://github.com/dailypartita/cn_cdc_crawl), which provides automated tools for downloading and processing China CDC surveillance reports. 
+此中心的目标数据是来自中国哨点医院监测网络的**流感样疾病（ILI）病例中每周SARS-CoV-2阳性率**。该数据由中国CDC通过其每周急性呼吸综合征监测报告收集和报告。历史目标数据可以通过[中国CDC爬虫存储库](https://github.com/dailypartita/cn_cdc_crawl)获取，该存储库提供了下载和处理中国CDC监测报告的自动化工具。 
 
 
-## Data formatting 
+## 数据格式
 
-The automatic checks in place for forecast files submitted to this
-repository validates both the filename and file contents to ensure the
-file can be used in the visualization and ensemble forecasting.
+为提交到此存储库的预测文件设置的自动检查会验证
+文件名和文件内容，以确保
+文件可用于可视化和集成预测。
 
-### Subdirectory
+### 子目录
 
-Each model that submits forecasts for this project will have a unique subdirectory within the [model-output/](model-output/) directory in this GitHub repository where forecasts will be submitted. Each subdirectory must be named
+为此项目提交预测的每个模型在此GitHub存储库的[model-output/](model-output/)目录内都将有一个独特的子目录，预测将在此处提交。每个子目录必须命名为
 
     team-model
 
-where
+其中
 
--   `team` is the team name and
--   `model` is the name of your model.
+-   `team`是团队名称
+-   `model`是您的模型名称。
 
-Both team and model should be less than 15 characters and not include
-hyphens or other special characters, with the exception of "\_".
+team和model都应该少于15个字符，不包含
+连字符或其他特殊字符，但"\_"除外。
 
-The combination of `team` and `model` should be unique from any other model in the project.
+`team`和`model`的组合应该与项目中的任何其他模型都不同。
 
 
-### Metadata
+### 元数据
 
-The metadata file will be saved within the model-metdata directory in the Hub's GitHub repository, and should have the following naming convention:
+元数据文件将保存在Hub的GitHub存储库的model-metdata目录中，并应遵循以下命名约定：
 
 
       team-model.yml
 
-Details on the content and formatting of metadata files are provided in the [model-metadata README](https://github.com/hubverse-org/hubTemplate/blob/master/model-metadata/README.md).
+元数据文件的内容和格式详细信息在[model-metadata README](https://github.com/hubverse-org/hubTemplate/blob/master/model-metadata/README.md)中提供。
 
 
 
 
-### Forecasts
+### 预测
 
-Each forecast file should have the following
-format
+每个预测文件都应该有以下
+格式
 
     YYYY-MM-DD-team-model.csv
 
-where
+其中
 
--   `YYYY` is the 4 digit year,
--   `MM` is the 2 digit month,
--   `DD` is the 2 digit day,
--   `team` is the team name, and
--   `model` is the name of your model.
+-   `YYYY`是4位数年份，
+-   `MM`是2位数月份，
+-   `DD`是2位数日期，
+-   `team`是团队名称，
+-   `model`是您的模型名称。
 
-The date YYYY-MM-DD is the [`reference_date`](#reference_date). This should be the Saturday following the submission date.
+日期YYYY-MM-DD是[`reference_date`](#reference_date)。这应该是提交日期后的星期六。
 
-The `team` and `model` in this file must match the `team` and `model` in
-the directory this file is in. Both `team` and `model` should be less
-than 15 characters, alpha-numeric and underscores only, with no spaces
-or hyphens. 
+此文件中的`team`和`model`必须与
+此文件所在目录中的`team`和`model`匹配。`team`和`model`都应该少
+于15个字符，仅包含字母数字和下划线，不包含空格
+或连字符。 
 
-## Forecast file format 
+## 预测文件格式
 
-The file must be a comma-separated value (csv) file with the following
-columns (in any order):
+文件必须是逗号分隔值（csv）文件，包含以下
+列（任意顺序）：
 
 -   `reference_date`
 -   `target`
@@ -123,68 +120,68 @@ columns (in any order):
 -   `output_type_id`
 -   `value`
 
-No additional columns are allowed.
+不允许其他列。
 
-The value in each row of the file is a quantile for a particular combination of location, date, and horizon. 
+文件每一行中的值是特定位置、日期和时间范围组合的分位数。 
 
 ### `reference_date` 
 
-Values in the `reference_date` column must be a date in the ISO format
+`reference_date`列中的值必须是ISO格式的日期
 
     YYYY-MM-DD
 
-This is the date from which all forecasts should be considered. This date is the Saturday following the submission Due Date, corresponding to the last day of the epiweek when submissions are made. The `reference_date` should be the same as the date in the filename but is included here to facilitate validation and analysis. 
+这是应该考虑所有预测的日期。这个日期是提交截止日期后的星期六，对应于提交时流行病学周的最后一天。`reference_date`应该与文件名中的日期相同，但在此处包含以便进行验证和分析。 
 
 ### `target`
 
-Values in the `target` column must be a character (string) and be the following specific target:
+`target`列中的值必须是字符（字符串），且是以下特定目标：
 
--   **`wk inc covid prop ili`** - Weekly incident COVID-19 proportion in influenza-like illness
+-   **`wk inc covid prop ili`** - 流感样疾病中每周新发COVID-19比例
 
 
 ### `horizon`
-Values in the `horizon` column indicate the number of **weeks** between the `reference_date` and the `target_end_date`. This should be a number between **-3 and 6**, where for example a `horizon` of 0 indicates that the prediction is a nowcast for the **week** of submission, a `horizon` of 1 indicates a forecast for the **week** after submission, and a `horizon` of -1 indicates a nowcast for the **week** before submission (retrospective analysis). 
+`horizon`列中的值表示`reference_date`和`target_end_date`之间的**周**数。这应该是**-3到6**之间的数字，例如`horizon`为0表示预测是提交**周**的实时预测，`horizon`为1表示提交后**周**的预测，`horizon`为-1表示提交前**周**的实时预测（回顾性分析）。 
 
 ### `target_end_date`
 
-Values in the `target_end_date` column must be a date in the format
+`target_end_date`列中的值必须是以下格式的日期
 
     YYYY-MM-DD
     
-This is the last date of the forecast target's **epidemiological week**. This will be the date of the Saturday at the end of the forecasted **week**. Within each row of the submission file, the `target_end_date` should be equal to the `reference_date` + `horizon` * (**7** days).
+这是预测目标**流行病学周**的最后一天。这将是预测**周**末尾星期六的日期。在提交文件的每一行中，`target_end_date`应该等于`reference_date` + `horizon` * (**7**天)。
 
 
 ### `location`
 
-Values in the `location` column must be **"CN"**, representing China as a whole. This hub focuses on national-level forecasting for China's overall SARS-CoV-2 positivity rates from the sentinel hospital network. 
+`location`列中的值必须是**"CN"**，代表整个中国。此中心专注于中国哨点医院网络整体SARS-CoV-2阳性率的国家级预测。 
 
 ### `output_type`
 
-Values in the `output_type` column must be **"quantile"**.
+`output_type`列中的值必须是**"quantile"**。
 
-This hub exclusively collects quantile forecasts for the SARS-CoV-2 positivity rate target, which allows for proper evaluation of prediction intervals and forecast uncertainty. 
+此中心专门收集SARS-CoV-2阳性率目标的分位数预测，这允许对预测区间和预测不确定性进行适当的评估。 
 
 ### `output_type_id`
-Values in the `output_type_id` column specify identifying information for the output type.
+`output_type_id`列中的值指定输出类型的识别信息。
 
-#### quantile output
+#### 分位数输出
 
-When the predictions are quantiles, values in the `output_type_id` column are a quantile probability level in the format
+当预测是分位数时，`output_type_id`列中的值是以下格式的分位数概率级别
 
     0.###
 
-This value indicates the quantile probability level for the `value` in this row.
+此值表示此行中`value`的分位数概率级别。
 
-Teams must provide the following **23 quantiles**:
+团队必须提供以下**23个分位数**：
 
-**Required quantiles**: 0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99
+**必需分位数**: 0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99
 
-**R code for defining quantiles:**
+**定义分位数的R代码：**
 ```r
 quantiles <- c(0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99)
 ```
 
-**Python code for defining quantiles:**
+**定义分位数的Python代码：**
 ```python
 quantiles = [0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99]
 ```
@@ -192,13 +189,13 @@ quantiles = [0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5,
 
 ### `value`
 
-Values in the `value` column are non-negative numbers indicating the **quantile** prediction for this row. For a "quantile" prediction, `value` is the inverse of the cumulative distribution function (CDF) for the target, location, and quantile associated with that row. For example, the 2.5% and 97.5% quantiles for a given target and location should capture 95% of the predicted values and correspond to the central 95% Prediction Interval.
+`value`列中的值是非负数，表示此行的**分位数**预测。对于"分位数"预测，`value`是与该行相关的目标、位置和分位数的累积分布函数（CDF）的逆函数。例如，给定目标和位置的2.5%和97.5%分位数应该捕获95%的预测值，并对应于中央95%预测区间。
 
-**Important**: Values represent **percentages** (0-100), not proportions (0-1). For example, a value of 15.3 represents 15.3% SARS-CoV-2 positivity rate. 
+**重要**：值表示**百分比**(0-100)，而不是比例(0-1)。例如，15.3的值表示15.3%的SARS-CoV-2阳性率。 
 
-### Example tables
+### 示例表格
 
-Here's an example of a forecast submission for the 2025-08-21 reference date:
+以下是2025-08-21参考日期预测提交的示例：
 
 | reference_date | target | horizon | target_end_date | location | output_type | output_type_id | value |
 |----------------|--------|---------|----------------|----------|-------------|----------------|-------|
@@ -213,38 +210,37 @@ Here's an example of a forecast submission for the 2025-08-21 reference date:
 | 2025-08-21 | wk inc covid prop ili | 0 | 2025-08-21 | CN | quantile | 0.01 | 7.8 |
 | ... | ... | ... | ... | ... | ... | ... | ... |
 
-**Key points:**
-- Each horizon (-3 to 6) requires all 23 quantiles
-- Total rows per submission: 10 horizons × 23 quantiles = 230 rows
-- Values represent percentage points (e.g., 13.5 = 13.5%)
+**关键点：**
+- 每个horizon（-3到6）都需要所有23个分位数
+- 每次提交的总行数：10个horizons × 23个分位数 = 230行
+- 值表示百分点（例如，13.5 = 13.5%）
 
-## Forecast validation 
+## 预测验证
 
-To ensure proper data formatting, pull requests for new data in
-`model-output/` will be automatically run. Optionally, you may also run these validations locally.
+为确保适当的数据格式，在`model-output/`中新数据的pull request将自动运行。您也可以选择在本地运行这些验证。
 
-### Pull request forecast validation
+### Pull request预测验证
 
-When a pull request is submitted, the data are validated through [Github Actions](https://docs.github.com/en/actions) which runs the tests present in [the hubValidations package](https://github.com/hubverse-org/hubValidations). The intent for these tests are to validate the requirements above. Please [let us know](https://github.com/dailypartita/China_COVID-19_Forecast_Hub/issues) if you are facing issues while running the tests.
+当提交pull request时，数据通过[Github Actions](https://docs.github.com/en/actions)进行验证，这些操作运行[hubValidations包](https://github.com/hubverse-org/hubValidations)中存在的测试。这些测试的目的是验证上述要求。如果您在运行测试时遇到问题，请[告知我们](https://github.com/dailypartita/China_COVID-19_Forecast_Hub/issues)。
 
-### Local forecast validation
+### 本地预测验证
 
-Optionally, you may validate a forecast file locally before submitting it to the hub in a pull request. Note that this is not required, since the validations will also run on the pull request. To run the validations locally, follow these steps:
+您可以选择在通过pull request向中心提交之前在本地验证预测文件。请注意，这不是必需的，因为验证也会在pull request上运行。要在本地运行验证，请按照以下步骤操作：
 
-1. Create a fork of the `China_COVID-19_Forecast_Hub` repository and then clone the fork to your computer.
-2. Create a draft of the forecast file for your model and place it in the appropriate `model-output/team-model/` folder.
-3. Install the hubValidations package for R by running the following command from within an R session:
+1. 创建`China_COVID-19_Forecast_Hub`存储库的fork，然后将fork克隆到您的计算机。
+2. 为您的模型创建预测文件草稿，并将其放在适当的`model-output/team-model/`文件夹中。
+3. 通过在R会话中运行以下命令来安装hubValidations包：
 ``` r
 remotes::install_github("hubverse-org/hubValidations")
 ```
-4. Validate your draft forecast file by running the following command in an R session:
+4. 通过在R会话中运行以下命令来验证您的预测文件草稿：
 ``` r
 hubValidations::validate_submission(
-    hub_path="<path to your clone of the hub repository>",
-    file_path="<relative path to your submission file>")
+    hub_path="<您的hub存储库克隆路径>",
+    file_path="<您的提交文件的相对路径>")
 ```
 
-For example, if your working directory is the root of the hub repository:
+例如，如果您的工作目录是hub存储库的根目录：
 ``` r
 hubValidations::validate_submission(
     hub_path=".", 
@@ -252,58 +248,58 @@ hubValidations::validate_submission(
 ```
 
 
-## Weekly ensemble build 
+## 每周集成构建
 
-Every **Thursday at 09:00 Beijing Time**, we will generate a **China COVID-19 Forecast Hub** ensemble for **weekly SARS-CoV-2 positivity rate** using valid forecast submissions in the current week by the **Wednesday 23:59 Beijing Time** deadline. Some or all participant forecasts may be combined into an ensemble forecast to be published in real-time along with the participant forecasts. In addition, some or all forecasts may be displayed alongside the output of a baseline model for comparison.
+每周**北京时间周四09:00**，我们将使用在**北京时间周三 23:59**截止日期前当周有效的预测提交，生成**中国COVID-19预测中心**的**每周SARS-CoV-2阳性率**集成。部分或全部参与者的预测可能被组合成集成预测，与参与者预测一起实时发布。此外，部分或全部预测可能与基线模型的输出一起显示以供比较。
 
 
-## Policy on late or updated submissions 
+## 逾期或更新提交政策
 
-In order to ensure that forecasting is done in real-time, all forecasts are required to be submitted to this repository by **Wednesday 23:59 Beijing Time** each week. We do not accept late forecasts.
+为了确保预测是实时进行的，所有预测都需要在每周**北京时间周三 23:59**之前提交到此存储库。我们不接受逾期预测。
 
-**Weekly submission timeline:**
-- **Monday-Wednesday**: Forecast development period
-- **Wednesday 23:59 Beijing Time**: Submission deadline
-- **Thursday 09:00 Beijing Time**: Ensemble generation and evaluation
-- **Saturday**: Reference date (end of epidemiological week)
+**每周提交时间表：**
+- **周一至周三**：预测开发期
+- **北京时间周三 23:59**：提交截止日期
+- **北京时间周四 09:00**：集成生成和评估
+- **周六**：参考日期（流行病学周末）
 
-**Updated submissions:** If you need to update a forecast after submission but before the deadline, you may submit a new pull request with the corrected file. Only the most recent valid submission before the deadline will be used.
+**更新提交**：如果您需要在提交后但在截止日期前更新预测，您可以提交一个带有修正文件的新pull request。只会使用截止日期前最近的有效提交。
 
-## Evaluation criteria
+## 评估标准
 
-Forecasts will be evaluated using a variety of metrics, including:
+预测将使用各种指标进行评估，包括：
 
-### Primary Metrics
-- **WIS (Weighted Interval Score)**: Comprehensive measure of probabilistic forecast accuracy
-- **MAE (Mean Absolute Error)**: Accuracy of point forecasts (using median/0.5 quantile)
-- **Interval Coverage**: Percentage of observations falling within prediction intervals (50%, 95%)
+### 主要指标
+- **WIS（加权区间得分）**：概率预测准确性的综合指标
+- **MAE（平均绝对误差）**：点预测的准确性（使用中位数/0.5分位数）
+- **区间覆盖率**：落在预测区间内的观察值百分比（50%、95%）
 
-### Relative Metrics
-- **Relative WIS**: WIS relative to a baseline model (GZNL-test_001)
-- **Relative MAE**: MAE relative to a baseline model
+### 相对指标
+- **相对WIS**：相对于基线模型（GZNL-test_001）的WIS
+- **相对MAE**：相对于基线模型的MAE
 
-### Evaluation Schedule
-- **Real-time evaluation**: Conducted when new surveillance data becomes available
-- **Retrospective analysis**: Periodic evaluation of historical forecast performance
-- **Dashboard updates**: Results published on the [China COVID-19 Forecast Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
+### 评估计划
+- **实时评估**：当新的监测数据可用时进行
+- **回顾性分析**：定期评估历史预测性能
+- **仪表板更新**：结果发布在[中国COVID-19预测仪表板](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)上
 
-### Evaluation Data Source
-Evaluation will be conducted using official surveillance data from China CDC's sentinel hospital network, obtained through the automated data collection system at [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl).
+### 评估数据来源
+评估将使用来自中国CDC哨点医院网络的官方监测数据进行，通过[cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl)的自动化数据收集系统获得。
 
-## Data Sources for Model Development
+## 模型开发数据源
 
-Teams are encouraged to use the following data sources for model development:
+鼓励团队使用以下数据源进行模型开发：
 
-1. **Historical surveillance data**: Available through [China CDC Crawl Repository](https://github.com/dailypartita/cn_cdc_crawl)
-2. **Weather data**: Available from Chinese meteorological services
-3. **Mobility data**: Available from various sources (with appropriate permissions)
-4. **Vaccination data**: Available from official health authorities
-5. **Social media indicators**: Available through appropriate APIs and permissions
+1. **历史监测数据**：通过[中国CDC爬虫存储库](https://github.com/dailypartita/cn_cdc_crawl)获取
+2. **天气数据**：从中国气象服务获取
+3. **流动性数据**：从各种来源获取（并获得适当的许可）
+4. **疫苗接种数据**：从官方卫生部门获取
+5. **社交媒体指标**：通过适当的API和许可获取
 
-**Important**: Please ensure compliance with all relevant data use agreements and privacy regulations when using external data sources.
+**重要**：在使用外部数据源时，请确保遵守所有相关的数据使用协议和隐私法规。
 
-## Support and Contact
+## 支持和联系
 
-- **Technical questions**: Create an issue on [GitHub Issues](https://github.com/dailypartita/China_COVID-19_Forecast_Hub/issues)
-- **General inquiries**: Contact Yang Kaixin (yang_kaixin@gzlab.ac.cn)
-- **Dashboard access**: [China COVID-19 Forecast Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
+- **技术问题**：在[GitHub Issues](https://github.com/dailypartita/China_COVID-19_Forecast_Hub/issues)上创建问题
+- **一般咨询**：联系杨凯鑫 (yang_kaixin@gzlab.ac.cn)
+- **仪表板访问**：[中国COVID-19预测仪表板](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
