@@ -67,6 +67,8 @@ model_contributors: [
 - [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl)的历史ILI监测数据
 - 天气数据、流动性数据、疫苗接种覆盖率等
 
+**数据使用说明**：本中心支持使用所有时间段的数据，包括过去、当前和未来几周的数据进行模型训练和评估。团队可以充分利用可用数据进行回顾性分析和前瞻性预测。
+
 ### methods
 
 对预测方法的简要描述，少于200个字符。
@@ -158,9 +160,9 @@ model_contributors: [
 ]
 license: "cc-by-4.0"
 designated_model: true
-data_inputs: "中国CDC周监测报告，历史ILI数据"
-methods: "基于统计建模的时间序列预测"
-methods_long: "该模型使用时间序列分析来预测基于中国CDC哨点医院历史监测数据的SARS-CoV-2阳性率。该模型结合了季节性模式和趋势分析。"
+data_inputs: "中国CDC周监测报告，历史ILI数据，多时间窗口的监测数据用于模型训练和评估"
+methods: "基于统计建模的时间序列预测，支持多时间窗口分析"
+methods_long: "该模型使用时间序列分析来预测SARS-CoV-2阳性率，基于中国CDC哨点医院的全时间段监测数据。模型结合了季节性模式和趋势分析，利用过去、当前和预测未来的数据进行训练和验证，以提供更准确的预测和性能评估。"
 ensemble_of_models: false
 ensemble_of_hub_models: false
 ```
