@@ -75,7 +75,7 @@
             "submissions_due": {
                 "relative_to": "reference_date",
                 "start": -60,
-                "end": -30
+                "end": 60
             }
         }
     ],
