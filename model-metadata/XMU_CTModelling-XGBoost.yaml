@@ -1,4 +1,3 @@
-model_id: "XMU_CTModelling-XGBoost"
 team_name: "厦门大学流行病学课题组传染病建模团队"
 team_abbr: "XMU_CTModelling"
 model_name: "XGBoost梯度提升树COVID-19预测模型"

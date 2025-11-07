@@ -1,4 +1,3 @@
-model_id: "XMU_CTModelling-GRU"
 team_name: "厦门大学流行病学课题组传染病建模团队"
 team_abbr: "XMU_CTModelling"
 model_name: "GRU深度学习COVID-19预测模型"
@@ -22,7 +21,7 @@ model_contributors:
   - name: "陈田木"
     affiliation: "厦门大学"
     email: "13698665@qq.com"
-license: "cc-by-4.0"
+license: "CC-BY-4.0"
 designated_model: true
 data_inputs: "中国疾控中心每周发布的《全国急性呼吸道传染病哨点监测情况》报告中的门急诊流感样病例新型冠状病毒阳性率数据。使用历史时间序列数据进行模型训练，支持多时间窗口的回顾性分析和前瞻性预测。"
 methods: "基于GRU门控循环单元的时间序列预测模型，高效捕捉COVID-19阳性率的时序依赖关系"
