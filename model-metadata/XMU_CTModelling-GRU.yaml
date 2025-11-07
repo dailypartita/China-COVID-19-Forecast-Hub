@@ -1,7 +1,8 @@
+model_id: "XMU_CTModelling-GRU"
 team_name: "厦门大学流行病学课题组传染病建模团队"
 team_abbr: "XMU_CTModelling"
-model_name: "LSTM深度学习COVID-19预测模型"
-model_abbr: "LSTM"
+model_name: "GRU深度学习COVID-19预测模型"
+model_abbr: "GRU"
 model_contributors:
   - name: "赵虹锋"
     affiliation: "厦门大学"
@@ -24,11 +25,11 @@ model_contributors:
 license: "cc-by-4.0"
 designated_model: true
 data_inputs: "中国疾控中心每周发布的《全国急性呼吸道传染病哨点监测情况》报告中的门急诊流感样病例新型冠状病毒阳性率数据。使用历史时间序列数据进行模型训练，支持多时间窗口的回顾性分析和前瞻性预测。"
-methods: "基于LSTM深度学习的时间序列预测模型，捕捉COVID-19阳性率的长期依赖关系"
-methods_long: "该模型使用长短期记忆网络（LSTM）进行时间序列预测。LSTM是一种循环神经网络（RNN）的变体，特别适合捕捉时间序列数据中的长期依赖关系和复杂模式。每周使用最新数据进行增量训练更新。"
+methods: "基于GRU门控循环单元的时间序列预测模型，高效捕捉COVID-19阳性率的时序依赖关系"
+methods_long: "该模型使用门控循环单元（GRU）进行时间序列预测。GRU是一种循环神经网络（RNN）的变体，通过更新门和重置门机制来捕捉时间序列数据中的长期依赖关系。相比LSTM，GRU结构更简洁、参数更少，训练速度更快，同时保持了对复杂时序模式的学习能力。模型架构包括多层GRU单元，能够学习历史阳性率数据中的季节性模式、趋势变化和周期性特征。每周使用最新数据进行增量训练更新。"
 ensemble_of_models: false
 ensemble_of_hub_models: false
-website_url: ""
-repo_url: ""
+website_url: "https://www.ctmodelling.cn/post/covidpredict/"    
+repo_url: "https://github.com/ZhuangHaner/CTM_Multi-Time-Series-Modeling-Platform"  
 citation: ""
 team_funding: ""
