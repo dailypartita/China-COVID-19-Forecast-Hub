@@ -1,0 +1,28 @@
+team_name: "澳门科技大学"
+team_abbr: "MUST"
+model_name: "AFD+SEIRS动力学模型"
+model_abbr: "SEIRS"
+model_contributors: [
+  {
+    "name": "韩子天",
+    "affiliation": "澳门科技大学",
+    "email": "cthon@must.edu.mo"
+  },
+  {
+    "name": "刘瑞斌",
+    "affiliation": "澳门科技大学",
+    "email": "ruibin.liu@qq.com"
+  },
+  {
+    "name": "林志杰",
+    "affiliation": "澳门科技大学",
+    "email": "zhijie_jim@foxmail.com"
+  }
+]
+license: "cc-by-4.0"
+designated_model: true
+data_inputs: "中国疾控中心每周发布的《全国急性呼吸道传染病哨点监测情况》报告中的门急诊流感样病例新型冠状病毒阳性率数据，传播动力学病毒参数，多时间窗口的监测数据用于模型训练和评估"
+methods: "基于AFD+SEIRS动力学模型的预测模型"
+methods_long: "该模型使用自适应傅里叶分解和SEIRS动力学模型方法来预测SARS-CoV-2阳性率，基于中国CDC哨点医院的全时间段监测数据。模型结合了传播动力学病毒参数和趋势分析，利用过去、当前和预测未来的数据进行训练和验证，以提供更准确的预测和性能评估。"
+ensemble_of_models: false
+ensemble_of_hub_models: false
