@@ -19,7 +19,7 @@ model_contributors: [
     "email": "zhijie_jim@foxmail.com"
   }
 ]
-license: "cc-by-4.0"
+license: "CC-BY-4.0"
 designated_model: true
 data_inputs: "中国疾控中心每周发布的《全国急性呼吸道传染病哨点监测情况》报告中的门急诊流感样病例新型冠状病毒阳性率数据，传播动力学病毒参数，多时间窗口的监测数据用于模型训练和评估"
 methods: "基于AFD+SEIRS动力学模型的预测模型"
