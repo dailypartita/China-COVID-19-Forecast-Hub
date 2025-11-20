@@ -1,7 +1,8 @@
 reference_date,target,horizon,target_end_date,location,output_type,output_type_id,oracle_value
-2025-10-27,wk inc covid prop ili,0,2025-10-27,CN,quantile,0.5,1.4
-2025-10-27,wk inc covid prop ili,-1,2025-10-20,CN,quantile,0.5,1.5
-2025-10-27,wk inc covid prop ili,-2,2025-10-13,CN,quantile,0.5,1.8
-2025-10-27,wk inc covid prop ili,-3,2025-10-06,CN,quantile,0.5,2.3
-2025-10-27,wk inc covid prop ili,-4,2025-09-29,CN,quantile,0.5,3.2
-2025-10-27,wk inc covid prop ili,-5,2025-09-22,CN,quantile,0.5,3.6
+2025-11-14,wk inc covid prop ili,0,2025-11-03,CN,quantile,0.5,1.1
+2025-10-27,wk inc covid prop ili,-1,2025-10-27,CN,quantile,0.5,1.4
+2025-10-27,wk inc covid prop ili,-2,2025-10-20,CN,quantile,0.5,1.5
+2025-10-27,wk inc covid prop ili,-3,2025-10-13,CN,quantile,0.5,1.8
+2025-10-27,wk inc covid prop ili,-4,2025-10-06,CN,quantile,0.5,2.3
+2025-10-27,wk inc covid prop ili,-5,2025-09-29,CN,quantile,0.5,3.2
+2025-10-27,wk inc covid prop ili,-6,2025-09-22,CN,quantile,0.5,3.6
