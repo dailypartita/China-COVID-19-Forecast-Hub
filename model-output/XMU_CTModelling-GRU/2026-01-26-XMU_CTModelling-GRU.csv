@@ -1,0 +1,16 @@
+reference_date,target,horizon,target_end_date,location,output_type,output_type_id,value
+2026-01-26,wk inc covid prop ili,-1,2026-01-19,CN,quantile,0.025,0.9269576950578995
+2026-01-26,wk inc covid prop ili,-1,2026-01-19,CN,quantile,0.25,0.9989837984786186
+2026-01-26,wk inc covid prop ili,-1,2026-01-19,CN,quantile,0.5,0.9998962072422265
+2026-01-26,wk inc covid prop ili,-1,2026-01-19,CN,quantile,0.75,0.9999894075050803
+2026-01-26,wk inc covid prop ili,-1,2026-01-19,CN,quantile,0.975,0.9999998632555698
+2026-01-26,wk inc covid prop ili,0,2026-01-26,CN,quantile,0.025,0.932320414454683
+2026-01-26,wk inc covid prop ili,0,2026-01-26,CN,quantile,0.25,0.9990336763992287
+2026-01-26,wk inc covid prop ili,0,2026-01-26,CN,quantile,0.5,0.9998996538667939
+2026-01-26,wk inc covid prop ili,0,2026-01-26,CN,quantile,0.75,0.9999895878248012
+2026-01-26,wk inc covid prop ili,0,2026-01-26,CN,quantile,0.975,0.9999998612618527
+2026-01-26,wk inc covid prop ili,1,2026-02-02,CN,quantile,0.025,0.9345182049429235
+2026-01-26,wk inc covid prop ili,1,2026-02-02,CN,quantile,0.25,0.9990544211677279
+2026-01-26,wk inc covid prop ili,1,2026-02-02,CN,quantile,0.5,0.9999011044625399
+2026-01-26,wk inc covid prop ili,1,2026-02-02,CN,quantile,0.75,0.999989664625691
+2026-01-26,wk inc covid prop ili,1,2026-02-02,CN,quantile,0.975,0.9999998603932481
