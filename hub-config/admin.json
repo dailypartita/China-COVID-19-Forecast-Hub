@@ -10,7 +10,8 @@
                 "required": ["CN"]
               },
               "horizon": {
-                "required": [0, 1, 2, 3, 4, 5, 6]
+                "required": [0, 1],
+                "optional": [2, 3, 4, 5, 6]
               },
               "target": {
                 "required": ["wk_inc_covid_prop_ili"]
