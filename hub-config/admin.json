@@ -1,19 +1,79 @@
 {
-    "schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v6.0.0/admin-schema.json",
-    "name": "China COVID-19 Forecast Hub",
-    "maintainer": "GZNL Group",
-    "contact": {
-        "name": "yang_kaixin",
-        "email": "yang_kaixin@gzlab.ac.cn"
-    },
-    "repository": {
-        "host": "github",
-        "owner": "dailypartita",
-        "name": "China-COVID-19-Forecast-Hub"
-    },
-    "file_format": ["csv", "parquet"],
-    "timezone": "Asia/Shanghai",
-    "cloud": {
-        "enabled": false
-    }
-}
+    "schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v6.0.0/tasks-schema.json",
+    "rounds": [
+      {
+        "round_id_from_variable": true,
+        "model_tasks": [
+          {
+            "task_ids": {
+              "location": {
+                "required": ["CN"]
+              },
+              "horizon": {
+                "required": [0, 1, 2, 3, 4, 5, 6]
+              },
+              "target": {
+                "required": ["wk_inc_covid_prop_ili"]
+              }
+            },
+            "output_type": {
+              "quantile": {
+                "output_type_id": {
+                  "required": [0.025, 0.25, 0.5, 0.75, 0.975],
+                  "optional": [
+                    0.01, 0.05, 0.1, 0.15, 0.2,
+                    0.3, 0.35, 0.4, 0.45,
+                    0.55, 0.6, 0.65, 0.7,
+                    0.8, 0.85, 0.9, 0.95, 0.99
+                  ]
+                },
+                "is_required": false,
+                "value": {
+                  "type": "double",
+                  "minimum": 0
+                }
+              },
+              "sample": {
+                "output_type_id": {
+                  "required": ["sample"]
+                },
+                "output_type_id_params": {
+                  "type": "character",
+                  "max_length": 15,
+                  "min_samples_per_task": 200,
+                  "max_samples_per_task": 200,
+                  "compound_taskid_set": ["location"]
+                },
+                "is_required": false,
+                "value": {
+                  "type": "double",
+                  "minimum": 0
+                }
+              }
+            },
+            "target_metadata": [
+              {
+                "target_id": "wk_inc_covid_prop_ili",
+                "target_name": "SARS-CoV-2 positivity rate among influenza-like illness (ILI) cases",
+                "target_units": "proportion",
+                "target_keys": {
+                  "target": "wk_inc_covid_prop_ili"
+                },
+                "description": "This target represents the SARS-CoV-2 positivity rate among influenza-like illness (ILI) cases, as reported in China's weekly sentinel surveillance system, for the epidemiological week ending on the target_end_date (horizon weeks after the reference_date).",
+                "target_type": "continuous",
+                "is_step_ahead": true,
+                "time_unit": "week"
+              }
+            ]
+          }
+        ],
+        "submissions_due": {
+          "relative_to": "reference_date",
+          "start": -360,
+          "end": 360
+        }
+      }
+    ],
+    "output_type_id_datatype": "auto"
+  }
+  
