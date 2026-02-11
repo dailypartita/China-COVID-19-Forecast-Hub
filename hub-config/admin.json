@@ -70,8 +70,8 @@
         ],
         "submissions_due": {
           "relative_to": "reference_date",
-          "start": -360,
-          "end": 360
+          "start": -30,
+          "end": 30
         }
       }
     ],
