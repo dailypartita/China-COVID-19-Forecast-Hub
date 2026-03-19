@@ -76,7 +76,8 @@
                 "relative_to": "reference_date",
                 "start": -360,
                 "end": 360
-            }
+            },
+            "file_format": ["csv"]
         }
     ],
     "output_type_id_datatype": "auto"
