@@ -1,4 +1,4 @@
-reference_date,target,horizon,target_end_date,location,output_type,output_type_id,value
+﻿reference_date,target,horizon,target_end_date,location,output_type,output_type_id,value
 2026-01-19,wk inc covid prop ili,-1,2026-01-12,CN,quantile,0.025,0.92143745
 2026-01-19,wk inc covid prop ili,-1,2026-01-12,CN,quantile,0.25,0.955961753
 2026-01-19,wk inc covid prop ili,-1,2026-01-12,CN,quantile,0.5,0.990486055
