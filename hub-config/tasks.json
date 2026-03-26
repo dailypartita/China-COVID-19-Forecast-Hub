@@ -80,5 +80,6 @@
             "file_format": ["csv"]
         }
     ],
-    "output_type_id_datatype": "auto"
+    "output_type_id_datatype": "auto",
+    "derived_task_ids": ["target_end_date"]
 }
