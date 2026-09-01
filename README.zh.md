@@ -35,7 +35,7 @@
 
 | 团队 | 模型 |
 |------|------|
-| GZNL | NextWave（当前提交）, CyclicalPositivity, ExponentialSmoothing, SeasonalDecomposition, SimpleTrend |
+| GZNL | NextWave（新冠阳性率周期演变 / 下一波情景预测） |
 | XMU_CTModelling | FNN, LSTM, XGBoost, GRU, TCN |
 | MUST | SEIRS |
 
