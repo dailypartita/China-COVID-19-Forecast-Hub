@@ -129,7 +129,7 @@ python3 target-data/update_from_cncdc.py
 ## 联系方式
 
 - **技术问题：** [GitHub Issues](https://github.com/dailypartita/China-COVID-19-Forecast-Hub/issues)
-- **一般咨询：** 杨开鑫 — yang_kaixin@gzlab.ac.cn
+- **一般咨询：** yang_kaixin@gzlab.ac.cn
 
 ## 许可证
 

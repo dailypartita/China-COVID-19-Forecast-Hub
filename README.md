@@ -129,7 +129,7 @@ Browse data interactively on the [Dashboard data page](https://dailypartita.gith
 ## Contact
 
 - **Technical issues:** [GitHub Issues](https://github.com/dailypartita/China-COVID-19-Forecast-Hub/issues)
-- **General inquiries:** Yang Kaixin — yang_kaixin@gzlab.ac.cn
+- **General inquiries:** yang_kaixin@gzlab.ac.cn
 
 ## License
 
