@@ -35,7 +35,7 @@ All pull requests are validated automatically via [GitHub Actions](.github/workf
 
 | Team | Models |
 |------|--------|
-| GZNL | ExponentialSmoothing, SeasonalDecomposition, SimpleTrend |
+| GZNL | CyclicalPositivity |
 | XMU_CTModelling | FNN, LSTM, XGBoost, GRU, TCN |
 | MUST | SEIRS |
 

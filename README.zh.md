@@ -35,7 +35,7 @@
 
 | 团队 | 模型 |
 |------|------|
-| GZNL | ExponentialSmoothing, SeasonalDecomposition, SimpleTrend |
+| GZNL | CyclicalPositivity（新冠阳性率周期演变模型） |
 | XMU_CTModelling | FNN, LSTM, XGBoost, GRU, TCN |
 | MUST | SEIRS |
 
