@@ -16,7 +16,7 @@ CNCDC_URL = (
 )
 TARGET = "wk inc covid prop ili"
 LOCATION = "CN"
-MIN_DATE = "2024-11-18"
+MIN_DATE = "2022-12-05"
 MAX_ORACLE_LOOKBACK = 6
 
 ROOT = Path(__file__).resolve().parent
