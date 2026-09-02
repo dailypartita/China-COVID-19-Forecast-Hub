@@ -1,216 +1,136 @@
+<div align="center">
+
 # China COVID-19 Forecast Hub
 
-This collaborative forecasting hub collects and evaluates real-time probabilistic forecasts of the weekly SARS-CoV-2 positivity rate among influenza-like illness (ILI) cases from sentinel hospitals across China. The hub provides a platform for comparing forecasting models and generating evidence-based insights for public health decision-making. It follows the standards and guidelines outlined by the [hubverse](https://hubverse.io), which provides a set of data formats and open-source tools for modeling hubs.
+**English** | [中文](README.zh.md)
 
-For questions about data sources or attribution, contact yang_kaixin@gzlab.ac.cn.
+</div>
+
+Collaborative forecasting hub built on the [Hubverse](https://hubverse.io/) framework. Collects, validates, and archives weekly probabilistic forecasts of SARS-CoV-2 positivity rate among influenza-like illness (ILI) cases from China's national sentinel surveillance network.
+
+**Dashboard:** [dailypartita.github.io/China-COVID-19-Forecast-Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
+
+**Target data:** [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) · **Coverage:** 2022-12-05 – 2026-08-17
+
+## Features
+
+### Forecast Target
+
+- **Target:** `wk inc covid prop ili` — weekly SARS-CoV-2 positivity rate among ILI cases
+- **Location:** `CN` (national)
+- **Output:** 23-quantile probabilistic forecasts (horizons -1 to 6)
+- **Units:** Percentage points (e.g., `13.5` = 13.5%), not proportions
+
+### Submission
+
+- Register model metadata in `model-metadata/`
+- Submit weekly forecast CSV files via pull request to `model-output/`
+- File naming: `<reference_date>-<team_abbr>-<model_abbr>.csv`
+
+### Validation
+
+All pull requests are validated automatically via [GitHub Actions](.github/workflows/validate-submission.yaml) using [hubValidations](https://github.com/hubverse-org/hubValidations).
+
+## Active Models
+
+| Team | Models |
+|------|--------|
+| GZNL | NextWave |
+| XMU_CTModelling | FNN, LSTM, XGBoost, GRU, TCN |
+| MUST | SEIRS |
+
+See the [Dashboard Evaluation page](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/eval.html) for latest rankings.
+
+## Data Updates
+
+| Step | Schedule |
+|------|----------|
+| CDC sentinel report | Weekly (typically Wednesday) |
+| Target data sync | From [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) via `target-data/update_from_cncdc.py` |
+| Forecast submission deadline | Wednesday 23:59 Beijing time |
+| Dashboard data refresh | Thursday 17:33 UTC (automated) |
+
+Target data from [China CDC sentinel surveillance](https://www.chinacdc.cn/jksj/jksj04_14275/). Extraction tool: [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl).
 
 ## Repository Structure
 
 ```
 China-COVID-19-Forecast-Hub/
-├── hub-config/                 # Hub configuration files
-│   ├── admin.json              # Administrative settings
-│   ├── tasks.json              # Modeling task definitions
-│   └── model-metadata-schema.json  # Schema for model metadata
-├── model-metadata/             # Model metadata (one YAML per model)
-├── model-output/               # Forecast submissions (one folder per model)
-├── target-data/                # Ground truth / target data
-│   ├── time-series.csv         # Weekly SARS-CoV-2 positivity time series
-│   └── oracle-output.csv       # Oracle output for evaluation
-└── .github/workflows/          # CI/CD for automated validation
+├── hub-config/          # Hub configuration (admin, tasks, schemas)
+├── model-metadata/      # Model registration (one YAML per model)
+├── model-output/        # Forecast submissions (one folder per model)
+├── target-data/         # Ground truth and oracle data
+│   ├── time-series.csv
+│   ├── oracle-output.csv
+│   └── update_from_cncdc.py
+└── .github/workflows/   # Automated PR validation
 ```
 
-## Forecast Target
+## Architecture
 
-Participating teams submit forecasts for the following target at the national level (China):
+| Component | Description |
+|-----------|-------------|
+| Framework | [Hubverse](https://hubverse.io/) |
+| Schema | Hubverse v6.0.0 |
+| Validation | hubValidations + GitHub Actions |
+| Target data | [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) |
+| Dashboard | [China COVID-19 Forecast Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/) |
 
-| Target ID | Description | Units |
-|-----------|-------------|-------|
-| `wk inc covid prop ili` | Weekly SARS-CoV-2 positivity rate among ILI cases from sentinel hospital surveillance | Percentage (0–100) |
+### Configuration
 
-Values represent **percentages** (e.g., `13.5` means 13.5%), **not** proportions (0–1).
+- [`hub-config/admin.json`](hub-config/admin.json) — hub settings
+- [`hub-config/tasks.json`](hub-config/tasks.json) — modeling tasks and quantile requirements
+- [`hub-config/model-metadata-schema.json`](hub-config/model-metadata-schema.json) — metadata schema
 
-## Submission Timeline
+### Workflows
 
-| Event | Timing |
-|-------|--------|
-| Forecast development | Monday – Wednesday |
-| **Submission deadline** | **Wednesday 23:59 Beijing Time (CST)** |
-| Ensemble generation | Thursday 09:00 Beijing Time |
-| Reference date | Saturday (end of the epidemiological week containing the deadline) |
+- **Hub Submission Validation (R)** (`validate-submission.yaml`) — validate forecast PRs on merge
 
-Forecasts have been accepted since **August 21, 2025**, and will continue indefinitely. If the data availability schedule changes, participants will be notified at least one week in advance.
+## Contributing
 
-## How to Participate
+### Register a model
 
-### Step 1: Register Your Model
+1. Create a YAML metadata file in [`model-metadata/`](model-metadata/)
+2. Open a pull request following the [model metadata guide](model-metadata/README.md)
 
-Create a YAML metadata file for your model in [`model-metadata/`](model-metadata/). See the [model metadata guide](model-metadata/README.md) for required fields and format.
+### Submit forecasts
 
-### Step 2: Submit Forecasts
+1. Place CSV files in `model-output/<team_abbr>-<model_abbr>/`
+2. Follow the [model output guide](model-output/README.md) for format and quantile requirements
+3. Submit a pull request before **Wednesday 23:59 Beijing time**
+4. Ensure the PR branch is up to date with `main` before validation runs
 
-Submit weekly forecast CSV files to [`model-output/`](model-output/) via pull request. See the [model output guide](model-output/README.md) for the complete data format specification.
+### Update target data
 
-### Step 3: Automated Validation
-
-All submissions are automatically validated via [GitHub Actions](https://github.com/features/actions) using the [hubValidations](https://github.com/hubverse-org/hubValidations) R package. Your pull request will show validation results before merging.
-
-### Quick Start Checklist
-
-- [ ] Read the [model metadata requirements](model-metadata/README.md)
-- [ ] Create your `<team_abbr>-<model_abbr>.yml` metadata file
-- [ ] Submit a pull request with your metadata
-- [ ] Read the [model output format specification](model-output/README.md)
-- [ ] Prepare your forecast CSV following the required format
-- [ ] Submit weekly forecasts before **Wednesday 23:59 Beijing Time**
-
-## Data Submission Format (Summary)
-
-Forecast files are submitted as CSV files with the naming convention:
-
-```
-<reference_date>-<team_abbr>-<model_abbr>.csv
+```bash
+python3 target-data/update_from_cncdc.py
 ```
 
-Each file must contain the following columns:
+This refreshes `time-series.csv`, `oracle-output.csv`, and `hub-config/tasks.json` from the latest [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) release.
 
-| Column | Type | Description |
-|--------|------|-------------|
-| `reference_date` | Date (YYYY-MM-DD) | The Saturday ending the epidemiological week of the submission |
-| `target` | String | `"wk inc covid prop ili"` |
-| `horizon` | Integer | Weeks relative to `reference_date` (valid: -1 to 6) |
-| `target_end_date` | Date (YYYY-MM-DD) | `reference_date + horizon × 7 days` |
-| `location` | String | `"CN"` (national-level only) |
-| `output_type` | String | `"quantile"` |
-| `output_type_id` | Numeric | Quantile probability level (e.g., 0.5) |
-| `value` | Numeric | Predicted value in percentage points (≥ 0) |
+## Data Access
 
-**Required quantile levels (23 total):**
-`0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99`
+| Dataset | Path | Description |
+|---------|------|-------------|
+| Target time series | `target-data/time-series.csv` | Weekly observed positivity rates |
+| Oracle output | `target-data/oracle-output.csv` | Ground truth for evaluation and dashboard |
+| Model forecasts | `model-output/<model_id>/` | Submitted probabilistic forecasts |
+| Hub config | `hub-config/` | Task definitions and admin settings |
 
-For the complete format specification with examples, see [model-output/README.md](model-output/README.md).
+Browse data interactively on the [Dashboard data page](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/data.html).
 
-## Data Sources
+## Links
 
-### Target Data
-
-Forecast target data comes from the **China CDC Weekly Acute Respiratory Infectious Disease Surveillance Report**, covering the national sentinel hospital network. Historical surveillance data is available through an automated data collection system:
-
-**[China CDC Crawl Repository](https://github.com/dailypartita/cn_cdc_crawl)**
-
-This repository provides tools for automatically downloading, processing, and extracting structured surveillance data from China CDC weekly reports, including:
-- PDF-to-text conversion of surveillance reports
-- Automated extraction of pathogen detection rates
-- Time series data for SARS-CoV-2, influenza, and other respiratory pathogens
-- Outpatient ILI and inpatient SARI surveillance data
-
-### Target Data Format
-
-The target time series (`target-data/time-series.csv`) uses the following columns:
-
-| Column | Description |
-|--------|-------------|
-| `date` | End date of the epidemiological week (Saturday) |
-| `location` | `"CN"` |
-| `target` | `"wk inc covid prop ili"` |
-| `value` | SARS-CoV-2 positivity rate (%) |
-
-## Model Development Guidelines
-
-### Data Usage
-
-Teams are encouraged to use all available time periods of surveillance data for model training and evaluation. Negative horizon values (e.g., -1) allow for nowcasting and retrospective model performance assessment.
-
-### Best Practices
-
-- **Cross-validation**: Use rolling-window cross-validation on historical data to assess model stability
-- **Feature engineering**: Consider using lagged features and external data sources to improve forecast accuracy
-- **Uncertainty quantification**: Ensure model outputs include adequate uncertainty information to support decision-making
-- **External data**: Weather data, mobility data, vaccination coverage, and other relevant sources may be used with appropriate attribution
-
-## Evaluation
-
-Forecasts are evaluated against official surveillance data from the China CDC sentinel hospital network, obtained through the [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) automated data collection system.
-
-### Metrics
-
-| Metric | Description |
-|--------|-------------|
-| **WIS** (Weighted Interval Score) | Primary metric for probabilistic forecast accuracy |
-| **MAE** (Mean Absolute Error) | Point forecast accuracy (using the median / 0.5 quantile) |
-| **Interval Coverage** | Percentage of observations within predicted intervals (50%, 95%) |
-
-Results are published on the [China COVID-19 Forecast Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/).
-
-## Cloud Data Access
-
-Live copies of model-output, target, and configuration files will be hosted on the Hubverse Amazon Web Services (AWS) infrastructure in a public S3 bucket (coming soon).
-
-> **Note**: For efficient storage, all model-output files in S3 are stored in Parquet format, even if the original versions in the GitHub repository are CSV files.
-
-GitHub remains the operational hub and primary interface for collecting modeler forecasts. The S3 mirror provides the most convenient way to access hub data without using git/GitHub or cloning the entire hub locally.
-
-<details>
-<summary>hubData (R)</summary>
-
-[hubData](https://hubverse-org.github.io/hubData), the Hubverse R client, can create interactive sessions to access, filter, and transform hub model output data stored in S3.
-
-### Installation
-
-Follow the [instructions in the hubData documentation](https://hubverse-org.github.io/hubData/#installation).
-
-### Usage
-
-```r
-library(dplyr)
-library(hubData)
-
-bucket_name <- "hub-bucket-name"
-hub_bucket <- s3_bucket(bucket_name)
-hub_con <- hubData::connect_hub(hub_bucket, file_format = "parquet", skip_checks = TRUE)
-hub_con %>%
-  dplyr::filter(location == "CN", output_type == "quantile") %>%
-  hubData::collect_hub()
-```
-
-- [Full hubData documentation](https://hubverse-org.github.io/hubData/)
-
-</details>
-
-<details>
-<summary>Polars (Python)</summary>
-
-[Polars](https://pola.rs/) is a good choice for working with hub data in S3 until the Hubverse Python client (hubDataPy) is ready.
-
-### Installation
-
-```sh
-pip install polars
-```
-
-### Usage
-
-```python
-import polars as pl
-
-lf = pl.scan_parquet(
-    "s3://hub-bucket-name/model-output/GZNL-SimpleTrend/*.parquet",
-    storage_options={"skip_signature": "true"}
-)
-```
-
-- [Full Polars documentation](https://docs.pola.rs/api/python/stable/reference/)
-
-</details>
+- [Forecast Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
+- [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl)
+- [Hub Issues](https://github.com/dailypartita/China-COVID-19-Forecast-Hub/issues)
+- [Hubverse docs](https://docs.hubverse.io/)
 
 ## Contact
 
-- **Technical issues**: Open an issue on [GitHub Issues](https://github.com/dailypartita/China-COVID-19-Forecast-Hub/issues)
-- **General inquiries**: Contact Yang Kaixin (yang_kaixin@gzlab.ac.cn)
-- **Dashboard**: [China COVID-19 Forecast Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
+- **Technical issues:** [GitHub Issues](https://github.com/dailypartita/China-COVID-19-Forecast-Hub/issues)
+- **General inquiries:** yang_kaixin@gzlab.ac.cn
 
-## Acknowledgments
+## License
 
-China CDC
-
-This repository follows the guidelines and standards outlined by the [hubverse](https://hubverse.io), which provides a set of data formats and open-source tools for modeling hubs.
+See [LICENSE](LICENSE).
