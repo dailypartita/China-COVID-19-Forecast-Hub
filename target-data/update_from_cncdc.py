@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import sys
@@ -13,6 +14,9 @@ from pathlib import Path
 CNCDC_URL = (
     "https://raw.githubusercontent.com/dailypartita/cn_cdc_crawl/main/"
     "data/cncdc_surveillance_covid19.csv"
+)
+DEFAULT_LOCAL_CSV = Path(
+    "/data/ykx/covid19/get_data/cn_cdc_data/data/cncdc_surveillance_covid19.csv"
 )
 TARGET = "wk inc covid prop ili"
 LOCATION = "CN"
@@ -25,7 +29,15 @@ ORACLE_PATH = ROOT / "oracle-output.csv"
 TASKS_PATH = ROOT.parent / "hub-config" / "tasks.json"
 
 
-def fetch_cncdc_rows() -> list[dict[str, str]]:
+def load_cncdc_rows(csv_path: Path | None = None) -> list[dict[str, str]]:
+    """Load rows from a local CSV, or fall back to GitHub raw."""
+    if csv_path is not None:
+        path = csv_path.expanduser().resolve()
+        if not path.exists():
+            raise FileNotFoundError(f"cncdc CSV not found: {path}")
+        text = path.read_text(encoding="utf-8-sig")
+        return list(csv.DictReader(text.splitlines()))
+
     with urllib.request.urlopen(CNCDC_URL, timeout=60) as response:
         text = response.read().decode("utf-8-sig")
     return list(csv.DictReader(text.splitlines()))
@@ -105,11 +117,14 @@ def write_csv(path: Path, rows: list[dict[str, str]], fieldnames: list[str]) -> 
         writer.writerows(rows)
 
 
-def main() -> int:
-    rows = fetch_cncdc_rows()
+def update_hub_target_data(csv_path: Path | None = None) -> dict[str, object]:
+    """Regenerate Hub target-data (+ tasks.json dates) from cncdc COVID CSV."""
+    rows = load_cncdc_rows(csv_path)
     time_series = build_time_series(rows)
-    oracle = build_oracle(time_series)
+    if not time_series:
+        raise RuntimeError("No time-series rows generated from cncdc CSV")
 
+    oracle = build_oracle(time_series)
     write_csv(
         TIME_SERIES_PATH,
         time_series,
@@ -133,9 +148,49 @@ def main() -> int:
 
     latest = time_series[0]["date"]
     earliest = time_series[-1]["date"]
-    print(f"Updated {TIME_SERIES_PATH.name}: {len(time_series)} rows ({earliest} .. {latest})")
-    print(f"Updated {ORACLE_PATH.name}: {len(oracle)} rows")
-    print(f"Updated tasks.json: {'yes' if tasks_changed else 'no'}")
+    return {
+        "earliest": earliest,
+        "latest": latest,
+        "time_series_rows": len(time_series),
+        "oracle_rows": len(oracle),
+        "tasks_changed": tasks_changed,
+        "source": str(csv_path) if csv_path else CNCDC_URL,
+    }
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--csv",
+        type=Path,
+        default=None,
+        help="Local cncdc_surveillance_covid19.csv (default: local path if present, else GitHub)",
+    )
+    parser.add_argument(
+        "--from-github",
+        action="store_true",
+        help="Force fetch from GitHub raw instead of local CSV",
+    )
+    args = parser.parse_args()
+
+    csv_path: Path | None
+    if args.from_github:
+        csv_path = None
+    elif args.csv is not None:
+        csv_path = args.csv
+    elif DEFAULT_LOCAL_CSV.exists():
+        csv_path = DEFAULT_LOCAL_CSV
+    else:
+        csv_path = None
+
+    stats = update_hub_target_data(csv_path)
+    print(
+        f"Updated {TIME_SERIES_PATH.name}: {stats['time_series_rows']} rows "
+        f"({stats['earliest']} .. {stats['latest']})"
+    )
+    print(f"Updated {ORACLE_PATH.name}: {stats['oracle_rows']} rows")
+    print(f"Updated tasks.json: {'yes' if stats['tasks_changed'] else 'no'}")
+    print(f"Source: {stats['source']}")
     return 0
 
 
