@@ -1,0 +1,23 @@
+{
+    "method": "weighted_mean",
+    "default_weight": 1.0,
+    "min_models": 2,
+    "weights": {},
+    "notes": [
+        "method: 'weighted_mean' averages the value at each quantile level across models",
+        "  (a weighted Vincent average). This is the same aggregation hubEnsembles",
+        "  performs by default and preserves the monotonicity of each input's quantiles.",
+        "default_weight: weight applied to any eligible model not listed in 'weights'.",
+        "weights: per-model overrides keyed by model_id. Weights are relative, not",
+        "  absolute: they are renormalised over the models that actually contributed to",
+        "  each horizon, so a missing submission does not shrink the ensemble. Set a",
+        "  model to 0 to exclude it while keeping the record of that decision.",
+        "min_models: a horizon is only written when at least this many models supplied a",
+        "  complete set of required quantile levels for it.",
+        "Leaving 'weights' empty means an equal-weight mean over all eligible models.",
+        "To move to accuracy-based weighting, set weights inversely proportional to each",
+        "model's WIS on a recent evaluation window (see 02-Dashboard/predevals-config.yml",
+        "for the evaluation sets) and record the window used in 'weights_updated'."
+    ],
+    "weights_updated": null
+}

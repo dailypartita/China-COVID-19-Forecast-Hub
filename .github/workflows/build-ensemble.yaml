@@ -1,0 +1,55 @@
+name: Build hub ensemble
+
+on:
+  schedule:
+    # Thursday 01:00 UTC = Thursday 09:00 Asia/Shanghai — after the Wednesday
+    # 23:59 CST submission deadline, matching model-output/README.md.
+    - cron: "0 1 * * 4"
+  workflow_dispatch:
+    inputs:
+      reference_date:
+        description: "Round to build (YYYY-MM-DD). Defaults to the latest configured round."
+        required: false
+        type: string
+      all_rounds:
+        description: "Rebuild every configured round instead of a single one"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-ensemble
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Build ensemble
+        run: |
+          if [ "${{ inputs.all_rounds }}" = "true" ]; then
+            python3 ensemble/build_ensemble.py --all-rounds
+          elif [ -n "${{ inputs.reference_date }}" ]; then
+            python3 ensemble/build_ensemble.py --reference-date "${{ inputs.reference_date }}"
+          else
+            python3 ensemble/build_ensemble.py
+          fi
+
+      - name: Commit if changed
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: "chore(ensemble): rebuild CNCovidHub-ensemble"
+          file_pattern: model-output/CNCovidHub-ensemble/*.csv

@@ -1,0 +1,16 @@
+team_name: "China COVID-19 Forecast Hub"
+team_abbr: "CNCovidHub"
+model_name: "Hub Weighted Quantile Ensemble"
+model_abbr: "ensemble"
+model_contributors:
+  - name: "GZNL Group"
+    affiliation: "Guangzhou National Laboratory"
+    email: "yang_kaixin@gzlab.ac.cn"
+repo_url: "https://github.com/dailypartita/China-COVID-19-Forecast-Hub"
+license: "CC-BY-4.0"
+designated_model: true
+data_inputs: "本 Hub 各团队提交的 designated model 预测结果（model-output/），不直接使用监测原始数据"
+methods: "Weighted mean of member model values at each quantile level, with weights renormalised per horizon over contributing models"
+methods_long: "对每个 (target, location, horizon) 组合，取各成员模型在同一分位点上的预测值的加权平均（加权 Vincent average），与 hubEnsembles 的默认聚合方式一致，可保证输出分位数的单调性。成员资格为本 Hub 中 designated_model 为 true 且自身不是 Hub 集成的模型。权重来自 ensemble/weights.json，为相对权重：每个 horizon 上仅对实际有完整分位点的成员归一化，因此个别模型缺交不会压低集成整体水平。某个 horizon 上完整提交的成员数少于 min_models 时不输出该 horizon。当前为等权平均，后续将依据近期评估窗口的 WIS 表现调整为按准确度加权。"
+ensemble_of_models: true
+ensemble_of_hub_models: true
