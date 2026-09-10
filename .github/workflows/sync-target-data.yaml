@@ -1,0 +1,39 @@
+name: Sync target data from cn_cdc_crawl
+
+on:
+  schedule:
+    # Friday 02:00 UTC ≈ Friday 10:00 Asia/Shanghai — after crawl Airflow (Fri 00:00 Shanghai)
+    - cron: "0 2 * * 5"
+    # Sunday backup if Friday crawl is delayed
+    - cron: "0 2 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-target-data
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Update target data from cn_cdc_crawl
+        run: python3 target-data/update_from_cncdc.py --from-github
+
+      - name: Commit if changed
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: "chore(target-data): sync from cn_cdc_crawl"
+          file_pattern: |
+            target-data/time-series.csv
+            target-data/oracle-output.csv
+            hub-config/tasks.json

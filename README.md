@@ -46,7 +46,7 @@ See the [Dashboard Evaluation page](https://dailypartita.github.io/China-COVID-1
 | Step | Schedule |
 |------|----------|
 | CDC sentinel report | Weekly (typically Wednesday) |
-| Target data sync | From [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) via `target-data/update_from_cncdc.py` |
+| Target data sync | From [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) via `target-data/update_from_cncdc.py` (automated: `sync-target-data.yaml`) |
 | Forecast submission deadline | Wednesday 23:59 Beijing time |
 | Dashboard data refresh | Thursday 17:33 UTC (automated) |
 
@@ -63,7 +63,7 @@ China-COVID-19-Forecast-Hub/
 │   ├── time-series.csv
 │   ├── oracle-output.csv
 │   └── update_from_cncdc.py
-└── .github/workflows/   # Automated PR validation
+└── .github/workflows/   # Automated PR validation + target-data sync
 ```
 
 ## Architecture
@@ -85,6 +85,7 @@ China-COVID-19-Forecast-Hub/
 ### Workflows
 
 - **Hub Submission Validation (R)** (`validate-submission.yaml`) — validate forecast PRs on merge
+- **Sync target data from cn_cdc_crawl** (`sync-target-data.yaml`) — scheduled/manual refresh of `target-data/` and `tasks.json` dates; commits only when something changes
 
 ## Contributing
 
@@ -102,8 +103,10 @@ China-COVID-19-Forecast-Hub/
 
 ### Update target data
 
+Automated on a schedule (Fri/Sun 02:00 UTC) and via Actions → **Sync target data from cn_cdc_crawl**. Manual local run:
+
 ```bash
-python3 target-data/update_from_cncdc.py
+python3 target-data/update_from_cncdc.py --from-github
 ```
 
 This refreshes `time-series.csv`, `oracle-output.csv`, and `hub-config/tasks.json` from the latest [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) release.

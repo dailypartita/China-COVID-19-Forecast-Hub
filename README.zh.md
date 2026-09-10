@@ -46,7 +46,7 @@
 | 环节 | 时间 |
 |------|------|
 | CDC 哨点监测报告发布 | 每周（通常周三） |
-| 目标数据同步 | 通过 `target-data/update_from_cncdc.py` 从 [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) 更新 |
+| 目标数据同步 | 通过 `target-data/update_from_cncdc.py` 从 [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) 更新（已自动化：`sync-target-data.yaml`） |
 | 模型预测提交截止 | 每周三 23:59（北京时间） |
 | Dashboard 数据更新 | 每周四 17:33 UTC（自动） |
 
@@ -63,7 +63,7 @@ China-COVID-19-Forecast-Hub/
 │   ├── time-series.csv
 │   ├── oracle-output.csv
 │   └── update_from_cncdc.py
-└── .github/workflows/   # PR 自动校验
+└── .github/workflows/   # PR 自动校验 + target-data 同步
 ```
 
 ## 技术架构
@@ -85,6 +85,7 @@ China-COVID-19-Forecast-Hub/
 ### 自动化工作流
 
 - **Hub Submission Validation (R)**（`validate-submission.yaml`）— 合并前校验预测 PR
+- **Sync target data from cn_cdc_crawl**（`sync-target-data.yaml`）— 定时/手动从 cn_cdc_crawl 刷新 `target-data/` 与 `tasks.json` 日期；无变更不提交
 
 ## 参与贡献
 
@@ -102,8 +103,10 @@ China-COVID-19-Forecast-Hub/
 
 ### 更新目标数据
 
+已由 GitHub Actions 定时执行（周五/周日 02:00 UTC），也可在 Actions 里手动跑 **Sync target data from cn_cdc_crawl**。本地手动：
+
 ```bash
-python3 target-data/update_from_cncdc.py
+python3 target-data/update_from_cncdc.py --from-github
 ```
 
 该脚本从 [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) 最新数据刷新 `time-series.csv`、`oracle-output.csv` 和 `hub-config/tasks.json`。
