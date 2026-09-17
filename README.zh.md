@@ -18,7 +18,7 @@
 
 - **指标：** `wk inc covid prop ili` — 门急诊 ILI 病例中 SARS-CoV-2 周度阳性率
 - **地区：** `CN`（全国）
-- **输出：** 23 分位数概率预测（horizon -1 至 6）
+- **输出：** 23 分位数概率预测（horizon -1 至 6；可提交其中任意子集。建议补齐 -1..6 以便可比，但校验并不要求全部 horizon）
 - **单位：** 百分点（如 `13.5` 表示 13.5%），非比例值
 
 ### 预测提交
@@ -59,6 +59,7 @@ China-COVID-19-Forecast-Hub/
 ├── hub-config/          # Hub 配置（admin、tasks、schema）
 ├── model-metadata/      # 模型注册（每个模型一个 YAML）
 ├── model-output/        # 预测提交（每个模型一个目录）
+├── ensemble/            # Hub 集成模型的权重与生成脚本
 ├── target-data/         # 观测真值与 oracle 数据
 │   ├── time-series.csv
 │   ├── oracle-output.csv
@@ -97,7 +98,7 @@ China-COVID-19-Forecast-Hub/
 ### 提交预测
 
 1. 将 CSV 文件放入 `model-output/<team_abbr>-<model_abbr>/`
-2. 按 [模型输出指南](model-output/README.md) 填写格式与分位数要求
+2. 按 [模型输出指南（中文）](model-output/README.zh.md) 填写格式与分位数要求（完整英文说明：[English](model-output/README.md)）
 3. 在**每周三 23:59（北京时间）**前提交 Pull Request
 4. 校验前请将 PR 分支与 `main` 最新代码同步
 
