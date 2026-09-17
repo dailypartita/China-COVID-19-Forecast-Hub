@@ -18,7 +18,7 @@ Collaborative forecasting hub built on the [Hubverse](https://hubverse.io/) fram
 
 - **Target:** `wk inc covid prop ili` — weekly SARS-CoV-2 positivity rate among ILI cases
 - **Location:** `CN` (national)
-- **Output:** 23-quantile probabilistic forecasts (horizons -1 to 6)
+- **Output:** 23-quantile probabilistic forecasts (horizons -1 to 6; teams may submit any subset — full -1..6 is recommended for comparability, but not all are required for validation)
 - **Units:** Percentage points (e.g., `13.5` = 13.5%), not proportions
 
 ### Submission
@@ -59,6 +59,7 @@ China-COVID-19-Forecast-Hub/
 ├── hub-config/          # Hub configuration (admin, tasks, schemas)
 ├── model-metadata/      # Model registration (one YAML per model)
 ├── model-output/        # Forecast submissions (one folder per model)
+├── ensemble/            # Weights and build script for the hub ensemble
 ├── target-data/         # Ground truth and oracle data
 │   ├── time-series.csv
 │   ├── oracle-output.csv

@@ -1,5 +1,7 @@
 # Model Output
 
+**English** | [中文](README.zh.md)
+
 This directory contains forecast submissions for the **China COVID-19 Forecast Hub**. Each model has its own subdirectory containing CSV forecast files. The directory structure and file format follow the [hubverse model output standards](https://hubverse.io/en/latest/user-guide/model-output.html).
 
 ## Table of Contents
@@ -65,7 +67,7 @@ Where:
 
 ## File Format
 
-Files must be comma-separated values (CSV), encoded as **UTF-8 without a byte order mark (BOM)**, with the following **8 columns** (in any order). No additional columns are allowed.
+Files must be comma-separated values (CSV), encoded as **UTF-8 without a byte order mark (BOM)**, with the following **8 columns** (in any order). No additional columns are allowed. Do not use `/` in dates; do not leave trailing commas or empty extra columns.
 
 > **Note on BOM:** Some spreadsheet applications (notably Excel on Windows) write a BOM when saving as CSV. A BOM turns the first header into `\ufeffreference_date`, so the `reference_date` column is no longer recognised and validation fails. In pandas use `df.to_csv(path, index=False, encoding="utf-8")`, and avoid `utf-8-sig`.
 
@@ -111,7 +113,7 @@ The number of **weeks** between the `reference_date` and the `target_end_date`. 
 | ... | ... |
 | 6 | 6-week-ahead forecast |
 
-Teams may submit any subset of these horizons.
+Teams may submit any subset of these horizons. Submitting the full -1 through 6 range is recommended for comparability, but not all horizons are required for validation.
 
 ### `target_end_date`
 
@@ -321,6 +323,8 @@ If everything is correct, you should see output like:
 |---------|-------|-----|
 | `[req_vals]` fails | Fewer than the 23 required quantile levels were supplied for a submitted horizon | Supply all 23 levels listed under [Quantile Levels](#quantile-levels) for **every** horizon in the file |
 | `reference_date` column reported as missing | File was saved with a UTF-8 BOM, so the first header reads `\ufeffreference_date` | Re-save as UTF-8 without BOM |
+| CSV date parse / `CSV conversion error to date32` / invalid value like `2026/8/31` | Dates written with slashes or Excel locale formats (`2026/8/31`, `8/31/2026`) instead of ISO | Use strict `YYYY-MM-DD` for both `reference_date` and `target_end_date` (and the date in the filename) |
+| unexpected extra columns / `file_read` or schema issues from trailing commas | Empty trailing columns or blank rows (common when exporting from spreadsheets) | Use exactly the 8 required columns; no trailing empty columns or blank data rows |
 | `[round_id_valid]` fails | The `reference_date` is not a Monday, or that round is not yet open | Use the Monday starting the surveillance week; rounds open as target data becomes available |
 | `[valid_vals]` fails | Negative values, or positivity submitted as a proportion (0–1) instead of percentage points | Use non-negative values on the 0–100 scale |
 
