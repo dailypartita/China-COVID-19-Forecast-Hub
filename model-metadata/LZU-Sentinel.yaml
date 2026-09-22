@@ -1,0 +1,22 @@
+team_name: "兰州大学"
+team_abbr: "LZU"
+model_name: "Sentinel哨点阳性率集合预报"
+model_abbr: "Sentinel"
+model_version: "v1.5.0"
+model_contributors:
+  - name: "张立"
+    affiliation: "兰州大学"
+    email: "lzu_cengt@lzu.edu.cn"
+  - name: "赵颖洁"
+    affiliation: "兰州大学"
+    email: "120220900920@lzu.edu.cn"
+  - name: "郝子涵"
+    affiliation: "兰州大学"
+    email: "haozh19@lzu.edu.cn"
+license: "CC-BY-4.0"
+designated_model: false
+data_inputs: "中国疾控中心每周《全国急性呼吸道传染病哨点监测情况》中的门急诊流感样病例新冠阳性率，取 Hub target-data 的 wk inc covid prop ili（CN，周一）。"
+methods: "四成员加权集合预报哨点阳性率。成员加权均值为中位数，加权标准差的正态分位数截断到0–100。"
+methods_long: "使用镜像 registry-vpc.miracle.ac.cn/gznl/sentinel_model:v1.5.0。将 Hub 的全国哨点 ILI 新冠阳性率周序列按时间顺序写入模型输入表的「新增确诊」列，一行一周；预报长度取覆盖 horizon -1 到 6 所需的周数；人口总数固定为 1400000000，只作为动力模型的尺度参数。四个成员与镜像内 EnsembleForecaster 相同：SinglePointModel、SetPredictModel、ASVENKFModel、LESAssimilateModel，权重 1.2、1.0、1.2、0.5。单点、集合预测和 LES 只用最近 20 周，ASVENKF 用全部历史，与镜像一致。各预报周的点预测是这四个成员逐步新增的加权均值，并把它解释为该周阳性率（百分点）。23 个分位数来自以该均值为中心、以四个成员加权标准差为尺度的正态分布，结果截断到 0–100。模型原始输出是感染人数动力系统的逐步新增，不是阳性率的生成模型，因此 designated_model 为 false，不进入 Hub 集成。"
+ensemble_of_models: true
+ensemble_of_hub_models: false
