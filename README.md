@@ -10,7 +10,7 @@ Collaborative forecasting hub built on the [Hubverse](https://hubverse.io/) fram
 
 **Dashboard:** [dailypartita.github.io/China-COVID-19-Forecast-Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
 
-**Target data:** [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) · **Coverage:** 2022-12-05 – 2026-08-17
+**Target data:** [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) · **Observed coverage:** 2022-12-05 – 2026-09-07 · **Configured submission rounds:** Mondays through 2027-10-25
 
 ## Features
 

@@ -10,7 +10,7 @@
 
 **在线 Dashboard：** [dailypartita.github.io/China-COVID-19-Forecast-Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
 
-**目标数据：** [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) · **覆盖范围：** 2022-12-05 – 2026-08-17
+**目标数据：** [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl) · **已观测覆盖：** 2022-12-05 – 2026-09-07 · **已配置提交轮次：** 周一至 2027-10-25
 
 ## 平台功能
 
