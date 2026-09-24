@@ -16,7 +16,7 @@ CNCDC_URL = (
     "data/cncdc_surveillance_covid19.csv"
 )
 DEFAULT_LOCAL_CSV = Path(
-    "/data/ykx/covid19/get_data/cn_cdc_data/data/cncdc_surveillance_covid19.csv"
+    "/data/ykx/hubverse_proj/cn_cdc_crawl/data/cncdc_surveillance_covid19.csv"
 )
 TARGET = "wk inc covid prop ili"
 LOCATION = "CN"
