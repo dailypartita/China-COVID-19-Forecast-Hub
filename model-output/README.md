@@ -336,7 +336,7 @@ If everything is correct, you should see output like:
 | Monday – Wednesday | Forecast development period |
 | **Wednesday 23:59 CST** | **Submission deadline** |
 | Thursday 09:00 CST | Ensemble generation and evaluation |
-| Friday | Target data sync from [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl); new rounds open as observations arrive |
+| Friday | Target data sync from [cn_cdc_dashboard](https://github.com/dailypartita/cn_cdc_dashboard); new rounds open as observations arrive |
 
 ## Late Submission Policy
 

@@ -1,11 +1,11 @@
-name: Sync target data from cn_cdc_crawl
+name: Sync target data from cn_cdc_dashboard
 
 on:
   schedule:
-    # Friday 02:00 UTC ≈ Friday 10:00 Asia/Shanghai — after crawl Airflow (Fri 00:00 Shanghai)
-    - cron: "0 2 * * 5"
-    # Sunday backup after delayed crawl (crawl this week landed ~03:51 UTC)
-    - cron: "0 6 * * 0"
+    # Friday 08:00 UTC ≈ Friday 16:00 Asia/Shanghai — after cn_cdc_dashboard sync (Fri 06:00 UTC)
+    - cron: "0 8 * * 5"
+    # Sunday backup after delayed upstream sync
+    - cron: "0 8 * * 0"
   workflow_dispatch:
 
 permissions:
@@ -26,13 +26,13 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Update target data from cn_cdc_crawl
+      - name: Update target data from cn_cdc_dashboard
         run: python3 target-data/update_from_cncdc.py --from-github
 
       - name: Commit if changed
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
-          commit_message: "chore(target-data): sync from cn_cdc_crawl"
+          commit_message: "chore(target-data): sync from cn_cdc_dashboard"
           file_pattern: |
             target-data/time-series.csv
             target-data/oracle-output.csv

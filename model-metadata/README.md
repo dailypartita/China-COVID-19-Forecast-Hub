@@ -81,7 +81,7 @@ Boolean (`true` or `false`) indicating whether this model should be considered f
 A description of the data sources used to inform the model, especially sources beyond the sentinel hospital SARS-CoV-2 positivity target data. Examples:
 
 - China CDC weekly surveillance reports
-- Historical ILI surveillance data from [cn_cdc_crawl](https://github.com/dailypartita/cn_cdc_crawl)
+- Historical ILI surveillance data from [cn_cdc_dashboard](https://github.com/dailypartita/cn_cdc_dashboard)
 - Weather data, mobility data, vaccination coverage, etc.
 
 ### `methods`
@@ -140,7 +140,7 @@ model_contributors: [
 ]
 license: "CC-BY-4.0"
 designated_model: true
-data_inputs: "China CDC weekly surveillance reports, historical ILI data from cn_cdc_crawl"
+data_inputs: "China CDC weekly surveillance reports, historical ILI data from cn_cdc_dashboard"
 methods: "Statistical time series forecasting using simple trend extrapolation"
 methods_long: "This model uses time series analysis to predict SARS-CoV-2 positivity rates based on sentinel hospital surveillance data from China CDC. It combines recent trend analysis with historical seasonal patterns to generate probabilistic forecasts at multiple horizons."
 ensemble_of_models: false

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Update Hub target data from cn_cdc_crawl surveillance CSV."""
+"""Update Hub target data from cn_cdc_dashboard surveillance CSV."""
 
 from __future__ import annotations
 
@@ -12,14 +12,15 @@ from datetime import datetime
 from pathlib import Path
 
 CNCDC_URL = (
-    "https://raw.githubusercontent.com/dailypartita/cn_cdc_crawl/main/"
+    "https://raw.githubusercontent.com/dailypartita/cn_cdc_dashboard/main/"
     "data/cncdc_surveillance_covid19.csv"
 )
 DEFAULT_LOCAL_CSV = Path(
-    "/data/ykx/hubverse_proj/00-cn_cdc_crawl/data/cncdc_surveillance_covid19.csv"
+    "/data/ykx/hubverse_proj/00-cn_cdc_dashboard/data/cncdc_surveillance_covid19.csv"
 )
 TARGET = "wk inc covid prop ili"
 LOCATION = "CN"
+PATHOGEN = "新型冠状病毒"
 MIN_DATE = "2022-12-05"
 MAX_ORACLE_LOOKBACK = 6
 
@@ -46,6 +47,8 @@ def load_cncdc_rows(csv_path: Path | None = None) -> list[dict[str, str]]:
 def build_time_series(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     series: dict[str, float] = {}
     for row in rows:
+        if row.get("pathogen", PATHOGEN) != PATHOGEN:
+            continue
         date = row["reference_date"]
         if date < MIN_DATE:
             continue
