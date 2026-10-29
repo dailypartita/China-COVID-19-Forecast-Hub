@@ -1,0 +1,16 @@
+team_name: "GZNL Group"
+team_abbr: "GZNL"
+model_name: "Quantile Regression Gradient Boosting Model"
+model_abbr: "QuantileBoost"
+model_contributors:
+  - name: "GZNL Group"
+    affiliation: "GZNL Group"
+    email: "gznl@example.com"
+license: "CC-BY-4.0"
+designated_model: false
+data_inputs: "中国疾控中心每周发布的《全国急性呼吸道传染病哨点监测情况》报告的门急诊流感样病例中的新型冠状病毒阳性率"
+methods: "XGBoost quantile regression on lag and rolling-mean features; one regressor per quantile level, recursive multi-step extrapolation, retrained weekly"
+methods_long: "The model builds a feature matrix from the observed series: lags 1-4, 6, 8 and 12 weeks, 4- and 8-week rolling means, and the first difference. For each of the 23 hub quantile levels a separate XGBoost regressor is trained with the quantile loss (reg:quantileerror), using shallow regularised trees (depth 2, learning rate 0.04) suited to the short (~200-week) history. Multi-step forecasts are produced recursively: the median forecast is appended to the series and features are recomputed for the next horizon. Uncertainty therefore comes directly from the data-driven quantile regressors rather than a parametric assumption; quantiles are monotonised across levels after prediction. The full model is retrained on the latest data every week. On the team's 126-origin rolling backtest (2024-04 to 2026-08) it achieves the lowest median MAE (2.65) of all GZNL models, though its raw intervals are narrow (50% nominal coverage 20%), which motivates its use inside the GZNL-VincentAvg ensemble."
+ensemble_of_models: false
+ensemble_of_hub_models: false
+repo_url: "https://github.com/dailypartita/GZNL-covid-forecast-models"
