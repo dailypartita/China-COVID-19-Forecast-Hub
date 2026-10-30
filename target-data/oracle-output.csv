@@ -1196,3 +1196,771 @@ reference_date,target,horizon,target_end_date,location,output_type,output_type_i
 2026-10-12,wk inc covid prop ili,-2,2026-09-28,CN,quantile,0.5,4.9
 2026-10-12,wk inc covid prop ili,-1,2026-10-05,CN,quantile,0.5,3.4
 2026-10-12,wk inc covid prop ili,0,2026-10-12,CN,quantile,0.5,2.9
+2024-11-11,wk inc flu prop ili,0,2024-11-11,CN,quantile,0.5,3.7
+2024-11-18,wk inc flu prop ili,-1,2024-11-11,CN,quantile,0.5,3.7
+2024-11-18,wk inc flu prop ili,0,2024-11-18,CN,quantile,0.5,5.5
+2024-11-25,wk inc flu prop ili,-2,2024-11-11,CN,quantile,0.5,3.7
+2024-11-25,wk inc flu prop ili,-1,2024-11-18,CN,quantile,0.5,5.5
+2024-11-25,wk inc flu prop ili,0,2024-11-25,CN,quantile,0.5,7
+2024-12-02,wk inc flu prop ili,-3,2024-11-11,CN,quantile,0.5,3.7
+2024-12-02,wk inc flu prop ili,-2,2024-11-18,CN,quantile,0.5,5.5
+2024-12-02,wk inc flu prop ili,-1,2024-11-25,CN,quantile,0.5,7
+2024-12-02,wk inc flu prop ili,0,2024-12-02,CN,quantile,0.5,10.8
+2024-12-09,wk inc flu prop ili,-4,2024-11-11,CN,quantile,0.5,3.7
+2024-12-09,wk inc flu prop ili,-3,2024-11-18,CN,quantile,0.5,5.5
+2024-12-09,wk inc flu prop ili,-2,2024-11-25,CN,quantile,0.5,7
+2024-12-09,wk inc flu prop ili,-1,2024-12-02,CN,quantile,0.5,10.8
+2024-12-09,wk inc flu prop ili,0,2024-12-09,CN,quantile,0.5,16.5
+2024-12-16,wk inc flu prop ili,-5,2024-11-11,CN,quantile,0.5,3.7
+2024-12-16,wk inc flu prop ili,-4,2024-11-18,CN,quantile,0.5,5.5
+2024-12-16,wk inc flu prop ili,-3,2024-11-25,CN,quantile,0.5,7
+2024-12-16,wk inc flu prop ili,-2,2024-12-02,CN,quantile,0.5,10.8
+2024-12-16,wk inc flu prop ili,-1,2024-12-09,CN,quantile,0.5,16.5
+2024-12-16,wk inc flu prop ili,0,2024-12-16,CN,quantile,0.5,23.1
+2024-12-23,wk inc flu prop ili,-5,2024-11-18,CN,quantile,0.5,5.5
+2024-12-23,wk inc flu prop ili,-4,2024-11-25,CN,quantile,0.5,7
+2024-12-23,wk inc flu prop ili,-3,2024-12-02,CN,quantile,0.5,10.8
+2024-12-23,wk inc flu prop ili,-2,2024-12-09,CN,quantile,0.5,16.5
+2024-12-23,wk inc flu prop ili,-1,2024-12-16,CN,quantile,0.5,23.1
+2024-12-23,wk inc flu prop ili,0,2024-12-23,CN,quantile,0.5,30.2
+2024-12-30,wk inc flu prop ili,-5,2024-11-25,CN,quantile,0.5,7
+2024-12-30,wk inc flu prop ili,-4,2024-12-02,CN,quantile,0.5,10.8
+2024-12-30,wk inc flu prop ili,-3,2024-12-09,CN,quantile,0.5,16.5
+2024-12-30,wk inc flu prop ili,-2,2024-12-16,CN,quantile,0.5,23.1
+2024-12-30,wk inc flu prop ili,-1,2024-12-23,CN,quantile,0.5,30.2
+2024-12-30,wk inc flu prop ili,0,2024-12-30,CN,quantile,0.5,35.5
+2025-01-06,wk inc flu prop ili,-5,2024-12-02,CN,quantile,0.5,10.8
+2025-01-06,wk inc flu prop ili,-4,2024-12-09,CN,quantile,0.5,16.5
+2025-01-06,wk inc flu prop ili,-3,2024-12-16,CN,quantile,0.5,23.1
+2025-01-06,wk inc flu prop ili,-2,2024-12-23,CN,quantile,0.5,30.2
+2025-01-06,wk inc flu prop ili,-1,2024-12-30,CN,quantile,0.5,35.5
+2025-01-06,wk inc flu prop ili,0,2025-01-06,CN,quantile,0.5,35.9
+2025-01-13,wk inc flu prop ili,-5,2024-12-09,CN,quantile,0.5,16.5
+2025-01-13,wk inc flu prop ili,-4,2024-12-16,CN,quantile,0.5,23.1
+2025-01-13,wk inc flu prop ili,-3,2024-12-23,CN,quantile,0.5,30.2
+2025-01-13,wk inc flu prop ili,-2,2024-12-30,CN,quantile,0.5,35.5
+2025-01-13,wk inc flu prop ili,-1,2025-01-06,CN,quantile,0.5,35.9
+2025-01-13,wk inc flu prop ili,0,2025-01-13,CN,quantile,0.5,32.2
+2025-01-20,wk inc flu prop ili,-5,2024-12-16,CN,quantile,0.5,23.1
+2025-01-20,wk inc flu prop ili,-4,2024-12-23,CN,quantile,0.5,30.2
+2025-01-20,wk inc flu prop ili,-3,2024-12-30,CN,quantile,0.5,35.5
+2025-01-20,wk inc flu prop ili,-2,2025-01-06,CN,quantile,0.5,35.9
+2025-01-20,wk inc flu prop ili,-1,2025-01-13,CN,quantile,0.5,32.2
+2025-01-20,wk inc flu prop ili,0,2025-01-20,CN,quantile,0.5,30.3
+2025-01-27,wk inc flu prop ili,-5,2024-12-23,CN,quantile,0.5,30.2
+2025-01-27,wk inc flu prop ili,-4,2024-12-30,CN,quantile,0.5,35.5
+2025-01-27,wk inc flu prop ili,-3,2025-01-06,CN,quantile,0.5,35.9
+2025-01-27,wk inc flu prop ili,-2,2025-01-13,CN,quantile,0.5,32.2
+2025-01-27,wk inc flu prop ili,-1,2025-01-20,CN,quantile,0.5,30.3
+2025-01-27,wk inc flu prop ili,0,2025-01-27,CN,quantile,0.5,23.4
+2025-02-03,wk inc flu prop ili,-5,2024-12-30,CN,quantile,0.5,35.5
+2025-02-03,wk inc flu prop ili,-4,2025-01-06,CN,quantile,0.5,35.9
+2025-02-03,wk inc flu prop ili,-3,2025-01-13,CN,quantile,0.5,32.2
+2025-02-03,wk inc flu prop ili,-2,2025-01-20,CN,quantile,0.5,30.3
+2025-02-03,wk inc flu prop ili,-1,2025-01-27,CN,quantile,0.5,23.4
+2025-02-03,wk inc flu prop ili,0,2025-02-03,CN,quantile,0.5,24.9
+2025-02-10,wk inc flu prop ili,-5,2025-01-06,CN,quantile,0.5,35.9
+2025-02-10,wk inc flu prop ili,-4,2025-01-13,CN,quantile,0.5,32.2
+2025-02-10,wk inc flu prop ili,-3,2025-01-20,CN,quantile,0.5,30.3
+2025-02-10,wk inc flu prop ili,-2,2025-01-27,CN,quantile,0.5,23.4
+2025-02-10,wk inc flu prop ili,-1,2025-02-03,CN,quantile,0.5,24.9
+2025-02-10,wk inc flu prop ili,0,2025-02-10,CN,quantile,0.5,20.2
+2025-02-17,wk inc flu prop ili,-5,2025-01-13,CN,quantile,0.5,32.2
+2025-02-17,wk inc flu prop ili,-4,2025-01-20,CN,quantile,0.5,30.3
+2025-02-17,wk inc flu prop ili,-3,2025-01-27,CN,quantile,0.5,23.4
+2025-02-17,wk inc flu prop ili,-2,2025-02-03,CN,quantile,0.5,24.9
+2025-02-17,wk inc flu prop ili,-1,2025-02-10,CN,quantile,0.5,20.2
+2025-02-17,wk inc flu prop ili,0,2025-02-17,CN,quantile,0.5,17
+2025-02-24,wk inc flu prop ili,-5,2025-01-20,CN,quantile,0.5,30.3
+2025-02-24,wk inc flu prop ili,-4,2025-01-27,CN,quantile,0.5,23.4
+2025-02-24,wk inc flu prop ili,-3,2025-02-03,CN,quantile,0.5,24.9
+2025-02-24,wk inc flu prop ili,-2,2025-02-10,CN,quantile,0.5,20.2
+2025-02-24,wk inc flu prop ili,-1,2025-02-17,CN,quantile,0.5,17
+2025-02-24,wk inc flu prop ili,0,2025-02-24,CN,quantile,0.5,15
+2025-03-03,wk inc flu prop ili,-5,2025-01-27,CN,quantile,0.5,23.4
+2025-03-03,wk inc flu prop ili,-4,2025-02-03,CN,quantile,0.5,24.9
+2025-03-03,wk inc flu prop ili,-3,2025-02-10,CN,quantile,0.5,20.2
+2025-03-03,wk inc flu prop ili,-2,2025-02-17,CN,quantile,0.5,17
+2025-03-03,wk inc flu prop ili,-1,2025-02-24,CN,quantile,0.5,15
+2025-03-03,wk inc flu prop ili,0,2025-03-03,CN,quantile,0.5,9.7
+2025-03-10,wk inc flu prop ili,-5,2025-02-03,CN,quantile,0.5,24.9
+2025-03-10,wk inc flu prop ili,-4,2025-02-10,CN,quantile,0.5,20.2
+2025-03-10,wk inc flu prop ili,-3,2025-02-17,CN,quantile,0.5,17
+2025-03-10,wk inc flu prop ili,-2,2025-02-24,CN,quantile,0.5,15
+2025-03-10,wk inc flu prop ili,-1,2025-03-03,CN,quantile,0.5,9.7
+2025-03-10,wk inc flu prop ili,0,2025-03-10,CN,quantile,0.5,6.7
+2025-03-17,wk inc flu prop ili,-5,2025-02-10,CN,quantile,0.5,20.2
+2025-03-17,wk inc flu prop ili,-4,2025-02-17,CN,quantile,0.5,17
+2025-03-17,wk inc flu prop ili,-3,2025-02-24,CN,quantile,0.5,15
+2025-03-17,wk inc flu prop ili,-2,2025-03-03,CN,quantile,0.5,9.7
+2025-03-17,wk inc flu prop ili,-1,2025-03-10,CN,quantile,0.5,6.7
+2025-03-17,wk inc flu prop ili,0,2025-03-17,CN,quantile,0.5,5.4
+2025-03-24,wk inc flu prop ili,-5,2025-02-17,CN,quantile,0.5,17
+2025-03-24,wk inc flu prop ili,-4,2025-02-24,CN,quantile,0.5,15
+2025-03-24,wk inc flu prop ili,-3,2025-03-03,CN,quantile,0.5,9.7
+2025-03-24,wk inc flu prop ili,-2,2025-03-10,CN,quantile,0.5,6.7
+2025-03-24,wk inc flu prop ili,-1,2025-03-17,CN,quantile,0.5,5.4
+2025-03-24,wk inc flu prop ili,0,2025-03-24,CN,quantile,0.5,3.5
+2025-03-31,wk inc flu prop ili,-5,2025-02-24,CN,quantile,0.5,15
+2025-03-31,wk inc flu prop ili,-4,2025-03-03,CN,quantile,0.5,9.7
+2025-03-31,wk inc flu prop ili,-3,2025-03-10,CN,quantile,0.5,6.7
+2025-03-31,wk inc flu prop ili,-2,2025-03-17,CN,quantile,0.5,5.4
+2025-03-31,wk inc flu prop ili,-1,2025-03-24,CN,quantile,0.5,3.5
+2025-03-31,wk inc flu prop ili,0,2025-03-31,CN,quantile,0.5,4.2
+2025-04-07,wk inc flu prop ili,-5,2025-03-03,CN,quantile,0.5,9.7
+2025-04-07,wk inc flu prop ili,-4,2025-03-10,CN,quantile,0.5,6.7
+2025-04-07,wk inc flu prop ili,-3,2025-03-17,CN,quantile,0.5,5.4
+2025-04-07,wk inc flu prop ili,-2,2025-03-24,CN,quantile,0.5,3.5
+2025-04-07,wk inc flu prop ili,-1,2025-03-31,CN,quantile,0.5,4.2
+2025-04-07,wk inc flu prop ili,0,2025-04-07,CN,quantile,0.5,2.8
+2025-04-14,wk inc flu prop ili,-5,2025-03-10,CN,quantile,0.5,6.7
+2025-04-14,wk inc flu prop ili,-4,2025-03-17,CN,quantile,0.5,5.4
+2025-04-14,wk inc flu prop ili,-3,2025-03-24,CN,quantile,0.5,3.5
+2025-04-14,wk inc flu prop ili,-2,2025-03-31,CN,quantile,0.5,4.2
+2025-04-14,wk inc flu prop ili,-1,2025-04-07,CN,quantile,0.5,2.8
+2025-04-14,wk inc flu prop ili,0,2025-04-14,CN,quantile,0.5,2.5
+2025-04-21,wk inc flu prop ili,-5,2025-03-17,CN,quantile,0.5,5.4
+2025-04-21,wk inc flu prop ili,-4,2025-03-24,CN,quantile,0.5,3.5
+2025-04-21,wk inc flu prop ili,-3,2025-03-31,CN,quantile,0.5,4.2
+2025-04-21,wk inc flu prop ili,-2,2025-04-07,CN,quantile,0.5,2.8
+2025-04-21,wk inc flu prop ili,-1,2025-04-14,CN,quantile,0.5,2.5
+2025-04-21,wk inc flu prop ili,0,2025-04-21,CN,quantile,0.5,2.4
+2025-04-28,wk inc flu prop ili,-5,2025-03-24,CN,quantile,0.5,3.5
+2025-04-28,wk inc flu prop ili,-4,2025-03-31,CN,quantile,0.5,4.2
+2025-04-28,wk inc flu prop ili,-3,2025-04-07,CN,quantile,0.5,2.8
+2025-04-28,wk inc flu prop ili,-2,2025-04-14,CN,quantile,0.5,2.5
+2025-04-28,wk inc flu prop ili,-1,2025-04-21,CN,quantile,0.5,2.4
+2025-04-28,wk inc flu prop ili,0,2025-04-28,CN,quantile,0.5,2
+2025-05-05,wk inc flu prop ili,-5,2025-03-31,CN,quantile,0.5,4.2
+2025-05-05,wk inc flu prop ili,-4,2025-04-07,CN,quantile,0.5,2.8
+2025-05-05,wk inc flu prop ili,-3,2025-04-14,CN,quantile,0.5,2.5
+2025-05-05,wk inc flu prop ili,-2,2025-04-21,CN,quantile,0.5,2.4
+2025-05-05,wk inc flu prop ili,-1,2025-04-28,CN,quantile,0.5,2
+2025-05-05,wk inc flu prop ili,0,2025-05-05,CN,quantile,0.5,2.2
+2025-05-12,wk inc flu prop ili,-5,2025-04-07,CN,quantile,0.5,2.8
+2025-05-12,wk inc flu prop ili,-4,2025-04-14,CN,quantile,0.5,2.5
+2025-05-12,wk inc flu prop ili,-3,2025-04-21,CN,quantile,0.5,2.4
+2025-05-12,wk inc flu prop ili,-2,2025-04-28,CN,quantile,0.5,2
+2025-05-12,wk inc flu prop ili,-1,2025-05-05,CN,quantile,0.5,2.2
+2025-05-12,wk inc flu prop ili,0,2025-05-12,CN,quantile,0.5,2.1
+2025-05-19,wk inc flu prop ili,-5,2025-04-14,CN,quantile,0.5,2.5
+2025-05-19,wk inc flu prop ili,-4,2025-04-21,CN,quantile,0.5,2.4
+2025-05-19,wk inc flu prop ili,-3,2025-04-28,CN,quantile,0.5,2
+2025-05-19,wk inc flu prop ili,-2,2025-05-05,CN,quantile,0.5,2.2
+2025-05-19,wk inc flu prop ili,-1,2025-05-12,CN,quantile,0.5,2.1
+2025-05-19,wk inc flu prop ili,0,2025-05-19,CN,quantile,0.5,1.6
+2025-05-26,wk inc flu prop ili,-5,2025-04-21,CN,quantile,0.5,2.4
+2025-05-26,wk inc flu prop ili,-4,2025-04-28,CN,quantile,0.5,2
+2025-05-26,wk inc flu prop ili,-3,2025-05-05,CN,quantile,0.5,2.2
+2025-05-26,wk inc flu prop ili,-2,2025-05-12,CN,quantile,0.5,2.1
+2025-05-26,wk inc flu prop ili,-1,2025-05-19,CN,quantile,0.5,1.6
+2025-05-26,wk inc flu prop ili,0,2025-05-26,CN,quantile,0.5,1.5
+2025-06-02,wk inc flu prop ili,-5,2025-04-28,CN,quantile,0.5,2
+2025-06-02,wk inc flu prop ili,-4,2025-05-05,CN,quantile,0.5,2.2
+2025-06-02,wk inc flu prop ili,-3,2025-05-12,CN,quantile,0.5,2.1
+2025-06-02,wk inc flu prop ili,-2,2025-05-19,CN,quantile,0.5,1.6
+2025-06-02,wk inc flu prop ili,-1,2025-05-26,CN,quantile,0.5,1.5
+2025-06-02,wk inc flu prop ili,0,2025-06-02,CN,quantile,0.5,1.8
+2025-06-09,wk inc flu prop ili,-5,2025-05-05,CN,quantile,0.5,2.2
+2025-06-09,wk inc flu prop ili,-4,2025-05-12,CN,quantile,0.5,2.1
+2025-06-09,wk inc flu prop ili,-3,2025-05-19,CN,quantile,0.5,1.6
+2025-06-09,wk inc flu prop ili,-2,2025-05-26,CN,quantile,0.5,1.5
+2025-06-09,wk inc flu prop ili,-1,2025-06-02,CN,quantile,0.5,1.8
+2025-06-09,wk inc flu prop ili,0,2025-06-09,CN,quantile,0.5,1.6
+2025-06-16,wk inc flu prop ili,-5,2025-05-12,CN,quantile,0.5,2.1
+2025-06-16,wk inc flu prop ili,-4,2025-05-19,CN,quantile,0.5,1.6
+2025-06-16,wk inc flu prop ili,-3,2025-05-26,CN,quantile,0.5,1.5
+2025-06-16,wk inc flu prop ili,-2,2025-06-02,CN,quantile,0.5,1.8
+2025-06-16,wk inc flu prop ili,-1,2025-06-09,CN,quantile,0.5,1.6
+2025-06-16,wk inc flu prop ili,0,2025-06-16,CN,quantile,0.5,1.5
+2025-06-23,wk inc flu prop ili,-5,2025-05-19,CN,quantile,0.5,1.6
+2025-06-23,wk inc flu prop ili,-4,2025-05-26,CN,quantile,0.5,1.5
+2025-06-23,wk inc flu prop ili,-3,2025-06-02,CN,quantile,0.5,1.8
+2025-06-23,wk inc flu prop ili,-2,2025-06-09,CN,quantile,0.5,1.6
+2025-06-23,wk inc flu prop ili,-1,2025-06-16,CN,quantile,0.5,1.5
+2025-06-23,wk inc flu prop ili,0,2025-06-23,CN,quantile,0.5,1.6
+2025-06-30,wk inc flu prop ili,-5,2025-05-26,CN,quantile,0.5,1.5
+2025-06-30,wk inc flu prop ili,-4,2025-06-02,CN,quantile,0.5,1.8
+2025-06-30,wk inc flu prop ili,-3,2025-06-09,CN,quantile,0.5,1.6
+2025-06-30,wk inc flu prop ili,-2,2025-06-16,CN,quantile,0.5,1.5
+2025-06-30,wk inc flu prop ili,-1,2025-06-23,CN,quantile,0.5,1.6
+2025-06-30,wk inc flu prop ili,0,2025-06-30,CN,quantile,0.5,1.8
+2025-07-07,wk inc flu prop ili,-5,2025-06-02,CN,quantile,0.5,1.8
+2025-07-07,wk inc flu prop ili,-4,2025-06-09,CN,quantile,0.5,1.6
+2025-07-07,wk inc flu prop ili,-3,2025-06-16,CN,quantile,0.5,1.5
+2025-07-07,wk inc flu prop ili,-2,2025-06-23,CN,quantile,0.5,1.6
+2025-07-07,wk inc flu prop ili,-1,2025-06-30,CN,quantile,0.5,1.8
+2025-07-07,wk inc flu prop ili,0,2025-07-07,CN,quantile,0.5,1.8
+2025-07-14,wk inc flu prop ili,-5,2025-06-09,CN,quantile,0.5,1.6
+2025-07-14,wk inc flu prop ili,-4,2025-06-16,CN,quantile,0.5,1.5
+2025-07-14,wk inc flu prop ili,-3,2025-06-23,CN,quantile,0.5,1.6
+2025-07-14,wk inc flu prop ili,-2,2025-06-30,CN,quantile,0.5,1.8
+2025-07-14,wk inc flu prop ili,-1,2025-07-07,CN,quantile,0.5,1.8
+2025-07-14,wk inc flu prop ili,0,2025-07-14,CN,quantile,0.5,2.4
+2025-07-21,wk inc flu prop ili,-5,2025-06-16,CN,quantile,0.5,1.5
+2025-07-21,wk inc flu prop ili,-4,2025-06-23,CN,quantile,0.5,1.6
+2025-07-21,wk inc flu prop ili,-3,2025-06-30,CN,quantile,0.5,1.8
+2025-07-21,wk inc flu prop ili,-2,2025-07-07,CN,quantile,0.5,1.8
+2025-07-21,wk inc flu prop ili,-1,2025-07-14,CN,quantile,0.5,2.4
+2025-07-21,wk inc flu prop ili,0,2025-07-21,CN,quantile,0.5,2.2
+2025-07-28,wk inc flu prop ili,-5,2025-06-23,CN,quantile,0.5,1.6
+2025-07-28,wk inc flu prop ili,-4,2025-06-30,CN,quantile,0.5,1.8
+2025-07-28,wk inc flu prop ili,-3,2025-07-07,CN,quantile,0.5,1.8
+2025-07-28,wk inc flu prop ili,-2,2025-07-14,CN,quantile,0.5,2.4
+2025-07-28,wk inc flu prop ili,-1,2025-07-21,CN,quantile,0.5,2.2
+2025-07-28,wk inc flu prop ili,0,2025-07-28,CN,quantile,0.5,2.3
+2025-08-04,wk inc flu prop ili,-5,2025-06-30,CN,quantile,0.5,1.8
+2025-08-04,wk inc flu prop ili,-4,2025-07-07,CN,quantile,0.5,1.8
+2025-08-04,wk inc flu prop ili,-3,2025-07-14,CN,quantile,0.5,2.4
+2025-08-04,wk inc flu prop ili,-2,2025-07-21,CN,quantile,0.5,2.2
+2025-08-04,wk inc flu prop ili,-1,2025-07-28,CN,quantile,0.5,2.3
+2025-08-04,wk inc flu prop ili,0,2025-08-04,CN,quantile,0.5,1.5
+2025-08-11,wk inc flu prop ili,-5,2025-07-07,CN,quantile,0.5,1.8
+2025-08-11,wk inc flu prop ili,-4,2025-07-14,CN,quantile,0.5,2.4
+2025-08-11,wk inc flu prop ili,-3,2025-07-21,CN,quantile,0.5,2.2
+2025-08-11,wk inc flu prop ili,-2,2025-07-28,CN,quantile,0.5,2.3
+2025-08-11,wk inc flu prop ili,-1,2025-08-04,CN,quantile,0.5,1.5
+2025-08-11,wk inc flu prop ili,0,2025-08-11,CN,quantile,0.5,1.5
+2025-08-18,wk inc flu prop ili,-5,2025-07-14,CN,quantile,0.5,2.4
+2025-08-18,wk inc flu prop ili,-4,2025-07-21,CN,quantile,0.5,2.2
+2025-08-18,wk inc flu prop ili,-3,2025-07-28,CN,quantile,0.5,2.3
+2025-08-18,wk inc flu prop ili,-2,2025-08-04,CN,quantile,0.5,1.5
+2025-08-18,wk inc flu prop ili,-1,2025-08-11,CN,quantile,0.5,1.5
+2025-08-18,wk inc flu prop ili,0,2025-08-18,CN,quantile,0.5,1.9
+2025-08-25,wk inc flu prop ili,-5,2025-07-21,CN,quantile,0.5,2.2
+2025-08-25,wk inc flu prop ili,-4,2025-07-28,CN,quantile,0.5,2.3
+2025-08-25,wk inc flu prop ili,-3,2025-08-04,CN,quantile,0.5,1.5
+2025-08-25,wk inc flu prop ili,-2,2025-08-11,CN,quantile,0.5,1.5
+2025-08-25,wk inc flu prop ili,-1,2025-08-18,CN,quantile,0.5,1.9
+2025-08-25,wk inc flu prop ili,0,2025-08-25,CN,quantile,0.5,2.4
+2025-09-01,wk inc flu prop ili,-5,2025-07-28,CN,quantile,0.5,2.3
+2025-09-01,wk inc flu prop ili,-4,2025-08-04,CN,quantile,0.5,1.5
+2025-09-01,wk inc flu prop ili,-3,2025-08-11,CN,quantile,0.5,1.5
+2025-09-01,wk inc flu prop ili,-2,2025-08-18,CN,quantile,0.5,1.9
+2025-09-01,wk inc flu prop ili,-1,2025-08-25,CN,quantile,0.5,2.4
+2025-09-01,wk inc flu prop ili,0,2025-09-01,CN,quantile,0.5,3.3
+2025-09-08,wk inc flu prop ili,-5,2025-08-04,CN,quantile,0.5,1.5
+2025-09-08,wk inc flu prop ili,-4,2025-08-11,CN,quantile,0.5,1.5
+2025-09-08,wk inc flu prop ili,-3,2025-08-18,CN,quantile,0.5,1.9
+2025-09-08,wk inc flu prop ili,-2,2025-08-25,CN,quantile,0.5,2.4
+2025-09-08,wk inc flu prop ili,-1,2025-09-01,CN,quantile,0.5,3.3
+2025-09-08,wk inc flu prop ili,0,2025-09-08,CN,quantile,0.5,3.6
+2025-09-15,wk inc flu prop ili,-5,2025-08-11,CN,quantile,0.5,1.5
+2025-09-15,wk inc flu prop ili,-4,2025-08-18,CN,quantile,0.5,1.9
+2025-09-15,wk inc flu prop ili,-3,2025-08-25,CN,quantile,0.5,2.4
+2025-09-15,wk inc flu prop ili,-2,2025-09-01,CN,quantile,0.5,3.3
+2025-09-15,wk inc flu prop ili,-1,2025-09-08,CN,quantile,0.5,3.6
+2025-09-15,wk inc flu prop ili,0,2025-09-15,CN,quantile,0.5,3.5
+2025-09-22,wk inc flu prop ili,-5,2025-08-18,CN,quantile,0.5,1.9
+2025-09-22,wk inc flu prop ili,-4,2025-08-25,CN,quantile,0.5,2.4
+2025-09-22,wk inc flu prop ili,-3,2025-09-01,CN,quantile,0.5,3.3
+2025-09-22,wk inc flu prop ili,-2,2025-09-08,CN,quantile,0.5,3.6
+2025-09-22,wk inc flu prop ili,-1,2025-09-15,CN,quantile,0.5,3.5
+2025-09-22,wk inc flu prop ili,0,2025-09-22,CN,quantile,0.5,4.1
+2025-09-29,wk inc flu prop ili,-5,2025-08-25,CN,quantile,0.5,2.4
+2025-09-29,wk inc flu prop ili,-4,2025-09-01,CN,quantile,0.5,3.3
+2025-09-29,wk inc flu prop ili,-3,2025-09-08,CN,quantile,0.5,3.6
+2025-09-29,wk inc flu prop ili,-2,2025-09-15,CN,quantile,0.5,3.5
+2025-09-29,wk inc flu prop ili,-1,2025-09-22,CN,quantile,0.5,4.1
+2025-09-29,wk inc flu prop ili,0,2025-09-29,CN,quantile,0.5,3
+2025-10-06,wk inc flu prop ili,-5,2025-09-01,CN,quantile,0.5,3.3
+2025-10-06,wk inc flu prop ili,-4,2025-09-08,CN,quantile,0.5,3.6
+2025-10-06,wk inc flu prop ili,-3,2025-09-15,CN,quantile,0.5,3.5
+2025-10-06,wk inc flu prop ili,-2,2025-09-22,CN,quantile,0.5,4.1
+2025-10-06,wk inc flu prop ili,-1,2025-09-29,CN,quantile,0.5,3
+2025-10-06,wk inc flu prop ili,0,2025-10-06,CN,quantile,0.5,3.5
+2025-10-13,wk inc flu prop ili,-5,2025-09-08,CN,quantile,0.5,3.6
+2025-10-13,wk inc flu prop ili,-4,2025-09-15,CN,quantile,0.5,3.5
+2025-10-13,wk inc flu prop ili,-3,2025-09-22,CN,quantile,0.5,4.1
+2025-10-13,wk inc flu prop ili,-2,2025-09-29,CN,quantile,0.5,3
+2025-10-13,wk inc flu prop ili,-1,2025-10-06,CN,quantile,0.5,3.5
+2025-10-13,wk inc flu prop ili,0,2025-10-13,CN,quantile,0.5,5.8
+2025-10-20,wk inc flu prop ili,-5,2025-09-15,CN,quantile,0.5,3.5
+2025-10-20,wk inc flu prop ili,-4,2025-09-22,CN,quantile,0.5,4.1
+2025-10-20,wk inc flu prop ili,-3,2025-09-29,CN,quantile,0.5,3
+2025-10-20,wk inc flu prop ili,-2,2025-10-06,CN,quantile,0.5,3.5
+2025-10-20,wk inc flu prop ili,-1,2025-10-13,CN,quantile,0.5,5.8
+2025-10-20,wk inc flu prop ili,0,2025-10-20,CN,quantile,0.5,10.5
+2025-10-27,wk inc flu prop ili,-5,2025-09-22,CN,quantile,0.5,4.1
+2025-10-27,wk inc flu prop ili,-4,2025-09-29,CN,quantile,0.5,3
+2025-10-27,wk inc flu prop ili,-3,2025-10-06,CN,quantile,0.5,3.5
+2025-10-27,wk inc flu prop ili,-2,2025-10-13,CN,quantile,0.5,5.8
+2025-10-27,wk inc flu prop ili,-1,2025-10-20,CN,quantile,0.5,10.5
+2025-10-27,wk inc flu prop ili,0,2025-10-27,CN,quantile,0.5,17.5
+2025-11-03,wk inc flu prop ili,-5,2025-09-29,CN,quantile,0.5,3
+2025-11-03,wk inc flu prop ili,-4,2025-10-06,CN,quantile,0.5,3.5
+2025-11-03,wk inc flu prop ili,-3,2025-10-13,CN,quantile,0.5,5.8
+2025-11-03,wk inc flu prop ili,-2,2025-10-20,CN,quantile,0.5,10.5
+2025-11-03,wk inc flu prop ili,-1,2025-10-27,CN,quantile,0.5,17.5
+2025-11-03,wk inc flu prop ili,0,2025-11-03,CN,quantile,0.5,29.8
+2025-11-10,wk inc flu prop ili,-5,2025-10-06,CN,quantile,0.5,3.5
+2025-11-10,wk inc flu prop ili,-4,2025-10-13,CN,quantile,0.5,5.8
+2025-11-10,wk inc flu prop ili,-3,2025-10-20,CN,quantile,0.5,10.5
+2025-11-10,wk inc flu prop ili,-2,2025-10-27,CN,quantile,0.5,17.5
+2025-11-10,wk inc flu prop ili,-1,2025-11-03,CN,quantile,0.5,29.8
+2025-11-10,wk inc flu prop ili,0,2025-11-10,CN,quantile,0.5,38.1
+2025-11-17,wk inc flu prop ili,-5,2025-10-13,CN,quantile,0.5,5.8
+2025-11-17,wk inc flu prop ili,-4,2025-10-20,CN,quantile,0.5,10.5
+2025-11-17,wk inc flu prop ili,-3,2025-10-27,CN,quantile,0.5,17.5
+2025-11-17,wk inc flu prop ili,-2,2025-11-03,CN,quantile,0.5,29.8
+2025-11-17,wk inc flu prop ili,-1,2025-11-10,CN,quantile,0.5,38.1
+2025-11-17,wk inc flu prop ili,0,2025-11-17,CN,quantile,0.5,44.8
+2025-11-24,wk inc flu prop ili,-5,2025-10-20,CN,quantile,0.5,10.5
+2025-11-24,wk inc flu prop ili,-4,2025-10-27,CN,quantile,0.5,17.5
+2025-11-24,wk inc flu prop ili,-3,2025-11-03,CN,quantile,0.5,29.8
+2025-11-24,wk inc flu prop ili,-2,2025-11-10,CN,quantile,0.5,38.1
+2025-11-24,wk inc flu prop ili,-1,2025-11-17,CN,quantile,0.5,44.8
+2025-11-24,wk inc flu prop ili,0,2025-11-24,CN,quantile,0.5,51.1
+2025-12-01,wk inc flu prop ili,-5,2025-10-27,CN,quantile,0.5,17.5
+2025-12-01,wk inc flu prop ili,-4,2025-11-03,CN,quantile,0.5,29.8
+2025-12-01,wk inc flu prop ili,-3,2025-11-10,CN,quantile,0.5,38.1
+2025-12-01,wk inc flu prop ili,-2,2025-11-17,CN,quantile,0.5,44.8
+2025-12-01,wk inc flu prop ili,-1,2025-11-24,CN,quantile,0.5,51.1
+2025-12-01,wk inc flu prop ili,0,2025-12-01,CN,quantile,0.5,54.2
+2025-12-08,wk inc flu prop ili,-5,2025-11-03,CN,quantile,0.5,29.8
+2025-12-08,wk inc flu prop ili,-4,2025-11-10,CN,quantile,0.5,38.1
+2025-12-08,wk inc flu prop ili,-3,2025-11-17,CN,quantile,0.5,44.8
+2025-12-08,wk inc flu prop ili,-2,2025-11-24,CN,quantile,0.5,51.1
+2025-12-08,wk inc flu prop ili,-1,2025-12-01,CN,quantile,0.5,54.2
+2025-12-08,wk inc flu prop ili,0,2025-12-08,CN,quantile,0.5,50.2
+2025-12-15,wk inc flu prop ili,-5,2025-11-10,CN,quantile,0.5,38.1
+2025-12-15,wk inc flu prop ili,-4,2025-11-17,CN,quantile,0.5,44.8
+2025-12-15,wk inc flu prop ili,-3,2025-11-24,CN,quantile,0.5,51.1
+2025-12-15,wk inc flu prop ili,-2,2025-12-01,CN,quantile,0.5,54.2
+2025-12-15,wk inc flu prop ili,-1,2025-12-08,CN,quantile,0.5,50.2
+2025-12-15,wk inc flu prop ili,0,2025-12-15,CN,quantile,0.5,41.9
+2025-12-22,wk inc flu prop ili,-5,2025-11-17,CN,quantile,0.5,44.8
+2025-12-22,wk inc flu prop ili,-4,2025-11-24,CN,quantile,0.5,51.1
+2025-12-22,wk inc flu prop ili,-3,2025-12-01,CN,quantile,0.5,54.2
+2025-12-22,wk inc flu prop ili,-2,2025-12-08,CN,quantile,0.5,50.2
+2025-12-22,wk inc flu prop ili,-1,2025-12-15,CN,quantile,0.5,41.9
+2025-12-22,wk inc flu prop ili,0,2025-12-22,CN,quantile,0.5,33.7
+2025-12-29,wk inc flu prop ili,-5,2025-11-24,CN,quantile,0.5,51.1
+2025-12-29,wk inc flu prop ili,-4,2025-12-01,CN,quantile,0.5,54.2
+2025-12-29,wk inc flu prop ili,-3,2025-12-08,CN,quantile,0.5,50.2
+2025-12-29,wk inc flu prop ili,-2,2025-12-15,CN,quantile,0.5,41.9
+2025-12-29,wk inc flu prop ili,-1,2025-12-22,CN,quantile,0.5,33.7
+2025-12-29,wk inc flu prop ili,0,2025-12-29,CN,quantile,0.5,27.4
+2026-01-05,wk inc flu prop ili,-5,2025-12-01,CN,quantile,0.5,54.2
+2026-01-05,wk inc flu prop ili,-4,2025-12-08,CN,quantile,0.5,50.2
+2026-01-05,wk inc flu prop ili,-3,2025-12-15,CN,quantile,0.5,41.9
+2026-01-05,wk inc flu prop ili,-2,2025-12-22,CN,quantile,0.5,33.7
+2026-01-05,wk inc flu prop ili,-1,2025-12-29,CN,quantile,0.5,27.4
+2026-01-05,wk inc flu prop ili,0,2026-01-05,CN,quantile,0.5,23.3
+2026-01-12,wk inc flu prop ili,-5,2025-12-08,CN,quantile,0.5,50.2
+2026-01-12,wk inc flu prop ili,-4,2025-12-15,CN,quantile,0.5,41.9
+2026-01-12,wk inc flu prop ili,-3,2025-12-22,CN,quantile,0.5,33.7
+2026-01-12,wk inc flu prop ili,-2,2025-12-29,CN,quantile,0.5,27.4
+2026-01-12,wk inc flu prop ili,-1,2026-01-05,CN,quantile,0.5,23.3
+2026-01-12,wk inc flu prop ili,0,2026-01-12,CN,quantile,0.5,21.3
+2026-01-19,wk inc flu prop ili,-5,2025-12-15,CN,quantile,0.5,41.9
+2026-01-19,wk inc flu prop ili,-4,2025-12-22,CN,quantile,0.5,33.7
+2026-01-19,wk inc flu prop ili,-3,2025-12-29,CN,quantile,0.5,27.4
+2026-01-19,wk inc flu prop ili,-2,2026-01-05,CN,quantile,0.5,23.3
+2026-01-19,wk inc flu prop ili,-1,2026-01-12,CN,quantile,0.5,21.3
+2026-01-19,wk inc flu prop ili,0,2026-01-19,CN,quantile,0.5,18.8
+2026-01-26,wk inc flu prop ili,-5,2025-12-22,CN,quantile,0.5,33.7
+2026-01-26,wk inc flu prop ili,-4,2025-12-29,CN,quantile,0.5,27.4
+2026-01-26,wk inc flu prop ili,-3,2026-01-05,CN,quantile,0.5,23.3
+2026-01-26,wk inc flu prop ili,-2,2026-01-12,CN,quantile,0.5,21.3
+2026-01-26,wk inc flu prop ili,-1,2026-01-19,CN,quantile,0.5,18.8
+2026-01-26,wk inc flu prop ili,0,2026-01-26,CN,quantile,0.5,17.1
+2026-02-02,wk inc flu prop ili,-5,2025-12-29,CN,quantile,0.5,27.4
+2026-02-02,wk inc flu prop ili,-4,2026-01-05,CN,quantile,0.5,23.3
+2026-02-02,wk inc flu prop ili,-3,2026-01-12,CN,quantile,0.5,21.3
+2026-02-02,wk inc flu prop ili,-2,2026-01-19,CN,quantile,0.5,18.8
+2026-02-02,wk inc flu prop ili,-1,2026-01-26,CN,quantile,0.5,17.1
+2026-02-02,wk inc flu prop ili,0,2026-02-02,CN,quantile,0.5,13
+2026-02-09,wk inc flu prop ili,-5,2026-01-05,CN,quantile,0.5,23.3
+2026-02-09,wk inc flu prop ili,-4,2026-01-12,CN,quantile,0.5,21.3
+2026-02-09,wk inc flu prop ili,-3,2026-01-19,CN,quantile,0.5,18.8
+2026-02-09,wk inc flu prop ili,-2,2026-01-26,CN,quantile,0.5,17.1
+2026-02-09,wk inc flu prop ili,-1,2026-02-02,CN,quantile,0.5,13
+2026-02-09,wk inc flu prop ili,0,2026-02-09,CN,quantile,0.5,11
+2026-02-16,wk inc flu prop ili,-5,2026-01-12,CN,quantile,0.5,21.3
+2026-02-16,wk inc flu prop ili,-4,2026-01-19,CN,quantile,0.5,18.8
+2026-02-16,wk inc flu prop ili,-3,2026-01-26,CN,quantile,0.5,17.1
+2026-02-16,wk inc flu prop ili,-2,2026-02-02,CN,quantile,0.5,13
+2026-02-16,wk inc flu prop ili,-1,2026-02-09,CN,quantile,0.5,11
+2026-02-16,wk inc flu prop ili,0,2026-02-16,CN,quantile,0.5,10.5
+2026-02-23,wk inc flu prop ili,-5,2026-01-19,CN,quantile,0.5,18.8
+2026-02-23,wk inc flu prop ili,-4,2026-01-26,CN,quantile,0.5,17.1
+2026-02-23,wk inc flu prop ili,-3,2026-02-02,CN,quantile,0.5,13
+2026-02-23,wk inc flu prop ili,-2,2026-02-09,CN,quantile,0.5,11
+2026-02-23,wk inc flu prop ili,-1,2026-02-16,CN,quantile,0.5,10.5
+2026-02-23,wk inc flu prop ili,0,2026-02-23,CN,quantile,0.5,11
+2026-03-02,wk inc flu prop ili,-5,2026-01-26,CN,quantile,0.5,17.1
+2026-03-02,wk inc flu prop ili,-4,2026-02-02,CN,quantile,0.5,13
+2026-03-02,wk inc flu prop ili,-3,2026-02-09,CN,quantile,0.5,11
+2026-03-02,wk inc flu prop ili,-2,2026-02-16,CN,quantile,0.5,10.5
+2026-03-02,wk inc flu prop ili,-1,2026-02-23,CN,quantile,0.5,11
+2026-03-02,wk inc flu prop ili,0,2026-03-02,CN,quantile,0.5,9.4
+2026-03-09,wk inc flu prop ili,-5,2026-02-02,CN,quantile,0.5,13
+2026-03-09,wk inc flu prop ili,-4,2026-02-09,CN,quantile,0.5,11
+2026-03-09,wk inc flu prop ili,-3,2026-02-16,CN,quantile,0.5,10.5
+2026-03-09,wk inc flu prop ili,-2,2026-02-23,CN,quantile,0.5,11
+2026-03-09,wk inc flu prop ili,-1,2026-03-02,CN,quantile,0.5,9.4
+2026-03-09,wk inc flu prop ili,0,2026-03-09,CN,quantile,0.5,11.3
+2026-03-16,wk inc flu prop ili,-5,2026-02-09,CN,quantile,0.5,11
+2026-03-16,wk inc flu prop ili,-4,2026-02-16,CN,quantile,0.5,10.5
+2026-03-16,wk inc flu prop ili,-3,2026-02-23,CN,quantile,0.5,11
+2026-03-16,wk inc flu prop ili,-2,2026-03-02,CN,quantile,0.5,9.4
+2026-03-16,wk inc flu prop ili,-1,2026-03-09,CN,quantile,0.5,11.3
+2026-03-16,wk inc flu prop ili,0,2026-03-16,CN,quantile,0.5,13.3
+2026-03-23,wk inc flu prop ili,-5,2026-02-16,CN,quantile,0.5,10.5
+2026-03-23,wk inc flu prop ili,-4,2026-02-23,CN,quantile,0.5,11
+2026-03-23,wk inc flu prop ili,-3,2026-03-02,CN,quantile,0.5,9.4
+2026-03-23,wk inc flu prop ili,-2,2026-03-09,CN,quantile,0.5,11.3
+2026-03-23,wk inc flu prop ili,-1,2026-03-16,CN,quantile,0.5,13.3
+2026-03-23,wk inc flu prop ili,0,2026-03-23,CN,quantile,0.5,15.5
+2026-03-30,wk inc flu prop ili,-5,2026-02-23,CN,quantile,0.5,11
+2026-03-30,wk inc flu prop ili,-4,2026-03-02,CN,quantile,0.5,9.4
+2026-03-30,wk inc flu prop ili,-3,2026-03-09,CN,quantile,0.5,11.3
+2026-03-30,wk inc flu prop ili,-2,2026-03-16,CN,quantile,0.5,13.3
+2026-03-30,wk inc flu prop ili,-1,2026-03-23,CN,quantile,0.5,15.5
+2026-03-30,wk inc flu prop ili,0,2026-03-30,CN,quantile,0.5,16.3
+2026-04-06,wk inc flu prop ili,-5,2026-03-02,CN,quantile,0.5,9.4
+2026-04-06,wk inc flu prop ili,-4,2026-03-09,CN,quantile,0.5,11.3
+2026-04-06,wk inc flu prop ili,-3,2026-03-16,CN,quantile,0.5,13.3
+2026-04-06,wk inc flu prop ili,-2,2026-03-23,CN,quantile,0.5,15.5
+2026-04-06,wk inc flu prop ili,-1,2026-03-30,CN,quantile,0.5,16.3
+2026-04-06,wk inc flu prop ili,0,2026-04-06,CN,quantile,0.5,15.3
+2026-04-13,wk inc flu prop ili,-5,2026-03-09,CN,quantile,0.5,11.3
+2026-04-13,wk inc flu prop ili,-4,2026-03-16,CN,quantile,0.5,13.3
+2026-04-13,wk inc flu prop ili,-3,2026-03-23,CN,quantile,0.5,15.5
+2026-04-13,wk inc flu prop ili,-2,2026-03-30,CN,quantile,0.5,16.3
+2026-04-13,wk inc flu prop ili,-1,2026-04-06,CN,quantile,0.5,15.3
+2026-04-13,wk inc flu prop ili,0,2026-04-13,CN,quantile,0.5,13.4
+2026-04-20,wk inc flu prop ili,-5,2026-03-16,CN,quantile,0.5,13.3
+2026-04-20,wk inc flu prop ili,-4,2026-03-23,CN,quantile,0.5,15.5
+2026-04-20,wk inc flu prop ili,-3,2026-03-30,CN,quantile,0.5,16.3
+2026-04-20,wk inc flu prop ili,-2,2026-04-06,CN,quantile,0.5,15.3
+2026-04-20,wk inc flu prop ili,-1,2026-04-13,CN,quantile,0.5,13.4
+2026-04-20,wk inc flu prop ili,0,2026-04-20,CN,quantile,0.5,14.8
+2026-04-27,wk inc flu prop ili,-5,2026-03-23,CN,quantile,0.5,15.5
+2026-04-27,wk inc flu prop ili,-4,2026-03-30,CN,quantile,0.5,16.3
+2026-04-27,wk inc flu prop ili,-3,2026-04-06,CN,quantile,0.5,15.3
+2026-04-27,wk inc flu prop ili,-2,2026-04-13,CN,quantile,0.5,13.4
+2026-04-27,wk inc flu prop ili,-1,2026-04-20,CN,quantile,0.5,14.8
+2026-04-27,wk inc flu prop ili,0,2026-04-27,CN,quantile,0.5,13.3
+2026-05-04,wk inc flu prop ili,-5,2026-03-30,CN,quantile,0.5,16.3
+2026-05-04,wk inc flu prop ili,-4,2026-04-06,CN,quantile,0.5,15.3
+2026-05-04,wk inc flu prop ili,-3,2026-04-13,CN,quantile,0.5,13.4
+2026-05-04,wk inc flu prop ili,-2,2026-04-20,CN,quantile,0.5,14.8
+2026-05-04,wk inc flu prop ili,-1,2026-04-27,CN,quantile,0.5,13.3
+2026-05-04,wk inc flu prop ili,0,2026-05-04,CN,quantile,0.5,12.2
+2026-05-11,wk inc flu prop ili,-5,2026-04-06,CN,quantile,0.5,15.3
+2026-05-11,wk inc flu prop ili,-4,2026-04-13,CN,quantile,0.5,13.4
+2026-05-11,wk inc flu prop ili,-3,2026-04-20,CN,quantile,0.5,14.8
+2026-05-11,wk inc flu prop ili,-2,2026-04-27,CN,quantile,0.5,13.3
+2026-05-11,wk inc flu prop ili,-1,2026-05-04,CN,quantile,0.5,12.2
+2026-05-11,wk inc flu prop ili,0,2026-05-11,CN,quantile,0.5,11.9
+2026-05-18,wk inc flu prop ili,-5,2026-04-13,CN,quantile,0.5,13.4
+2026-05-18,wk inc flu prop ili,-4,2026-04-20,CN,quantile,0.5,14.8
+2026-05-18,wk inc flu prop ili,-3,2026-04-27,CN,quantile,0.5,13.3
+2026-05-18,wk inc flu prop ili,-2,2026-05-04,CN,quantile,0.5,12.2
+2026-05-18,wk inc flu prop ili,-1,2026-05-11,CN,quantile,0.5,11.9
+2026-05-18,wk inc flu prop ili,0,2026-05-18,CN,quantile,0.5,11.8
+2026-05-25,wk inc flu prop ili,-5,2026-04-20,CN,quantile,0.5,14.8
+2026-05-25,wk inc flu prop ili,-4,2026-04-27,CN,quantile,0.5,13.3
+2026-05-25,wk inc flu prop ili,-3,2026-05-04,CN,quantile,0.5,12.2
+2026-05-25,wk inc flu prop ili,-2,2026-05-11,CN,quantile,0.5,11.9
+2026-05-25,wk inc flu prop ili,-1,2026-05-18,CN,quantile,0.5,11.8
+2026-05-25,wk inc flu prop ili,0,2026-05-25,CN,quantile,0.5,11.1
+2026-06-01,wk inc flu prop ili,-5,2026-04-27,CN,quantile,0.5,13.3
+2026-06-01,wk inc flu prop ili,-4,2026-05-04,CN,quantile,0.5,12.2
+2026-06-01,wk inc flu prop ili,-3,2026-05-11,CN,quantile,0.5,11.9
+2026-06-01,wk inc flu prop ili,-2,2026-05-18,CN,quantile,0.5,11.8
+2026-06-01,wk inc flu prop ili,-1,2026-05-25,CN,quantile,0.5,11.1
+2026-06-01,wk inc flu prop ili,0,2026-06-01,CN,quantile,0.5,11.3
+2026-06-08,wk inc flu prop ili,-5,2026-05-04,CN,quantile,0.5,12.2
+2026-06-08,wk inc flu prop ili,-4,2026-05-11,CN,quantile,0.5,11.9
+2026-06-08,wk inc flu prop ili,-3,2026-05-18,CN,quantile,0.5,11.8
+2026-06-08,wk inc flu prop ili,-2,2026-05-25,CN,quantile,0.5,11.1
+2026-06-08,wk inc flu prop ili,-1,2026-06-01,CN,quantile,0.5,11.3
+2026-06-08,wk inc flu prop ili,0,2026-06-08,CN,quantile,0.5,9.9
+2026-06-15,wk inc flu prop ili,-5,2026-05-11,CN,quantile,0.5,11.9
+2026-06-15,wk inc flu prop ili,-4,2026-05-18,CN,quantile,0.5,11.8
+2026-06-15,wk inc flu prop ili,-3,2026-05-25,CN,quantile,0.5,11.1
+2026-06-15,wk inc flu prop ili,-2,2026-06-01,CN,quantile,0.5,11.3
+2026-06-15,wk inc flu prop ili,-1,2026-06-08,CN,quantile,0.5,9.9
+2026-06-15,wk inc flu prop ili,0,2026-06-15,CN,quantile,0.5,9.7
+2026-06-22,wk inc flu prop ili,-5,2026-05-18,CN,quantile,0.5,11.8
+2026-06-22,wk inc flu prop ili,-4,2026-05-25,CN,quantile,0.5,11.1
+2026-06-22,wk inc flu prop ili,-3,2026-06-01,CN,quantile,0.5,11.3
+2026-06-22,wk inc flu prop ili,-2,2026-06-08,CN,quantile,0.5,9.9
+2026-06-22,wk inc flu prop ili,-1,2026-06-15,CN,quantile,0.5,9.7
+2026-06-22,wk inc flu prop ili,0,2026-06-22,CN,quantile,0.5,10.1
+2026-06-29,wk inc flu prop ili,-5,2026-05-25,CN,quantile,0.5,11.1
+2026-06-29,wk inc flu prop ili,-4,2026-06-01,CN,quantile,0.5,11.3
+2026-06-29,wk inc flu prop ili,-3,2026-06-08,CN,quantile,0.5,9.9
+2026-06-29,wk inc flu prop ili,-2,2026-06-15,CN,quantile,0.5,9.7
+2026-06-29,wk inc flu prop ili,-1,2026-06-22,CN,quantile,0.5,10.1
+2026-06-29,wk inc flu prop ili,0,2026-06-29,CN,quantile,0.5,11.6
+2026-07-06,wk inc flu prop ili,-5,2026-06-01,CN,quantile,0.5,11.3
+2026-07-06,wk inc flu prop ili,-4,2026-06-08,CN,quantile,0.5,9.9
+2026-07-06,wk inc flu prop ili,-3,2026-06-15,CN,quantile,0.5,9.7
+2026-07-06,wk inc flu prop ili,-2,2026-06-22,CN,quantile,0.5,10.1
+2026-07-06,wk inc flu prop ili,-1,2026-06-29,CN,quantile,0.5,11.6
+2026-07-06,wk inc flu prop ili,0,2026-07-06,CN,quantile,0.5,13.7
+2026-07-13,wk inc flu prop ili,-5,2026-06-08,CN,quantile,0.5,9.9
+2026-07-13,wk inc flu prop ili,-4,2026-06-15,CN,quantile,0.5,9.7
+2026-07-13,wk inc flu prop ili,-3,2026-06-22,CN,quantile,0.5,10.1
+2026-07-13,wk inc flu prop ili,-2,2026-06-29,CN,quantile,0.5,11.6
+2026-07-13,wk inc flu prop ili,-1,2026-07-06,CN,quantile,0.5,13.7
+2026-07-13,wk inc flu prop ili,0,2026-07-13,CN,quantile,0.5,12.6
+2026-07-20,wk inc flu prop ili,-5,2026-06-15,CN,quantile,0.5,9.7
+2026-07-20,wk inc flu prop ili,-4,2026-06-22,CN,quantile,0.5,10.1
+2026-07-20,wk inc flu prop ili,-3,2026-06-29,CN,quantile,0.5,11.6
+2026-07-20,wk inc flu prop ili,-2,2026-07-06,CN,quantile,0.5,13.7
+2026-07-20,wk inc flu prop ili,-1,2026-07-13,CN,quantile,0.5,12.6
+2026-07-20,wk inc flu prop ili,0,2026-07-20,CN,quantile,0.5,14.5
+2026-07-27,wk inc flu prop ili,-5,2026-06-22,CN,quantile,0.5,10.1
+2026-07-27,wk inc flu prop ili,-4,2026-06-29,CN,quantile,0.5,11.6
+2026-07-27,wk inc flu prop ili,-3,2026-07-06,CN,quantile,0.5,13.7
+2026-07-27,wk inc flu prop ili,-2,2026-07-13,CN,quantile,0.5,12.6
+2026-07-27,wk inc flu prop ili,-1,2026-07-20,CN,quantile,0.5,14.5
+2026-07-27,wk inc flu prop ili,0,2026-07-27,CN,quantile,0.5,13.3
+2026-08-03,wk inc flu prop ili,-5,2026-06-29,CN,quantile,0.5,11.6
+2026-08-03,wk inc flu prop ili,-4,2026-07-06,CN,quantile,0.5,13.7
+2026-08-03,wk inc flu prop ili,-3,2026-07-13,CN,quantile,0.5,12.6
+2026-08-03,wk inc flu prop ili,-2,2026-07-20,CN,quantile,0.5,14.5
+2026-08-03,wk inc flu prop ili,-1,2026-07-27,CN,quantile,0.5,13.3
+2026-08-03,wk inc flu prop ili,0,2026-08-03,CN,quantile,0.5,14.3
+2026-08-10,wk inc flu prop ili,-5,2026-07-06,CN,quantile,0.5,13.7
+2026-08-10,wk inc flu prop ili,-4,2026-07-13,CN,quantile,0.5,12.6
+2026-08-10,wk inc flu prop ili,-3,2026-07-20,CN,quantile,0.5,14.5
+2026-08-10,wk inc flu prop ili,-2,2026-07-27,CN,quantile,0.5,13.3
+2026-08-10,wk inc flu prop ili,-1,2026-08-03,CN,quantile,0.5,14.3
+2026-08-10,wk inc flu prop ili,0,2026-08-10,CN,quantile,0.5,15.8
+2026-08-17,wk inc flu prop ili,-5,2026-07-13,CN,quantile,0.5,12.6
+2026-08-17,wk inc flu prop ili,-4,2026-07-20,CN,quantile,0.5,14.5
+2026-08-17,wk inc flu prop ili,-3,2026-07-27,CN,quantile,0.5,13.3
+2026-08-17,wk inc flu prop ili,-2,2026-08-03,CN,quantile,0.5,14.3
+2026-08-17,wk inc flu prop ili,-1,2026-08-10,CN,quantile,0.5,15.8
+2026-08-17,wk inc flu prop ili,0,2026-08-17,CN,quantile,0.5,16.2
+2026-08-24,wk inc flu prop ili,-5,2026-07-20,CN,quantile,0.5,14.5
+2026-08-24,wk inc flu prop ili,-4,2026-07-27,CN,quantile,0.5,13.3
+2026-08-24,wk inc flu prop ili,-3,2026-08-03,CN,quantile,0.5,14.3
+2026-08-24,wk inc flu prop ili,-2,2026-08-10,CN,quantile,0.5,15.8
+2026-08-24,wk inc flu prop ili,-1,2026-08-17,CN,quantile,0.5,16.2
+2026-08-24,wk inc flu prop ili,0,2026-08-24,CN,quantile,0.5,17.7
+2026-08-31,wk inc flu prop ili,-5,2026-07-27,CN,quantile,0.5,13.3
+2026-08-31,wk inc flu prop ili,-4,2026-08-03,CN,quantile,0.5,14.3
+2026-08-31,wk inc flu prop ili,-3,2026-08-10,CN,quantile,0.5,15.8
+2026-08-31,wk inc flu prop ili,-2,2026-08-17,CN,quantile,0.5,16.2
+2026-08-31,wk inc flu prop ili,-1,2026-08-24,CN,quantile,0.5,17.7
+2026-08-31,wk inc flu prop ili,0,2026-08-31,CN,quantile,0.5,18.4
+2026-09-07,wk inc flu prop ili,-5,2026-08-03,CN,quantile,0.5,14.3
+2026-09-07,wk inc flu prop ili,-4,2026-08-10,CN,quantile,0.5,15.8
+2026-09-07,wk inc flu prop ili,-3,2026-08-17,CN,quantile,0.5,16.2
+2026-09-07,wk inc flu prop ili,-2,2026-08-24,CN,quantile,0.5,17.7
+2026-09-07,wk inc flu prop ili,-1,2026-08-31,CN,quantile,0.5,18.4
+2026-09-07,wk inc flu prop ili,0,2026-09-07,CN,quantile,0.5,19.8
+2026-09-14,wk inc flu prop ili,-5,2026-08-10,CN,quantile,0.5,15.8
+2026-09-14,wk inc flu prop ili,-4,2026-08-17,CN,quantile,0.5,16.2
+2026-09-14,wk inc flu prop ili,-3,2026-08-24,CN,quantile,0.5,17.7
+2026-09-14,wk inc flu prop ili,-2,2026-08-31,CN,quantile,0.5,18.4
+2026-09-14,wk inc flu prop ili,-1,2026-09-07,CN,quantile,0.5,19.8
+2026-09-14,wk inc flu prop ili,0,2026-09-14,CN,quantile,0.5,19
+2026-09-21,wk inc flu prop ili,-5,2026-08-17,CN,quantile,0.5,16.2
+2026-09-21,wk inc flu prop ili,-4,2026-08-24,CN,quantile,0.5,17.7
+2026-09-21,wk inc flu prop ili,-3,2026-08-31,CN,quantile,0.5,18.4
+2026-09-21,wk inc flu prop ili,-2,2026-09-07,CN,quantile,0.5,19.8
+2026-09-21,wk inc flu prop ili,-1,2026-09-14,CN,quantile,0.5,19
+2026-09-21,wk inc flu prop ili,0,2026-09-21,CN,quantile,0.5,15.6
+2026-09-28,wk inc flu prop ili,-5,2026-08-24,CN,quantile,0.5,17.7
+2026-09-28,wk inc flu prop ili,-4,2026-08-31,CN,quantile,0.5,18.4
+2026-09-28,wk inc flu prop ili,-3,2026-09-07,CN,quantile,0.5,19.8
+2026-09-28,wk inc flu prop ili,-2,2026-09-14,CN,quantile,0.5,19
+2026-09-28,wk inc flu prop ili,-1,2026-09-21,CN,quantile,0.5,15.6
+2026-09-28,wk inc flu prop ili,0,2026-09-28,CN,quantile,0.5,11.6
+2026-10-05,wk inc flu prop ili,-5,2026-08-31,CN,quantile,0.5,18.4
+2026-10-05,wk inc flu prop ili,-4,2026-09-07,CN,quantile,0.5,19.8
+2026-10-05,wk inc flu prop ili,-3,2026-09-14,CN,quantile,0.5,19
+2026-10-05,wk inc flu prop ili,-2,2026-09-21,CN,quantile,0.5,15.6
+2026-10-05,wk inc flu prop ili,-1,2026-09-28,CN,quantile,0.5,11.6
+2026-10-05,wk inc flu prop ili,0,2026-10-05,CN,quantile,0.5,13.6
+2026-10-12,wk inc flu prop ili,-5,2026-09-07,CN,quantile,0.5,19.8
+2026-10-12,wk inc flu prop ili,-4,2026-09-14,CN,quantile,0.5,19
+2026-10-12,wk inc flu prop ili,-3,2026-09-21,CN,quantile,0.5,15.6
+2026-10-12,wk inc flu prop ili,-2,2026-09-28,CN,quantile,0.5,11.6
+2026-10-12,wk inc flu prop ili,-1,2026-10-05,CN,quantile,0.5,13.6
+2026-10-12,wk inc flu prop ili,0,2026-10-12,CN,quantile,0.5,15.4
+2024-01-01,mo inc dengue cases,0,2024-01-01,CN,quantile,0.5,27
+2024-02-01,mo inc dengue cases,-1,2024-01-01,CN,quantile,0.5,27
+2024-02-01,mo inc dengue cases,0,2024-02-01,CN,quantile,0.5,42
+2024-03-01,mo inc dengue cases,-2,2024-01-01,CN,quantile,0.5,27
+2024-03-01,mo inc dengue cases,-1,2024-02-01,CN,quantile,0.5,42
+2024-03-01,mo inc dengue cases,0,2024-03-01,CN,quantile,0.5,38
+2024-04-01,mo inc dengue cases,-3,2024-01-01,CN,quantile,0.5,27
+2024-04-01,mo inc dengue cases,-2,2024-02-01,CN,quantile,0.5,42
+2024-04-01,mo inc dengue cases,-1,2024-03-01,CN,quantile,0.5,38
+2024-04-01,mo inc dengue cases,0,2024-04-01,CN,quantile,0.5,58
+2024-05-01,mo inc dengue cases,-4,2024-01-01,CN,quantile,0.5,27
+2024-05-01,mo inc dengue cases,-3,2024-02-01,CN,quantile,0.5,42
+2024-05-01,mo inc dengue cases,-2,2024-03-01,CN,quantile,0.5,38
+2024-05-01,mo inc dengue cases,-1,2024-04-01,CN,quantile,0.5,58
+2024-05-01,mo inc dengue cases,0,2024-05-01,CN,quantile,0.5,109
+2024-06-01,mo inc dengue cases,-5,2024-01-01,CN,quantile,0.5,27
+2024-06-01,mo inc dengue cases,-4,2024-02-01,CN,quantile,0.5,42
+2024-06-01,mo inc dengue cases,-3,2024-03-01,CN,quantile,0.5,38
+2024-06-01,mo inc dengue cases,-2,2024-04-01,CN,quantile,0.5,58
+2024-06-01,mo inc dengue cases,-1,2024-05-01,CN,quantile,0.5,109
+2024-06-01,mo inc dengue cases,0,2024-06-01,CN,quantile,0.5,130
+2024-07-01,mo inc dengue cases,-5,2024-02-01,CN,quantile,0.5,42
+2024-07-01,mo inc dengue cases,-4,2024-03-01,CN,quantile,0.5,38
+2024-07-01,mo inc dengue cases,-3,2024-04-01,CN,quantile,0.5,58
+2024-07-01,mo inc dengue cases,-2,2024-05-01,CN,quantile,0.5,109
+2024-07-01,mo inc dengue cases,-1,2024-06-01,CN,quantile,0.5,130
+2024-07-01,mo inc dengue cases,0,2024-07-01,CN,quantile,0.5,554
+2024-08-01,mo inc dengue cases,-5,2024-03-01,CN,quantile,0.5,38
+2024-08-01,mo inc dengue cases,-4,2024-04-01,CN,quantile,0.5,58
+2024-08-01,mo inc dengue cases,-3,2024-05-01,CN,quantile,0.5,109
+2024-08-01,mo inc dengue cases,-2,2024-06-01,CN,quantile,0.5,130
+2024-08-01,mo inc dengue cases,-1,2024-07-01,CN,quantile,0.5,554
+2024-08-01,mo inc dengue cases,0,2024-08-01,CN,quantile,0.5,1801
+2024-09-01,mo inc dengue cases,-5,2024-04-01,CN,quantile,0.5,58
+2024-09-01,mo inc dengue cases,-4,2024-05-01,CN,quantile,0.5,109
+2024-09-01,mo inc dengue cases,-3,2024-06-01,CN,quantile,0.5,130
+2024-09-01,mo inc dengue cases,-2,2024-07-01,CN,quantile,0.5,554
+2024-09-01,mo inc dengue cases,-1,2024-08-01,CN,quantile,0.5,1801
+2024-09-01,mo inc dengue cases,0,2024-09-01,CN,quantile,0.5,4845
+2024-10-01,mo inc dengue cases,-5,2024-05-01,CN,quantile,0.5,109
+2024-10-01,mo inc dengue cases,-4,2024-06-01,CN,quantile,0.5,130
+2024-10-01,mo inc dengue cases,-3,2024-07-01,CN,quantile,0.5,554
+2024-10-01,mo inc dengue cases,-2,2024-08-01,CN,quantile,0.5,1801
+2024-10-01,mo inc dengue cases,-1,2024-09-01,CN,quantile,0.5,4845
+2024-10-01,mo inc dengue cases,0,2024-10-01,CN,quantile,0.5,11083
+2024-11-01,mo inc dengue cases,-5,2024-06-01,CN,quantile,0.5,130
+2024-11-01,mo inc dengue cases,-4,2024-07-01,CN,quantile,0.5,554
+2024-11-01,mo inc dengue cases,-3,2024-08-01,CN,quantile,0.5,1801
+2024-11-01,mo inc dengue cases,-2,2024-09-01,CN,quantile,0.5,4845
+2024-11-01,mo inc dengue cases,-1,2024-10-01,CN,quantile,0.5,11083
+2024-11-01,mo inc dengue cases,0,2024-11-01,CN,quantile,0.5,5201
+2024-12-01,mo inc dengue cases,-5,2024-07-01,CN,quantile,0.5,554
+2024-12-01,mo inc dengue cases,-4,2024-08-01,CN,quantile,0.5,1801
+2024-12-01,mo inc dengue cases,-3,2024-09-01,CN,quantile,0.5,4845
+2024-12-01,mo inc dengue cases,-2,2024-10-01,CN,quantile,0.5,11083
+2024-12-01,mo inc dengue cases,-1,2024-11-01,CN,quantile,0.5,5201
+2024-12-01,mo inc dengue cases,0,2024-12-01,CN,quantile,0.5,442
+2025-01-01,mo inc dengue cases,-5,2024-08-01,CN,quantile,0.5,1801
+2025-01-01,mo inc dengue cases,-4,2024-09-01,CN,quantile,0.5,4845
+2025-01-01,mo inc dengue cases,-3,2024-10-01,CN,quantile,0.5,11083
+2025-01-01,mo inc dengue cases,-2,2024-11-01,CN,quantile,0.5,5201
+2025-01-01,mo inc dengue cases,-1,2024-12-01,CN,quantile,0.5,442
+2025-01-01,mo inc dengue cases,0,2025-01-01,CN,quantile,0.5,49
+2025-02-01,mo inc dengue cases,-5,2024-09-01,CN,quantile,0.5,4845
+2025-02-01,mo inc dengue cases,-4,2024-10-01,CN,quantile,0.5,11083
+2025-02-01,mo inc dengue cases,-3,2024-11-01,CN,quantile,0.5,5201
+2025-02-01,mo inc dengue cases,-2,2024-12-01,CN,quantile,0.5,442
+2025-02-01,mo inc dengue cases,-1,2025-01-01,CN,quantile,0.5,49
+2025-02-01,mo inc dengue cases,0,2025-02-01,CN,quantile,0.5,51
+2025-03-01,mo inc dengue cases,-5,2024-10-01,CN,quantile,0.5,11083
+2025-03-01,mo inc dengue cases,-4,2024-11-01,CN,quantile,0.5,5201
+2025-03-01,mo inc dengue cases,-3,2024-12-01,CN,quantile,0.5,442
+2025-03-01,mo inc dengue cases,-2,2025-01-01,CN,quantile,0.5,49
+2025-03-01,mo inc dengue cases,-1,2025-02-01,CN,quantile,0.5,51
+2025-03-01,mo inc dengue cases,0,2025-03-01,CN,quantile,0.5,38
+2025-04-01,mo inc dengue cases,-5,2024-11-01,CN,quantile,0.5,5201
+2025-04-01,mo inc dengue cases,-4,2024-12-01,CN,quantile,0.5,442
+2025-04-01,mo inc dengue cases,-3,2025-01-01,CN,quantile,0.5,49
+2025-04-01,mo inc dengue cases,-2,2025-02-01,CN,quantile,0.5,51
+2025-04-01,mo inc dengue cases,-1,2025-03-01,CN,quantile,0.5,38
+2025-04-01,mo inc dengue cases,0,2025-04-01,CN,quantile,0.5,74
+2025-05-01,mo inc dengue cases,-5,2024-12-01,CN,quantile,0.5,442
+2025-05-01,mo inc dengue cases,-4,2025-01-01,CN,quantile,0.5,49
+2025-05-01,mo inc dengue cases,-3,2025-02-01,CN,quantile,0.5,51
+2025-05-01,mo inc dengue cases,-2,2025-03-01,CN,quantile,0.5,38
+2025-05-01,mo inc dengue cases,-1,2025-04-01,CN,quantile,0.5,74
+2025-05-01,mo inc dengue cases,0,2025-05-01,CN,quantile,0.5,126
+2025-06-01,mo inc dengue cases,-5,2025-01-01,CN,quantile,0.5,49
+2025-06-01,mo inc dengue cases,-4,2025-02-01,CN,quantile,0.5,51
+2025-06-01,mo inc dengue cases,-3,2025-03-01,CN,quantile,0.5,38
+2025-06-01,mo inc dengue cases,-2,2025-04-01,CN,quantile,0.5,74
+2025-06-01,mo inc dengue cases,-1,2025-05-01,CN,quantile,0.5,126
+2025-06-01,mo inc dengue cases,0,2025-06-01,CN,quantile,0.5,225
+2025-07-01,mo inc dengue cases,-5,2025-02-01,CN,quantile,0.5,51
+2025-07-01,mo inc dengue cases,-4,2025-03-01,CN,quantile,0.5,38
+2025-07-01,mo inc dengue cases,-3,2025-04-01,CN,quantile,0.5,74
+2025-07-01,mo inc dengue cases,-2,2025-05-01,CN,quantile,0.5,126
+2025-07-01,mo inc dengue cases,-1,2025-06-01,CN,quantile,0.5,225
+2025-07-01,mo inc dengue cases,0,2025-07-01,CN,quantile,0.5,694
+2025-08-01,mo inc dengue cases,-5,2025-03-01,CN,quantile,0.5,38
+2025-08-01,mo inc dengue cases,-4,2025-04-01,CN,quantile,0.5,74
+2025-08-01,mo inc dengue cases,-3,2025-05-01,CN,quantile,0.5,126
+2025-08-01,mo inc dengue cases,-2,2025-06-01,CN,quantile,0.5,225
+2025-08-01,mo inc dengue cases,-1,2025-07-01,CN,quantile,0.5,694
+2025-08-01,mo inc dengue cases,0,2025-08-01,CN,quantile,0.5,1702
+2025-09-01,mo inc dengue cases,-5,2025-04-01,CN,quantile,0.5,74
+2025-09-01,mo inc dengue cases,-4,2025-05-01,CN,quantile,0.5,126
+2025-09-01,mo inc dengue cases,-3,2025-06-01,CN,quantile,0.5,225
+2025-09-01,mo inc dengue cases,-2,2025-07-01,CN,quantile,0.5,694
+2025-09-01,mo inc dengue cases,-1,2025-08-01,CN,quantile,0.5,1702
+2025-09-01,mo inc dengue cases,0,2025-09-01,CN,quantile,0.5,2321
+2025-10-01,mo inc dengue cases,-5,2025-05-01,CN,quantile,0.5,126
+2025-10-01,mo inc dengue cases,-4,2025-06-01,CN,quantile,0.5,225
+2025-10-01,mo inc dengue cases,-3,2025-07-01,CN,quantile,0.5,694
+2025-10-01,mo inc dengue cases,-2,2025-08-01,CN,quantile,0.5,1702
+2025-10-01,mo inc dengue cases,-1,2025-09-01,CN,quantile,0.5,2321
+2025-10-01,mo inc dengue cases,0,2025-10-01,CN,quantile,0.5,3727
+2025-11-01,mo inc dengue cases,-5,2025-06-01,CN,quantile,0.5,225
+2025-11-01,mo inc dengue cases,-4,2025-07-01,CN,quantile,0.5,694
+2025-11-01,mo inc dengue cases,-3,2025-08-01,CN,quantile,0.5,1702
+2025-11-01,mo inc dengue cases,-2,2025-09-01,CN,quantile,0.5,2321
+2025-11-01,mo inc dengue cases,-1,2025-10-01,CN,quantile,0.5,3727
+2025-11-01,mo inc dengue cases,0,2025-11-01,CN,quantile,0.5,849
+2025-12-01,mo inc dengue cases,-5,2025-07-01,CN,quantile,0.5,694
+2025-12-01,mo inc dengue cases,-4,2025-08-01,CN,quantile,0.5,1702
+2025-12-01,mo inc dengue cases,-3,2025-09-01,CN,quantile,0.5,2321
+2025-12-01,mo inc dengue cases,-2,2025-10-01,CN,quantile,0.5,3727
+2025-12-01,mo inc dengue cases,-1,2025-11-01,CN,quantile,0.5,849
+2025-12-01,mo inc dengue cases,0,2025-12-01,CN,quantile,0.5,151
+2026-01-01,mo inc dengue cases,-5,2025-08-01,CN,quantile,0.5,1702
+2026-01-01,mo inc dengue cases,-4,2025-09-01,CN,quantile,0.5,2321
+2026-01-01,mo inc dengue cases,-3,2025-10-01,CN,quantile,0.5,3727
+2026-01-01,mo inc dengue cases,-2,2025-11-01,CN,quantile,0.5,849
+2026-01-01,mo inc dengue cases,-1,2025-12-01,CN,quantile,0.5,151
+2026-01-01,mo inc dengue cases,0,2026-01-01,CN,quantile,0.5,93
+2026-02-01,mo inc dengue cases,-5,2025-09-01,CN,quantile,0.5,2321
+2026-02-01,mo inc dengue cases,-4,2025-10-01,CN,quantile,0.5,3727
+2026-02-01,mo inc dengue cases,-3,2025-11-01,CN,quantile,0.5,849
+2026-02-01,mo inc dengue cases,-2,2025-12-01,CN,quantile,0.5,151
+2026-02-01,mo inc dengue cases,-1,2026-01-01,CN,quantile,0.5,93
+2026-02-01,mo inc dengue cases,0,2026-02-01,CN,quantile,0.5,94
+2026-03-01,mo inc dengue cases,-5,2025-10-01,CN,quantile,0.5,3727
+2026-03-01,mo inc dengue cases,-4,2025-11-01,CN,quantile,0.5,849
+2026-03-01,mo inc dengue cases,-3,2025-12-01,CN,quantile,0.5,151
+2026-03-01,mo inc dengue cases,-2,2026-01-01,CN,quantile,0.5,93
+2026-03-01,mo inc dengue cases,-1,2026-02-01,CN,quantile,0.5,94
+2026-03-01,mo inc dengue cases,0,2026-03-01,CN,quantile,0.5,92
+2026-04-01,mo inc dengue cases,-5,2025-11-01,CN,quantile,0.5,849
+2026-04-01,mo inc dengue cases,-4,2025-12-01,CN,quantile,0.5,151
+2026-04-01,mo inc dengue cases,-3,2026-01-01,CN,quantile,0.5,93
+2026-04-01,mo inc dengue cases,-2,2026-02-01,CN,quantile,0.5,94
+2026-04-01,mo inc dengue cases,-1,2026-03-01,CN,quantile,0.5,92
+2026-04-01,mo inc dengue cases,0,2026-04-01,CN,quantile,0.5,137
+2026-05-01,mo inc dengue cases,-5,2025-12-01,CN,quantile,0.5,151
+2026-05-01,mo inc dengue cases,-4,2026-01-01,CN,quantile,0.5,93
+2026-05-01,mo inc dengue cases,-3,2026-02-01,CN,quantile,0.5,94
+2026-05-01,mo inc dengue cases,-2,2026-03-01,CN,quantile,0.5,92
+2026-05-01,mo inc dengue cases,-1,2026-04-01,CN,quantile,0.5,137
+2026-05-01,mo inc dengue cases,0,2026-05-01,CN,quantile,0.5,222
+2026-06-01,mo inc dengue cases,-5,2026-01-01,CN,quantile,0.5,93
+2026-06-01,mo inc dengue cases,-4,2026-02-01,CN,quantile,0.5,94
+2026-06-01,mo inc dengue cases,-3,2026-03-01,CN,quantile,0.5,92
+2026-06-01,mo inc dengue cases,-2,2026-04-01,CN,quantile,0.5,137
+2026-06-01,mo inc dengue cases,-1,2026-05-01,CN,quantile,0.5,222
+2026-06-01,mo inc dengue cases,0,2026-06-01,CN,quantile,0.5,255
+2026-07-01,mo inc dengue cases,-5,2026-02-01,CN,quantile,0.5,94
+2026-07-01,mo inc dengue cases,-4,2026-03-01,CN,quantile,0.5,92
+2026-07-01,mo inc dengue cases,-3,2026-04-01,CN,quantile,0.5,137
+2026-07-01,mo inc dengue cases,-2,2026-05-01,CN,quantile,0.5,222
+2026-07-01,mo inc dengue cases,-1,2026-06-01,CN,quantile,0.5,255
+2026-07-01,mo inc dengue cases,0,2026-07-01,CN,quantile,0.5,1120
+2026-08-01,mo inc dengue cases,-5,2026-03-01,CN,quantile,0.5,92
+2026-08-01,mo inc dengue cases,-4,2026-04-01,CN,quantile,0.5,137
+2026-08-01,mo inc dengue cases,-3,2026-05-01,CN,quantile,0.5,222
+2026-08-01,mo inc dengue cases,-2,2026-06-01,CN,quantile,0.5,255
+2026-08-01,mo inc dengue cases,-1,2026-07-01,CN,quantile,0.5,1120
+2026-08-01,mo inc dengue cases,0,2026-08-01,CN,quantile,0.5,836

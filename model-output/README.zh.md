@@ -2,7 +2,7 @@
 
 [English](README.md) | **中文**
 
-本目录存放 **中国 COVID-19 预测中心** 的预测提交文件。每个模型一个子目录，内含 CSV 预测文件。
+本目录存放 **中国传染病预测中心** 的预测提交文件。每个模型一个子目录，内含 CSV 预测文件。
 
 本文是提交要点速查。完整说明、Hub 集成模型与本地校验见 [英文 README](README.md)。
 
@@ -89,6 +89,6 @@ quantiles = [0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35,
 
 ## 支持
 
-- **技术问题**：[GitHub Issues](https://github.com/dailypartita/China-COVID-19-Forecast-Hub/issues)
+- **技术问题**：[GitHub Issues](https://github.com/dailypartita/China-Infectious-Disease-Forecast-Hub/issues)
 - **一般咨询：** yang_kaixin@gzlab.ac.cn
-- **Dashboard：** [China COVID-19 Forecast Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
+- **Dashboard：** [China Infectious Disease Forecast Dashboard](https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/)

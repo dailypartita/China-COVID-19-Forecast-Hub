@@ -1,6 +1,6 @@
 # Hub Configuration
 
-This directory contains the configuration files for the **China COVID-19 Forecast Hub**, following the [hubverse hub configuration standards](https://hubverse.io/en/latest/user-guide/hub-config.html).
+This directory contains the configuration files for the **China Infectious Disease Forecast Hub**, following the [hubverse hub configuration standards](https://hubverse.io/en/latest/user-guide/hub-config.html).
 
 ## Files
 
@@ -14,7 +14,7 @@ This directory contains the configuration files for the **China COVID-19 Forecas
 
 Defines global hub settings that should remain stable throughout the hub's operation:
 
-- **Hub name**: China COVID-19 Forecast Hub
+- **Hub name**: China Infectious Disease Forecast Hub
 - **Maintainer**: GZNL Group
 - **Accepted file formats**: CSV and Parquet
 - **Timezone**: Asia/Shanghai (Beijing Time)
@@ -29,8 +29,8 @@ Defines the modeling tasks, including:
 - **Output types**:
   - `quantile` — 23 required quantile levels from 0.01 to 0.99
   - `sample` — 200 samples per task (optional)
-- **Target**: `wk inc covid prop ili` (weekly SARS-CoV-2 positivity rate among ILI cases)
-- **Horizons**: -1 to 6 weeks relative to the reference date
+- **Targets**: round 1 (weekly) — `wk inc covid prop ili`, `wk inc flu prop ili` (SARS-CoV-2 / influenza positivity rates among ILI cases); round 2 (monthly) — `mo inc dengue cases` (reported dengue cases)
+- **Horizons**: -1 to 6 weeks (round 1) or -1 to 3 months (round 2) relative to the reference date
 - **Submission window**: Broad window (±360 days relative to reference date)
 
 For a detailed explanation of each task ID and output type, see [model-output/README.md](../model-output/README.md).

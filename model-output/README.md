@@ -2,7 +2,7 @@
 
 **English** | [中文](README.zh.md)
 
-This directory contains forecast submissions for the **China COVID-19 Forecast Hub**. Each model has its own subdirectory containing CSV forecast files. The directory structure and file format follow the [hubverse model output standards](https://hubverse.io/en/latest/user-guide/model-output.html).
+This directory contains forecast submissions for the **China Infectious Disease Forecast Hub**. Each model has its own subdirectory containing CSV forecast files. The directory structure and file format follow the [hubverse model output standards](https://hubverse.io/en/latest/user-guide/model-output.html).
 
 ## Table of Contents
 
@@ -348,6 +348,6 @@ If you need to update a forecast after submission but before the deadline, submi
 
 ## Support
 
-- **Technical issues**: [GitHub Issues](https://github.com/dailypartita/China-COVID-19-Forecast-Hub/issues)
+- **Technical issues**: [GitHub Issues](https://github.com/dailypartita/China-Infectious-Disease-Forecast-Hub/issues)
 - **General inquiries**: yang_kaixin@gzlab.ac.cn
-- **Dashboard**: [China COVID-19 Forecast Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
+- **Dashboard**: [China Infectious Disease Forecast Dashboard](https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/)
