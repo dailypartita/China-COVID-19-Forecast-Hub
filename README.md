@@ -6,20 +6,29 @@
 
 </div>
 
-Collaborative forecasting hub built on the [Hubverse](https://hubverse.io/) framework. Collects, validates, and archives weekly probabilistic forecasts of SARS-CoV-2 positivity rate among influenza-like illness (ILI) cases from China's national sentinel surveillance network.
+Collaborative forecasting hub built on the [Hubverse](https://hubverse.io/) framework. Collects, validates, and archives probabilistic forecasts of SARS-CoV-2 and influenza positivity rates among influenza-like illness (ILI) cases from China's national sentinel surveillance network, plus monthly reported dengue cases from national notifiable disease surveillance.
 
 **Dashboard:** [dailypartita.github.io/China-COVID-19-Forecast-Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
 
-**Target data:** [cn_cdc_dashboard](https://github.com/dailypartita/cn_cdc_dashboard) · **Observed coverage:** 2022-12-05 – 2026-10-12 · **Configured submission rounds:** Mondays through 2027-10-25
+**Target data:** [cn_cdc_dashboard](https://github.com/dailypartita/cn_cdc_dashboard) · **Observed coverage:** COVID-19 weekly 2022-12-05 – 2026-10-12 · Flu weekly 2024-11-11 – 2026-10-12 · Dengue monthly 2024-01 – 2026-08 · **Configured submission rounds:** Mondays through 2027-10-25
 
 ## Features
 
-### Forecast Target
+### Forecast Targets
 
-- **Target:** `wk inc covid prop ili` — weekly SARS-CoV-2 positivity rate among ILI cases
+**Round 1 — weekly respiratory targets**
+
+- **Targets:** `wk inc covid prop ili`, `wk inc flu prop ili` — weekly SARS-CoV-2 / influenza virus positivity rates among ILI cases
 - **Location:** `CN` (national)
 - **Output:** 23-quantile probabilistic forecasts (horizons -1 to 6; teams may submit any subset — full -1..6 is recommended for comparability, but not all are required for validation)
 - **Units:** Percentage points (e.g., `13.5` = 13.5%), not proportions
+
+**Round 2 — monthly dengue target**
+
+- **Target:** `mo inc dengue cases` — monthly reported dengue cases from notifiable disease surveillance
+- **Location:** `CN` (national)
+- **Output:** 23-quantile probabilistic forecasts (horizons -1 to 3 months; reference dates are the 1st of each month)
+- **Units:** Case counts (integers)
 
 ### Submission
 
@@ -50,7 +59,7 @@ See the [Dashboard Evaluation page](https://dailypartita.github.io/China-COVID-1
 | Forecast submission deadline | Wednesday 23:59 Beijing time |
 | Dashboard data refresh | Thursday 17:33 UTC (automated) |
 
-Target data from [China CDC sentinel surveillance](https://www.chinacdc.cn/jksj/jksj04_14275/). Structured data source: [cn_cdc_dashboard](https://github.com/dailypartita/cn_cdc_dashboard).
+Target data from [China CDC sentinel surveillance](https://www.chinacdc.cn/jksj/jksj04_14275/) (weekly respiratory pathogens) and [China CDC notifiable disease reports](https://www.chinacdc.cn/jksj/jksj01/) (monthly dengue). Structured data source: [cn_cdc_dashboard](https://github.com/dailypartita/cn_cdc_dashboard).
 
 ## Repository Structure
 
@@ -116,7 +125,7 @@ This refreshes `time-series.csv`, `oracle-output.csv`, and `hub-config/tasks.jso
 
 | Dataset | Path | Description |
 |---------|------|-------------|
-| Target time series | `target-data/time-series.csv` | Weekly observed positivity rates |
+| Target time series | `target-data/time-series.csv` | Weekly observed positivity rates + monthly dengue cases |
 | Oracle output | `target-data/oracle-output.csv` | Ground truth for evaluation and dashboard |
 | Model forecasts | `model-output/<model_id>/` | Submitted probabilistic forecasts |
 | Hub config | `hub-config/` | Task definitions and admin settings |
