@@ -1,6 +1,6 @@
 # Model Metadata
 
-This directory contains model metadata files for the **China COVID-19 Forecast Hub**. Each participating model must have a metadata file in [YAML format](https://yaml.org/) that describes the model, team, and methods. The metadata specification is aligned with the [hubverse model metadata guide](https://hubverse.io/en/latest/user-guide/model-metadata.html).
+This directory contains model metadata files for the **China Infectious Disease Forecast Hub**. Each participating model must have a metadata file in [YAML format](https://yaml.org/) that describes the model, team, and methods. The metadata specification is aligned with the [hubverse model metadata guide](https://hubverse.io/en/latest/user-guide/model-metadata.html).
 
 ## Table of Contents
 
@@ -145,7 +145,7 @@ methods: "Statistical time series forecasting using simple trend extrapolation"
 methods_long: "This model uses time series analysis to predict SARS-CoV-2 positivity rates based on sentinel hospital surveillance data from China CDC. It combines recent trend analysis with historical seasonal patterns to generate probabilistic forecasts at multiple horizons."
 ensemble_of_models: false
 ensemble_of_hub_models: false
-repo_url: "https://github.com/dailypartita/China-COVID-19-Forecast-Hub"
+repo_url: "https://github.com/dailypartita/China-Infectious-Disease-Forecast-Hub"
 ```
 
 ## Validation

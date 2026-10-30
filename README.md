@@ -1,6 +1,6 @@
 <div align="center">
 
-# China COVID-19 Forecast Hub
+# China Infectious Disease Forecast Hub
 
 **English** | [中文](README.zh.md)
 
@@ -8,7 +8,7 @@
 
 Collaborative forecasting hub built on the [Hubverse](https://hubverse.io/) framework. Collects, validates, and archives probabilistic forecasts of SARS-CoV-2 and influenza positivity rates among influenza-like illness (ILI) cases from China's national sentinel surveillance network, plus monthly reported dengue cases from national notifiable disease surveillance.
 
-**Dashboard:** [dailypartita.github.io/China-COVID-19-Forecast-Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
+**Dashboard:** [dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard](https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/)
 
 **Target data:** [cn_cdc_dashboard](https://github.com/dailypartita/cn_cdc_dashboard) · **Observed coverage:** COVID-19 weekly 2022-12-05 – 2026-10-12 · Flu weekly 2024-11-11 – 2026-10-12 · Dengue monthly 2024-01 – 2026-08 · **Configured submission rounds:** Mondays through 2027-10-25
 
@@ -48,7 +48,7 @@ All pull requests are validated automatically via [GitHub Actions](.github/workf
 | XMU_CTModelling | FNN, LSTM, XGBoost, GRU, TCN |
 | MUST | SEIRS |
 
-See the [Dashboard Evaluation page](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/eval.html) for latest rankings.
+See the [Dashboard Evaluation page](https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/eval.html) for latest rankings.
 
 ## Data Updates
 
@@ -64,7 +64,7 @@ Target data from [China CDC sentinel surveillance](https://www.chinacdc.cn/jksj/
 ## Repository Structure
 
 ```
-China-COVID-19-Forecast-Hub/
+China-Infectious-Disease-Forecast-Hub/
 ├── hub-config/          # Hub configuration (admin, tasks, schemas)
 ├── model-metadata/      # Model registration (one YAML per model)
 ├── model-output/        # Forecast submissions (one folder per model)
@@ -84,7 +84,7 @@ China-COVID-19-Forecast-Hub/
 | Schema | Hubverse v6.0.0 |
 | Validation | hubValidations + GitHub Actions |
 | Target data | [cn_cdc_dashboard](https://github.com/dailypartita/cn_cdc_dashboard) |
-| Dashboard | [China COVID-19 Forecast Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/) |
+| Dashboard | [China Infectious Disease Forecast Dashboard](https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/) |
 
 ### Configuration
 
@@ -130,18 +130,18 @@ This refreshes `time-series.csv`, `oracle-output.csv`, and `hub-config/tasks.jso
 | Model forecasts | `model-output/<model_id>/` | Submitted probabilistic forecasts |
 | Hub config | `hub-config/` | Task definitions and admin settings |
 
-Browse data interactively on the [Dashboard data page](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/data.html).
+Browse data interactively on the [Dashboard data page](https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/data.html).
 
 ## Links
 
-- [Forecast Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
+- [Forecast Dashboard](https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/)
 - [cn_cdc_dashboard](https://github.com/dailypartita/cn_cdc_dashboard)
-- [Hub Issues](https://github.com/dailypartita/China-COVID-19-Forecast-Hub/issues)
+- [Hub Issues](https://github.com/dailypartita/China-Infectious-Disease-Forecast-Hub/issues)
 - [Hubverse docs](https://docs.hubverse.io/)
 
 ## Contact
 
-- **Technical issues:** [GitHub Issues](https://github.com/dailypartita/China-COVID-19-Forecast-Hub/issues)
+- **Technical issues:** [GitHub Issues](https://github.com/dailypartita/China-Infectious-Disease-Forecast-Hub/issues)
 - **General inquiries:** yang_kaixin@gzlab.ac.cn
 
 ## License

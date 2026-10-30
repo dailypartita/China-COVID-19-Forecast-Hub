@@ -1,6 +1,6 @@
 {
     "schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v6.0.0/admin-schema.json",
-    "name": "China COVID-19 Forecast Hub",
+    "name": "China Infectious Disease Forecast Hub",
     "maintainer": "GZNL Group",
     "contact": {
         "name": "yang_kaixin",
@@ -9,7 +9,7 @@
     "repository": {
         "host": "github",
         "owner": "dailypartita",
-        "name": "China-COVID-19-Forecast-Hub"
+        "name": "China-Infectious-Disease-Forecast-Hub"
     },
     "file_format": ["csv", "parquet"],
     "timezone": "Asia/Shanghai",

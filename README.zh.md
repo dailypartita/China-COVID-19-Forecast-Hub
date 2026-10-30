@@ -1,6 +1,6 @@
 <div align="center">
 
-# 中国 COVID-19 预测中心 Forecast Hub
+# 中国传染病预测中心 Forecast Hub
 
 [English](README.md) | **中文**
 
@@ -8,7 +8,7 @@
 
 基于 [Hubverse](https://hubverse.io/) 框架构建的协作式预测中心，用于收集、校验和归档全国哨点监测网络中门急诊 ILI 病例 SARS-CoV-2 与流感病毒阳性率的周度概率预测，以及全国法定传染病报告中登革热月度病例数的概率预测。
 
-**在线 Dashboard：** [dailypartita.github.io/China-COVID-19-Forecast-Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
+**在线 Dashboard：** [dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard](https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/)
 
 **目标数据：** [cn_cdc_dashboard](https://github.com/dailypartita/cn_cdc_dashboard) · **已观测覆盖：** 新冠周度 2022-12-05 – 2026-10-12 · 流感周度 2024-11-11 – 2026-10-12 · 登革热月度 2024-01 – 2026-08 · **已配置提交轮次：** 周一至 2027-10-25
 
@@ -48,7 +48,7 @@
 | XMU_CTModelling | FNN, LSTM, XGBoost, GRU, TCN |
 | MUST | SEIRS |
 
-最新排名与详细指标请查看 Dashboard [Evaluation 页面](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/eval.html)。
+最新排名与详细指标请查看 Dashboard [Evaluation 页面](https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/eval.html)。
 
 ## 数据更新
 
@@ -64,7 +64,7 @@
 ## 仓库结构
 
 ```
-China-COVID-19-Forecast-Hub/
+China-Infectious-Disease-Forecast-Hub/
 ├── hub-config/          # Hub 配置（admin、tasks、schema）
 ├── model-metadata/      # 模型注册（每个模型一个 YAML）
 ├── model-output/        # 预测提交（每个模型一个目录）
@@ -84,7 +84,7 @@ China-COVID-19-Forecast-Hub/
 | Schema | Hubverse v6.0.0 |
 | 校验 | hubValidations + GitHub Actions |
 | 目标数据 | [cn_cdc_dashboard](https://github.com/dailypartita/cn_cdc_dashboard) |
-| Dashboard | [中国 COVID-19 预测中心 Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/) |
+| Dashboard | [中国传染病预测中心 Dashboard](https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/) |
 
 ### 配置文件
 
@@ -130,18 +130,18 @@ python3 target-data/update_from_cncdc.py --from-github
 | 模型预测 | `model-output/<model_id>/` | 已提交的概率预测 |
 | Hub 配置 | `hub-config/` | 任务定义与管理配置 |
 
-也可通过 [Dashboard 数据页面](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/data.html) 交互式浏览。
+也可通过 [Dashboard 数据页面](https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/data.html) 交互式浏览。
 
 ## 相关链接
 
-- [Forecast Dashboard](https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/)
+- [Forecast Dashboard](https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/)
 - [cn_cdc_dashboard](https://github.com/dailypartita/cn_cdc_dashboard)
-- [Hub Issues](https://github.com/dailypartita/China-COVID-19-Forecast-Hub/issues)
+- [Hub Issues](https://github.com/dailypartita/China-Infectious-Disease-Forecast-Hub/issues)
 - [Hubverse 文档](https://docs.hubverse.io/)
 
 ## 联系方式
 
-- **技术问题：** [GitHub Issues](https://github.com/dailypartita/China-COVID-19-Forecast-Hub/issues)
+- **技术问题：** [GitHub Issues](https://github.com/dailypartita/China-Infectious-Disease-Forecast-Hub/issues)
 - **一般咨询：** yang_kaixin@gzlab.ac.cn
 
 ## 许可证
